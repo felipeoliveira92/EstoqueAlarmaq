@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "un52XECu3AFdUVseJ1cbjgSLSlLPjqosQSSZ1fYTVrvJ+sNoQwsO3vAe9BeGINS9k549msvQvboelHwLzIO2lw==",
+  "dgSpecHash": "t7HFq0mcz9NP+BSoR8ajGbXbLP32/Vb+8HViv/fJdlS0hmZ556mNCD6O5ZjRP3WUxvyoC1QSuSpVs85aYHWYdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.1\\microsoft.entityframeworkcore.design.5.0.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.1\\microsoft.entityframeworkcore.relational.5.0.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.1\\microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.1\\microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

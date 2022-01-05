@@ -10,11 +10,20 @@ namespace EstoqueAlarmaq.Infra.Data
 {
     public class DataContext : DbContext
     {
-        public DbSet<Produto> Produtos { get; set; }
+        public DataContext()
+        {
 
+        }
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
+        }
+        public DbSet<Produto> Produtos { get; set; }
+
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Password=Alarmaq2014@;Persist Security Info=True;User ID=sa;Initial Catalog=dbEstoque;Data Source=DESKTOP-FELIPE");
         }
     }
 }

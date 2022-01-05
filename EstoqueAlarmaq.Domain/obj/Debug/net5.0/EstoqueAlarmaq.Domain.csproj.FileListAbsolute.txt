@@ -1,0 +1,12 @@
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\bin\Debug\net5.0\EstoqueAlarmaq.Domain.deps.json
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\bin\Debug\net5.0\EstoqueAlarmaq.Domain.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\bin\Debug\net5.0\ref\EstoqueAlarmaq.Domain.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\bin\Debug\net5.0\EstoqueAlarmaq.Domain.pdb
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.csproj.AssemblyReference.cache
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.AssemblyInfoInputs.cache
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.AssemblyInfo.cs
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\ref\EstoqueAlarmaq.Domain.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.pdb
