@@ -10,6 +10,11 @@ namespace EstoqueAlarmaq.Infra.Data
 {
     public class DataContext : DbContext
     {
-        DbSet<Produto> Produtos;
+        public DbSet<Produto> Produtos { get; set; }
+
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+
+        }
     }
 }
