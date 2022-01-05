@@ -18,7 +18,7 @@ namespace EstoqueAlarmaq.Infra.Data
         {
 
         }
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Product> Produtos { get; set; }
 
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueAlarmaq.Infra", "Est
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueAlarmaq.Application", "EstoqueAlarmaq.Aplication\EstoqueAlarmaq.Application.csproj", "{64216534-06FB-4E1A-BFFF-DF51BBC0C853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueAlarmaq.Api", "EstoqueAlarmaq.Api\EstoqueAlarmaq.Api.csproj", "{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
