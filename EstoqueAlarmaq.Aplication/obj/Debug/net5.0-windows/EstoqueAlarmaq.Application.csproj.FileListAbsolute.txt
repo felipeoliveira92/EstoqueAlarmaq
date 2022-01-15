@@ -55,3 +55,7 @@ C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\obj\
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\obj\Debug\net5.0-windows\ref\EstoqueAlarmaq.Application.dll
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\obj\Debug\net5.0-windows\EstoqueAlarmaq.Application.pdb
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\obj\Debug\net5.0-windows\EstoqueAlarmaq.Application.genruntimeconfig.cache
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\bin\Debug\net5.0-windows\MetroFramework.Design.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\bin\Debug\net5.0-windows\MetroFramework.Fonts.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\bin\Debug\net5.0-windows\MetroFramework.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Aplication\obj\Debug\net5.0-windows\EstoqueAlarmaq.Application.Properties.Resources.resources

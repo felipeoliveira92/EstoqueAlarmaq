@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Aplication
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
@@ -22,7 +22,8 @@ namespace EstoqueAlarmaq.Aplication
         private void label1_Click(object sender, EventArgs e)
         {
             var context = new DataContext();
-            var produto = new Produto("12345", "DVR", "equipamento");
+            var produto = new Product("12345", "DVR", "equipamento", 2, "c:\\photo");
+
             context.Produtos.Add(produto);
 
             context.SaveChanges();

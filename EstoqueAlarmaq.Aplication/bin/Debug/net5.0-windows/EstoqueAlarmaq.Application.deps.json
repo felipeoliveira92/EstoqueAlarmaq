@@ -8,10 +8,27 @@
     ".NETCoreApp,Version=v5.0": {
       "EstoqueAlarmaq.Application/1.0.0": {
         "dependencies": {
-          "EstoqueAlarmaq.Infra": "1.0.0"
+          "EstoqueAlarmaq.Infra": "1.0.0",
+          "MetroModernUI": "1.4.0"
         },
         "runtime": {
           "EstoqueAlarmaq.Application.dll": {}
+        }
+      },
+      "MetroModernUI/1.4.0": {
+        "runtime": {
+          "lib/net/MetroFramework.Design.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          },
+          "lib/net/MetroFramework.Fonts.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          },
+          "lib/net/MetroFramework.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
         }
       },
       "Microsoft.CSharp/4.5.0": {},
@@ -978,6 +995,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MetroModernUI/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p2F3w8bF1tb0tpkDceEVO65UYMKnJxdQyNxVyl/OjrFZHighicLYZDppKkiqmvBZ10XUi2mqHiIJUzXBP3GElQ==",
+      "path": "metromodernui/1.4.0",
+      "hashPath": "metromodernui.1.4.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
