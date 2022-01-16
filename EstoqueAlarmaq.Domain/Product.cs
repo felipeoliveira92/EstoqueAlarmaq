@@ -8,6 +8,13 @@ namespace EstoqueAlarmaq.Domain
 {
     public class Product
     {
+        public int Id { get; set; }
+        public string Codigo { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Quantidade { get; set; }
+        public string PhotoLocation { get; set; }
+        
         public Product(string codigo, string name, string description, int quantidade, string photoLocation)
         {
             Codigo = codigo;
@@ -16,13 +23,6 @@ namespace EstoqueAlarmaq.Domain
             Quantidade = quantidade;
             PhotoLocation = photoLocation;
         }
-
-        public int Id { get; set; }
-        public string Codigo { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Quantidade { get; set; }
-        public string PhotoLocation { get; set; }
 
     }
 }

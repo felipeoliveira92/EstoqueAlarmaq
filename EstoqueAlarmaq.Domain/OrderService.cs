@@ -1,3 +1,5 @@
+using System;
+
 namespace EstoqueAlarmaq.Domain
 {
     public class OrderService
@@ -17,7 +19,7 @@ namespace EstoqueAlarmaq.Domain
             this.Product = product;
             this.User = user;
             this.Observation = observation;
-            this.DateCreatedAt = DateTime.now;
+            this.DateCreatedAt = DateTime.Now;
         }
     }
 }

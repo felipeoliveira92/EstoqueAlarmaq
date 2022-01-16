@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueAlarmaq.Domain", "Es
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueAlarmaq.Infra", "EstoqueAlarmaq.Infra\EstoqueAlarmaq.Infra.csproj", "{1F26ADE8-1CCE-419D-9A51-2B57C3541C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueAlarmaq.Application", "EstoqueAlarmaq.Aplication\EstoqueAlarmaq.Application.csproj", "{64216534-06FB-4E1A-BFFF-DF51BBC0C853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstoqueAlarmaq.Api", "EstoqueAlarmaq.Api\EstoqueAlarmaq.Api.csproj", "{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueAlarmaq.Api", "EstoqueAlarmaq.Api\EstoqueAlarmaq.Api.csproj", "{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueAlarmaq.Desktop", "EstoqueAlarmaq.Desktop\EstoqueAlarmaq.Desktop.csproj", "{57233023-7C41-4873-A82D-CEE8DC0A6006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{1F26ADE8-1CCE-419D-9A51-2B57C3541C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F26ADE8-1CCE-419D-9A51-2B57C3541C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F26ADE8-1CCE-419D-9A51-2B57C3541C8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64216534-06FB-4E1A-BFFF-DF51BBC0C853}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD12E28-54A4-4F08-BC97-9FFC896BDDDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57233023-7C41-4873-A82D-CEE8DC0A6006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57233023-7C41-4873-A82D-CEE8DC0A6006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57233023-7C41-4873-A82D-CEE8DC0A6006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57233023-7C41-4873-A82D-CEE8DC0A6006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
