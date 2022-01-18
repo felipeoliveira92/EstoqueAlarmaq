@@ -22,7 +22,7 @@ namespace EstoqueAlarmaq.Aplication
         private void label1_Click(object sender, EventArgs e)
         {
             var context = new DataContext();
-            var produto = new Produto("12345", "DVR", "equipamento");
+            var produto = new Product("12345", "DVR", "equipamento", 3, null);
             context.Produtos.Add(produto);
 
             context.SaveChanges();
