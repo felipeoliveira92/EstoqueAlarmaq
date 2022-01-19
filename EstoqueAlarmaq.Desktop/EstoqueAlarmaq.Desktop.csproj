@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="bunifu.ui.winforms" Version="5.3.0" />
   </ItemGroup>
 
   <ItemGroup>

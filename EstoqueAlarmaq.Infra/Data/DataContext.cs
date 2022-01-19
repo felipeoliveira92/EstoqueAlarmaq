@@ -24,7 +24,7 @@ namespace EstoqueAlarmaq.Infra.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Password=Alarmaq2014@;Persist Security Info=True;User ID=sa;Initial Catalog=dbEstoque;Data Source=DESKTOP-FELIPE");
+            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=dbEstoque;Data Source=A002");
         }
     }
 }

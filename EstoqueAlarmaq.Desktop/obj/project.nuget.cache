@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "Bsb+WqlTL1zCUTLIfuoXqCxdAxKSCJ5aMjqUSXgIpJ2tQDKwwCrZMvBNcIdKTWdJLMy9YJF5GCC2Cp+2la2ctA==",
+  "dgSpecHash": "b5yy8e0TqgAWWtcY8ZTWUGIEB5QniWGCS3vCMSgb2mfL846Wy1bqDBYbLAtywsPJJt7W66AWzu8tPtU9k4r3xQ==",
   "success": true,
   "projectFilePath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrador\\.nuget\\packages\\bunifu.ui.winforms\\5.3.0\\bunifu.ui.winforms.5.3.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -100,16 +99,5 @@
     "C:\\Users\\Administrador\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'Bunifu.UI.WinForms 5.3.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0-windows7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "Bunifu.UI.WinForms",
-      "targetGraphs": [
-        "net5.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

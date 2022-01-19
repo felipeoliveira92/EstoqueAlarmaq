@@ -19,6 +19,12 @@ namespace EstoqueAlarmaq.Desktop
         {
             InitializeComponent();
             _context = context;
+            refreshDataGrid();
+        }
+
+        private void FormClients_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -56,6 +62,16 @@ namespace EstoqueAlarmaq.Desktop
 
             MessageBox.Show("Cliente cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtCode.Focus();
+            refreshDataGrid();
         }
+
+
+        private void refreshDataGrid()
+        {
+            dataGridClients.DataSource = _context.Clients.ToList();
+            dataGridClients.AutoResizeColumns();
+            dataGridClients.AutoResizeRows();
+        }
+        
     }
 }
