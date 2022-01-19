@@ -60,48 +60,26 @@ namespace EstoqueAlarmaq.Desktop
                     {
                         _context.Products.Add(product);
                         _context.SaveChanges();
+
+                        CleanForm();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    CleanForm();
-
-                    counter = 0;
-                    timer1.Interval = 5000;
-                    timer1.Enabled = true;
-                    
-                    this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
                 }                
             }           
         }
         
-        private void timer1_Tick(object sender, System.EventArgs e)
-        {
-            if (counter >= 10)
-            {
-                // Exit loop code.  
-                timer1.Enabled = false;
-                counter = 0;
-                label5.Text = "";
-            }
-            else
-            {
-                // Run your procedure here.  
-                // Increment counter.  
-                counter = counter + 1;
-            }
-        }
-
         private void CleanForm()
         {
             txtCode.Clear();
             txtName.Clear();
             txtDescription.Clear();
             txtQuantidade.Clear();
-            txtCode.Focus();
 
-            label5.Text = "produto Cadastrado com sucesso!";
+            MessageBox.Show("Produto cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtCode.Focus();
         }
     }
 }
