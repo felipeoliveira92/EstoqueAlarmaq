@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "64216534-06fb-4e1a-bfff-df51bbc0c853": {
+      "ProjectGuid": "64216534-06fb-4e1a-bfff-df51bbc0c853",
+      "DisplayName": "EstoqueAlarmaq.Application",
+      "ColorIndex": 0
+    },
+    "57233023-7c41-4873-a82d-cee8dc0a6006": {
+      "ProjectGuid": "57233023-7c41-4873-a82d-cee8dc0a6006",
+      "DisplayName": "EstoqueAlarmaq.Desktop",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
