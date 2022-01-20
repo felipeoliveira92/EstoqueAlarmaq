@@ -148,3 +148,4 @@ F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windo
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.genruntimeconfig.cache
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormClients.resources
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormProducts.resources
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormOrderServices.resources

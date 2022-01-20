@@ -31,5 +31,11 @@ namespace EstoqueAlarmaq.Desktop
             FormClients formClients = new FormClients(_context);
             formClients.ShowDialog();
         }
+
+        private void btnOrderServices_Click(object sender, EventArgs e)
+        {
+            FormOrderServices formOrderServices = new FormOrderServices(_context);
+            formOrderServices.ShowDialog();
+        }
     }
 }

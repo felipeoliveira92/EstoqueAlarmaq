@@ -30,6 +30,7 @@
         {
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
+            this.btnOrderServices = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProducts
@@ -52,11 +53,22 @@
             this.btnClients.UseVisualStyleBackColor = true;
             this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
+            // btnOrderServices
+            // 
+            this.btnOrderServices.Location = new System.Drawing.Point(300, 302);
+            this.btnOrderServices.Name = "btnOrderServices";
+            this.btnOrderServices.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderServices.TabIndex = 2;
+            this.btnOrderServices.Text = "Saida";
+            this.btnOrderServices.UseVisualStyleBackColor = true;
+            this.btnOrderServices.Click += new System.EventHandler(this.btnOrderServices_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnOrderServices);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnProducts);
             this.Name = "FormHome";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnClients;
+        private System.Windows.Forms.Button btnOrderServices;
     }
 }
