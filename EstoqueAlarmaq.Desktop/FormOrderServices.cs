@@ -22,16 +22,13 @@ namespace EstoqueAlarmaq.Desktop
 
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
 
-            listProducts.Add("teste");
+            string[] selectProducts = new string[_context.Products.Count()];            
 
             try
             {
-                while (true)
+                foreach (var item in selectProducts)
                 {
-                    //string modelo = sqlDataReader["modelo"].ToString();
-                    //string cor = sqlDataReader["cor"].ToString();
-                    //dadosModelo.Add(modelo);
-                    //dadosCor.Add(cor);
+                    listProducts.Add(item);
                 }
             }
             catch (Exception msg)
