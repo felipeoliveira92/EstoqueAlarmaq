@@ -22,20 +22,30 @@ namespace EstoqueAlarmaq.Desktop
 
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
 
-            string[] selectProducts = new string[_context.Products.Count()];            
 
+            var products = _context.Products.Select(x => new { x.Name }).ToList();
+
+
+             //.Select(p => new { p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice })
+            //.Select(p => new ProductDTO {p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice})
+
+            //.Where(p => p.UnitsInStock > 0)
+            //.OrderBy(p => p.ProductName)
+            //.ToList()
             try
             {
-                foreach (var item in selectProducts)
+                foreach (var item in products)
                 {
-                    listProducts.Add(item);
+
+                    listProducts.Add(products.ToString());
+                    MessageBox.Show(listProducts.ToString());
                 }
             }
             catch (Exception msg)
             {
                 MessageBox.Show(msg.Message);
             }
-
+            
 
             txtProduct.AutoCompleteCustomSource = listProducts;
         }
