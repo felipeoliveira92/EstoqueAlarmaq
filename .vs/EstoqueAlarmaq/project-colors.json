@@ -10,7 +10,17 @@
       "ProjectGuid": "57233023-7c41-4873-a82d-cee8dc0a6006",
       "DisplayName": "EstoqueAlarmaq.Desktop",
       "ColorIndex": 1
+    },
+    "a61b2852-0fc0-412a-8f9f-9fa8f62ef6f5": {
+      "ProjectGuid": "a61b2852-0fc0-412a-8f9f-9fa8f62ef6f5",
+      "DisplayName": "EstoqueAlarmaq.Domain",
+      "ColorIndex": 2
+    },
+    "1f26ade8-1cce-419d-9a51-2b57c3541c8f": {
+      "ProjectGuid": "1f26ade8-1cce-419d-9a51-2b57c3541c8f",
+      "DisplayName": "EstoqueAlarmaq.Infra",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

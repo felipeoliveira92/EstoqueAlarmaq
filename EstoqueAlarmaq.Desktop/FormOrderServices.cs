@@ -1,6 +1,4 @@
-﻿using EstoqueAlarmaq.Domain;
-using EstoqueAlarmaq.Infra.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,28 +22,30 @@ namespace EstoqueAlarmaq.Desktop
 
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
 
-            //string[] selectProducts = new string[_context.Products.Count()];
-            //List<Product> products = new List<Product>();
-            //Product[] productsArray = new Product[_context.Products.Count()];
 
-            var users = _context.Products.Include(p => p.Name).Select(x => new { x.Name }).ToList();
+            var products = _context.Products.Select(x => new { x.Name }).ToList();
 
-            listBox1.DataSource = users;
-                //.Select(x => new { x.Nome, x.Email, x.Status, x.Matricula, x.CargoId, x.FuncaoId, Cliente = x.Cliente.Select(cli => new { cli.ClienteId, cli.Cliente.Nome }).ToList() }).ToListAsync();
-            //try
-            //{
-            //    foreach (var item in productsArray)
-            //    {
-            //        selectProducts = _context.Find(productsArray = productsArray);
-            //        _context.Products.All();
-            //        listProducts.Add();
-            //    }
-            //}
-            //catch (Exception msg)
-            //{
-            //    MessageBox.Show(msg.Message);
-            //}
 
+             //.Select(p => new { p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice })
+            //.Select(p => new ProductDTO {p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice})
+
+            //.Where(p => p.UnitsInStock > 0)
+            //.OrderBy(p => p.ProductName)
+            //.ToList()
+            try
+            {
+                foreach (var item in products)
+                {
+
+                    listProducts.Add(products.ToString());
+                    MessageBox.Show(listProducts.ToString());
+                }
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.Message);
+            }
+            
 
             txtProduct.AutoCompleteCustomSource = listProducts;
         }
