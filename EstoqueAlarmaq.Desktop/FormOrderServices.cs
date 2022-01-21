@@ -1,4 +1,6 @@
-﻿using EstoqueAlarmaq.Infra.Data;
+﻿using EstoqueAlarmaq.Domain;
+using EstoqueAlarmaq.Infra.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,19 +24,27 @@ namespace EstoqueAlarmaq.Desktop
 
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
 
-            string[] selectProducts = new string[_context.Products.Count()];            
+            //string[] selectProducts = new string[_context.Products.Count()];
+            //List<Product> products = new List<Product>();
+            //Product[] productsArray = new Product[_context.Products.Count()];
 
-            try
-            {
-                foreach (var item in selectProducts)
-                {
-                    listProducts.Add(item);
-                }
-            }
-            catch (Exception msg)
-            {
-                MessageBox.Show(msg.Message);
-            }
+            var users = _context.Products.Include(p => p.Name).Select(x => new { x.Name }).ToList();
+
+            listBox1.DataSource = users;
+                //.Select(x => new { x.Nome, x.Email, x.Status, x.Matricula, x.CargoId, x.FuncaoId, Cliente = x.Cliente.Select(cli => new { cli.ClienteId, cli.Cliente.Nome }).ToList() }).ToListAsync();
+            //try
+            //{
+            //    foreach (var item in productsArray)
+            //    {
+            //        selectProducts = _context.Find(productsArray = productsArray);
+            //        _context.Products.All();
+            //        listProducts.Add();
+            //    }
+            //}
+            //catch (Exception msg)
+            //{
+            //    MessageBox.Show(msg.Message);
+            //}
 
 
             txtProduct.AutoCompleteCustomSource = listProducts;
