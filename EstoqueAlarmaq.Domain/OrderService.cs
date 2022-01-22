@@ -5,18 +5,16 @@ namespace EstoqueAlarmaq.Domain
     public class OrderService
     {
         public int Id { get; set; }
-        public int Code { get; set; }
-        public Client Client { get; set; }
-        public Product Product { get; set; }
-        public User User { get; set; }
+        public string Client { get; set; }
+        public string Products { get; set; }
+        public string User { get; set; }
         public string Observation { get; set; }
         public DateTime DateCreatedAt { get; set; } 
 
-        public OrderService(int code, Client client, Product product, User user, string observation)
+        public OrderService( string client, string products, string user, string observation)
         {
-            this.Code = code;
             this.Client = client;
-            this.Product = product;
+            this.Products = products;
             this.User = user;
             this.Observation = observation;
             this.DateCreatedAt = DateTime.Now;

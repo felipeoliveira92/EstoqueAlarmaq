@@ -1,4 +1,5 @@
-﻿using EstoqueAlarmaq.Infra.Data;
+﻿using EstoqueAlarmaq.Domain;
+using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +20,16 @@ namespace EstoqueAlarmaq.Desktop
         {
             InitializeComponent();
             _context = context;
+                        
+        }
 
+        private void autoComplete()
+        {
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
-
 
             var products = _context.Products.Select(x => new { x.Name }).ToList();
 
-
-             //.Select(p => new { p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice })
+            //.Select(p => new { p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice })
             //.Select(p => new ProductDTO {p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice})
 
             //.Where(p => p.UnitsInStock > 0)
@@ -34,6 +37,11 @@ namespace EstoqueAlarmaq.Desktop
             //.ToList()
             try
             {
+                foreach (var product in _context.Products)
+                {
+                    Console.WriteLine("Blog: " + product.Name);
+                    listProducts.Add(product.Name);
+                }
                 foreach (var item in products)
                 {
 
@@ -45,9 +53,8 @@ namespace EstoqueAlarmaq.Desktop
             {
                 MessageBox.Show(msg.Message);
             }
-            
 
-            txtProduct.AutoCompleteCustomSource = listProducts;
+            txtProductCode.AutoCompleteCustomSource = listProducts;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -58,6 +65,60 @@ namespace EstoqueAlarmaq.Desktop
         private void FormOrderServices_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtProduct_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                try
+                {
+                    var product = _context.Products.First(x => x.Code == txtProductCode.Text);
+
+                    listBoxProducts.Items.Add(product);
+                }
+                catch (Exception msg)
+                {
+                    MessageBox.Show(msg.Message);
+                }
+            }
+        }
+
+        private void btnRegisterOrderService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OrderService orderService = new OrderService(txtClient.Text, listBoxProducts.Items.ToString(),
+                                                        txtUser.Text, txtObservation.Text);
+
+                _context.Add(orderService);
+                _context.SaveChanges();
+
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.Message);
+            }
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var product = _context.Products.First(x => x.Code == txtProductCode.Text);
+
+                listBoxProducts.Items.Add(product.Name);
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.Message);
+            }
         }
     }
 }

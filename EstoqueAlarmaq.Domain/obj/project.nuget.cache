@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B/dTFo08bF9+7gNpxFIhMQkwyDGzvlMRWupGsVeoCK99Bx/dJF6AE4Tq6o2PLf1/xV+/9sZCip2i8kVtt3KngA==",
+  "dgSpecHash": "EdiRT/Mpf/0ISm07qLlQMyzKR9C4mYm75szudLFdCuuQuqXXlYcdlGveQG5kVxy+35NdLundubYFq9fr+50VNQ==",
   "success": true,
-  "projectFilePath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
