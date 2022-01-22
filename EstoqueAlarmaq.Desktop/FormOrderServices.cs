@@ -16,11 +16,13 @@ namespace EstoqueAlarmaq.Desktop
     {
         private readonly DataContext _context;
 
+        List<Product> listProducts;
+        OrderService orderService = new OrderService();
+
         public FormOrderServices(DataContext context)
         {
             InitializeComponent();
-            _context = context;
-                        
+            _context = context;                        
         }
 
         private void autoComplete()
@@ -57,20 +59,6 @@ namespace EstoqueAlarmaq.Desktop
             txtProductCode.AutoCompleteCustomSource = listProducts;
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormOrderServices_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProduct_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -80,7 +68,8 @@ namespace EstoqueAlarmaq.Desktop
                 {
                     var product = _context.Products.First(x => x.Code == txtProductCode.Text);
 
-                    listBoxProducts.Items.Add(product);
+                    listBoxProducts.Items.Add(product.Name);
+                    orderService.Products += product.Name + ",";
                 }
                 catch (Exception msg)
                 {
@@ -93,10 +82,11 @@ namespace EstoqueAlarmaq.Desktop
         {
             try
             {
-                OrderService orderService = new OrderService(txtClient.Text, listBoxProducts.Items.ToString(),
-                                                        txtUser.Text, txtObservation.Text);
+                orderService.Client = txtClient.Text;
+                orderService.User = txtUser.Text;
+                orderService.Observation = txtObservation.Text;
 
-                _context.Add(orderService);
+                _context.OrderServices.Add(orderService);
                 _context.SaveChanges();
 
             }
@@ -113,12 +103,38 @@ namespace EstoqueAlarmaq.Desktop
             {
                 var product = _context.Products.First(x => x.Code == txtProductCode.Text);
 
-                listBoxProducts.Items.Add(product.Name);
+                if(product == null)
+                {
+                    MessageBox.Show("produto não encontrado");
+                }
+                else
+                {
+                    listBoxProducts.Items.Add(product.Name);
+                    orderService.Products += product.Name + ",";
+                }
             }
             catch (Exception msg)
             {
                 MessageBox.Show(msg.Message);
             }
+        }
+
+
+
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormOrderServices_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProduct_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,8 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTecnical = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDateCreated = new System.Windows.Forms.TextBox();
             this.txtObservation = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listViewProducts = new System.Windows.Forms.ListView();
@@ -104,33 +102,18 @@
             this.txtTecnical.Size = new System.Drawing.Size(323, 23);
             this.txtTecnical.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 219);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Data Abertura";
-            // 
-            // txtDateCreated
-            // 
-            this.txtDateCreated.Location = new System.Drawing.Point(12, 240);
-            this.txtDateCreated.Name = "txtDateCreated";
-            this.txtDateCreated.Size = new System.Drawing.Size(323, 23);
-            this.txtDateCreated.TabIndex = 7;
-            // 
             // txtObservation
             // 
-            this.txtObservation.Location = new System.Drawing.Point(12, 290);
+            this.txtObservation.Location = new System.Drawing.Point(12, 246);
+            this.txtObservation.Multiline = true;
             this.txtObservation.Name = "txtObservation";
-            this.txtObservation.Size = new System.Drawing.Size(323, 23);
+            this.txtObservation.Size = new System.Drawing.Size(323, 73);
             this.txtObservation.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 269);
+            this.label5.Location = new System.Drawing.Point(12, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 15);
             this.label5.TabIndex = 10;
@@ -142,7 +125,7 @@
             this.listViewProducts.HideSelection = false;
             this.listViewProducts.Location = new System.Drawing.Point(341, 140);
             this.listViewProducts.Name = "listViewProducts";
-            this.listViewProducts.Size = new System.Drawing.Size(404, 173);
+            this.listViewProducts.Size = new System.Drawing.Size(404, 61);
             this.listViewProducts.TabIndex = 11;
             this.listViewProducts.UseCompatibleStateImageBehavior = false;
             // 
@@ -150,9 +133,9 @@
             // 
             this.listBoxProducts.FormattingEnabled = true;
             this.listBoxProducts.ItemHeight = 15;
-            this.listBoxProducts.Location = new System.Drawing.Point(341, 319);
+            this.listBoxProducts.Location = new System.Drawing.Point(341, 214);
             this.listBoxProducts.Name = "listBoxProducts";
-            this.listBoxProducts.Size = new System.Drawing.Size(404, 94);
+            this.listBoxProducts.Size = new System.Drawing.Size(404, 199);
             this.listBoxProducts.TabIndex = 12;
             // 
             // label6
@@ -208,8 +191,6 @@
             this.Controls.Add(this.listViewProducts);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtObservation);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDateCreated);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTecnical);
             this.Controls.Add(this.label2);
@@ -234,8 +215,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTecnical;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDateCreated;
         private System.Windows.Forms.TextBox txtObservation;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listViewProducts;

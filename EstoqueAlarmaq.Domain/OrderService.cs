@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EstoqueAlarmaq.Domain
 {
@@ -9,15 +10,19 @@ namespace EstoqueAlarmaq.Domain
         public string Products { get; set; }
         public string User { get; set; }
         public string Observation { get; set; }
-        public DateTime DateCreatedAt { get; set; } 
+        public DateTime DateCreatedAt { get; set; } = DateTime.Now;
 
-        public OrderService( string client, string products, string user, string observation)
+        public OrderService(string client, string products, string user, string observation)
         {
             this.Client = client;
             this.Products = products;
             this.User = user;
             this.Observation = observation;
-            this.DateCreatedAt = DateTime.Now;
+        }
+
+        public OrderService()
+        {
+
         }
     }
 }
