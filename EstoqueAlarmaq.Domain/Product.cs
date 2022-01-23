@@ -14,7 +14,8 @@ namespace EstoqueAlarmaq.Domain
         public string Description { get; set; }
         public int Quantidade { get; set; }
         public string PhotoLocation { get; set; }
-        
+        public List<OrderService> OrderServices { get; set; }
+
         public Product(string code, string name, string description, int quantidade, string photoLocation)
         {
             Code = code;

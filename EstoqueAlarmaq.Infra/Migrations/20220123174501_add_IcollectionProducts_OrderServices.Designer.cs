@@ -4,14 +4,16 @@ using EstoqueAlarmaq.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EstoqueAlarmaq.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220123174501_add_IcollectionProducts_OrderServices")]
+    partial class add_IcollectionProducts_OrderServices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,6 +79,9 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("OrderServiceId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhotoLocation")
                         .HasColumnType("nvarchar(max)");
 
@@ -84,6 +89,8 @@ namespace EstoqueAlarmaq.Infra.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderServiceId");
 
                     b.ToTable("Products");
                 });
@@ -109,34 +116,16 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("OrderServiceProduct", b =>
-                {
-                    b.Property<int>("OrderServicesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrderServicesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("OrderServiceProduct");
-                });
-
-            modelBuilder.Entity("OrderServiceProduct", b =>
+            modelBuilder.Entity("EstoqueAlarmaq.Domain.Product", b =>
                 {
                     b.HasOne("EstoqueAlarmaq.Domain.OrderService", null)
-                        .WithMany()
-                        .HasForeignKey("OrderServicesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Products")
+                        .HasForeignKey("OrderServiceId");
+                });
 
-                    b.HasOne("EstoqueAlarmaq.Domain.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            modelBuilder.Entity("EstoqueAlarmaq.Domain.OrderService", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

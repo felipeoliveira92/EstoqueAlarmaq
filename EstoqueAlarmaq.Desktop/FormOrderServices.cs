@@ -16,13 +16,20 @@ namespace EstoqueAlarmaq.Desktop
     {
         private readonly DataContext _context;
 
-        List<Product> listProducts;
         OrderService orderService = new OrderService();
+        List<Product> listProducts = new List<Product>();
 
         public FormOrderServices(DataContext context)
         {
             InitializeComponent();
-            _context = context;                        
+            _context = context;
+
+            refreshDataGrid();
+            autoComplete();
+        }
+        private void refreshDataGrid()
+        {
+            dataGridOrders.DataSource = _context.OrderServices.Select(x => new { x.Client, x.Observation }).ToList();
         }
 
         private void autoComplete()
@@ -31,24 +38,11 @@ namespace EstoqueAlarmaq.Desktop
 
             var products = _context.Products.Select(x => new { x.Name }).ToList();
 
-            //.Select(p => new { p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice })
-            //.Select(p => new ProductDTO {p.ProductID, p.ProductName, p.UnitsInStock, p.UnitPrice})
-
-            //.Where(p => p.UnitsInStock > 0)
-            //.OrderBy(p => p.ProductName)
-            //.ToList()
             try
             {
-                foreach (var product in _context.Products)
+                foreach (var product in products)
                 {
-                    Console.WriteLine("Blog: " + product.Name);
                     listProducts.Add(product.Name);
-                }
-                foreach (var item in products)
-                {
-
-                    listProducts.Add(products.ToString());
-                    MessageBox.Show(listProducts.ToString());
                 }
             }
             catch (Exception msg)
@@ -69,7 +63,8 @@ namespace EstoqueAlarmaq.Desktop
                     var product = _context.Products.First(x => x.Code == txtProductCode.Text);
 
                     listBoxProducts.Items.Add(product.Name);
-                    orderService.Products += product.Name + ",";
+                    listProducts.Add(product);
+                    //orderService.Products += product.Name + ",";
                 }
                 catch (Exception msg)
                 {
@@ -85,9 +80,13 @@ namespace EstoqueAlarmaq.Desktop
                 orderService.Client = txtClient.Text;
                 orderService.User = txtUser.Text;
                 orderService.Observation = txtObservation.Text;
+                orderService.Products = listProducts.ToList();
+
 
                 _context.OrderServices.Add(orderService);
                 _context.SaveChanges();
+                MessageBox.Show("Order de Serviço gerada!");
+                refreshDataGrid();
 
             }
             catch (Exception msg)
@@ -102,15 +101,19 @@ namespace EstoqueAlarmaq.Desktop
             try
             {
                 var product = _context.Products.First(x => x.Code == txtProductCode.Text);
+                                                
 
-                if(product == null)
+                if (product == null)
                 {
                     MessageBox.Show("produto não encontrado");
                 }
                 else
                 {
                     listBoxProducts.Items.Add(product.Name);
-                    orderService.Products += product.Name + ",";
+                    listProducts.Add(product);
+
+                    //orderService.Products.Add(product);
+                    //orderService.Products += product.Name + ",";
                 }
             }
             catch (Exception msg)

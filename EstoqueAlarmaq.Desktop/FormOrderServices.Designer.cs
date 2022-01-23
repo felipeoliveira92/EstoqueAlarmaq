@@ -37,12 +37,13 @@
             this.txtTecnical = new System.Windows.Forms.TextBox();
             this.txtObservation = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listViewProducts = new System.Windows.Forms.ListView();
             this.listBoxProducts = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.btnRegisterOrderService = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.dataGridOrders = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewOrder
@@ -56,15 +57,16 @@
             // 
             // txtClient
             // 
-            this.txtClient.Location = new System.Drawing.Point(12, 90);
+            this.txtClient.Location = new System.Drawing.Point(12, 58);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(323, 23);
             this.txtClient.TabIndex = 1;
+            this.txtClient.Text = "almoxarifado";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 69);
+            this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 2;
@@ -72,15 +74,16 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(12, 190);
+            this.txtUser.Location = new System.Drawing.Point(12, 158);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(323, 23);
             this.txtUser.TabIndex = 3;
+            this.txtUser.Text = "ciclano";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 169);
+            this.label2.Location = new System.Drawing.Point(12, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 4;
@@ -89,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 119);
+            this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 6;
@@ -97,43 +100,36 @@
             // 
             // txtTecnical
             // 
-            this.txtTecnical.Location = new System.Drawing.Point(12, 140);
+            this.txtTecnical.Location = new System.Drawing.Point(12, 108);
             this.txtTecnical.Name = "txtTecnical";
             this.txtTecnical.Size = new System.Drawing.Size(323, 23);
             this.txtTecnical.TabIndex = 5;
+            this.txtTecnical.Text = "Fulano";
             // 
             // txtObservation
             // 
-            this.txtObservation.Location = new System.Drawing.Point(12, 246);
+            this.txtObservation.Location = new System.Drawing.Point(12, 214);
             this.txtObservation.Multiline = true;
             this.txtObservation.Name = "txtObservation";
             this.txtObservation.Size = new System.Drawing.Size(323, 73);
             this.txtObservation.TabIndex = 9;
+            this.txtObservation.Text = "Observação";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 225);
+            this.label5.Location = new System.Drawing.Point(12, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Observações";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // listViewProducts
-            // 
-            this.listViewProducts.HideSelection = false;
-            this.listViewProducts.Location = new System.Drawing.Point(341, 140);
-            this.listViewProducts.Name = "listViewProducts";
-            this.listViewProducts.Size = new System.Drawing.Size(404, 61);
-            this.listViewProducts.TabIndex = 11;
-            this.listViewProducts.UseCompatibleStateImageBehavior = false;
-            // 
             // listBoxProducts
             // 
             this.listBoxProducts.FormattingEnabled = true;
             this.listBoxProducts.ItemHeight = 15;
-            this.listBoxProducts.Location = new System.Drawing.Point(341, 214);
+            this.listBoxProducts.Location = new System.Drawing.Point(341, 108);
             this.listBoxProducts.Name = "listBoxProducts";
             this.listBoxProducts.Size = new System.Drawing.Size(404, 199);
             this.listBoxProducts.TabIndex = 12;
@@ -141,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(341, 90);
+            this.label6.Location = new System.Drawing.Point(341, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 15);
             this.label6.TabIndex = 14;
@@ -149,9 +145,9 @@
             // 
             // txtProductCode
             // 
-            this.txtProductCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.txtProductCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtProductCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtProductCode.Location = new System.Drawing.Point(341, 111);
+            this.txtProductCode.Location = new System.Drawing.Point(341, 79);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(323, 23);
             this.txtProductCode.TabIndex = 13;
@@ -160,7 +156,7 @@
             // 
             // btnRegisterOrderService
             // 
-            this.btnRegisterOrderService.Location = new System.Drawing.Point(670, 419);
+            this.btnRegisterOrderService.Location = new System.Drawing.Point(670, 313);
             this.btnRegisterOrderService.Name = "btnRegisterOrderService";
             this.btnRegisterOrderService.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterOrderService.TabIndex = 15;
@@ -170,7 +166,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(670, 111);
+            this.btnAdd.Location = new System.Drawing.Point(670, 79);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 16;
@@ -178,17 +174,31 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // dataGridOrders
+            // 
+            this.dataGridOrders.AllowUserToAddRows = false;
+            this.dataGridOrders.AllowUserToDeleteRows = false;
+            this.dataGridOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrders.Location = new System.Drawing.Point(12, 352);
+            this.dataGridOrders.Name = "dataGridOrders";
+            this.dataGridOrders.ReadOnly = true;
+            this.dataGridOrders.RowHeadersVisible = false;
+            this.dataGridOrders.RowTemplate.Height = 25;
+            this.dataGridOrders.Size = new System.Drawing.Size(733, 150);
+            this.dataGridOrders.TabIndex = 17;
+            // 
             // FormOrderServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 549);
+            this.Controls.Add(this.dataGridOrders);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRegisterOrderService);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtProductCode);
             this.Controls.Add(this.listBoxProducts);
-            this.Controls.Add(this.listViewProducts);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtObservation);
             this.Controls.Add(this.label3);
@@ -201,6 +211,7 @@
             this.Name = "FormOrderServices";
             this.Text = "FormOrderServices";
             this.Load += new System.EventHandler(this.FormOrderServices_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,11 +228,11 @@
         private System.Windows.Forms.TextBox txtTecnical;
         private System.Windows.Forms.TextBox txtObservation;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView listViewProducts;
         private System.Windows.Forms.ListBox listBoxProducts;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.Button btnRegisterOrderService;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dataGridOrders;
     }
 }
