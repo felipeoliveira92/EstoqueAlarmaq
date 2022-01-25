@@ -1,4 +1,5 @@
-﻿using EstoqueAlarmaq.Infra.Data;
+﻿using EstoqueAlarmaq.Domain;
+using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,9 @@ namespace EstoqueAlarmaq.Desktop
 
         private void btnOrderServices_Click(object sender, EventArgs e)
         {
-            FormOrderServices formOrderServices = new FormOrderServices(_context);
+            OrderService orderService = new OrderService();
+
+            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
             formOrderServices.ShowDialog();
         }
     }

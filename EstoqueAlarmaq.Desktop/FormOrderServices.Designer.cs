@@ -43,6 +43,7 @@
             this.btnRegisterOrderService = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,5 +235,6 @@
         private System.Windows.Forms.Button btnRegisterOrderService;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridOrders;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

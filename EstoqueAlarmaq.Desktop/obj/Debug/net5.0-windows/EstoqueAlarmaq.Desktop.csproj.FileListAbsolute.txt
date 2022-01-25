@@ -118,3 +118,6 @@ F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windo
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormClients.resources
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormOrderServices.resources
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormProducts.resources
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormOrderService.resources
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\itextsharp.dll

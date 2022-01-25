@@ -35,7 +35,7 @@
             // 
             // btnProducts
             // 
-            this.btnProducts.Location = new System.Drawing.Point(300, 228);
+            this.btnProducts.Location = new System.Drawing.Point(12, 28);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(89, 23);
             this.btnProducts.TabIndex = 0;
@@ -45,9 +45,9 @@
             // 
             // btnClients
             // 
-            this.btnClients.Location = new System.Drawing.Point(300, 273);
+            this.btnClients.Location = new System.Drawing.Point(12, 57);
             this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(75, 23);
+            this.btnClients.Size = new System.Drawing.Size(89, 23);
             this.btnClients.TabIndex = 1;
             this.btnClients.Text = "Clientes";
             this.btnClients.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // btnOrderServices
             // 
-            this.btnOrderServices.Location = new System.Drawing.Point(300, 302);
+            this.btnOrderServices.Location = new System.Drawing.Point(12, 86);
             this.btnOrderServices.Name = "btnOrderServices";
-            this.btnOrderServices.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderServices.Size = new System.Drawing.Size(89, 23);
             this.btnOrderServices.TabIndex = 2;
             this.btnOrderServices.Text = "Saida";
             this.btnOrderServices.UseVisualStyleBackColor = true;
