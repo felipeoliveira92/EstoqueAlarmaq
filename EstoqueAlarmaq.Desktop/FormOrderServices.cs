@@ -41,12 +41,13 @@ namespace EstoqueAlarmaq.Desktop
         {
             AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
 
-            var products = _context.Products.Select(x => new { x.Name }).ToList();
+            var products = _context.Products.Select(x => new { x.Code, x.Name }).ToList();
 
             try
             {
                 foreach (var product in products)
                 {
+                    listProducts.Add(product.Code);
                     listProducts.Add(product.Name);
                 }
             }

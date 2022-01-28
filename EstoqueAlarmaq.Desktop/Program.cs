@@ -20,7 +20,7 @@ namespace EstoqueAlarmaq.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
 
             DataContext context = new DataContext();
-            Application.Run(new FormOrderServices(context));
+            Application.Run(new FormHome(context));
         }
     }
 }

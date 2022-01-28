@@ -9,16 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ReaLTaiizor.Forms;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormHome : Form
+    public partial class FormHome : MaterialForm
     {
         private readonly DataContext _context;
         public FormHome(DataContext context)
         {
             InitializeComponent();
             _context = context;
+
+            refreshDataGrid();
+        }
+
+        private void refreshDataGrid()
+        {
+            DataGridOrders.DataSource = _context.OrderServices
+                .Select(x => new { x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -39,6 +48,13 @@ namespace EstoqueAlarmaq.Desktop
 
             FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
             formOrderServices.ShowDialog();
+
+            refreshDataGrid();
+        }
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

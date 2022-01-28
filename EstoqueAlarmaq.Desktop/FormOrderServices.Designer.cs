@@ -186,14 +186,14 @@
             this.dataGridOrders.ReadOnly = true;
             this.dataGridOrders.RowHeadersVisible = false;
             this.dataGridOrders.RowTemplate.Height = 25;
-            this.dataGridOrders.Size = new System.Drawing.Size(733, 150);
+            this.dataGridOrders.Size = new System.Drawing.Size(733, 185);
             this.dataGridOrders.TabIndex = 17;
             // 
             // FormOrderServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 549);
+            this.ClientSize = new System.Drawing.Size(763, 549);
             this.Controls.Add(this.dataGridOrders);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRegisterOrderService);
