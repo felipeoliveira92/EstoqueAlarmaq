@@ -149,7 +149,7 @@
             this.DataGridOrders.EnableHeadersVisualStyles = false;
             this.DataGridOrders.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.DataGridOrders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataGridOrders.Location = new System.Drawing.Point(145, 211);
+            this.DataGridOrders.Location = new System.Drawing.Point(145, 161);
             this.DataGridOrders.Name = "DataGridOrders";
             this.DataGridOrders.ReadOnly = true;
             this.DataGridOrders.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -164,8 +164,10 @@
             this.DataGridOrders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DataGridOrders.RowTemplate.Height = 25;
             this.DataGridOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridOrders.Size = new System.Drawing.Size(649, 233);
+            this.DataGridOrders.Size = new System.Drawing.Size(649, 283);
             this.DataGridOrders.TabIndex = 11;
+            this.DataGridOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridOrders_CellContentClick);
+            this.DataGridOrders.DoubleClick += new System.EventHandler(this.DataGridOrders_DoubleClick);
             // 
             // FormHome
             // 
@@ -178,10 +180,10 @@
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.crownSectionPanel1);
             this.MaximumSize = new System.Drawing.Size(1680, 1010);
-            this.MinimumSize = new System.Drawing.Size(261, 65);
+            this.MinimumSize = new System.Drawing.Size(261, 61);
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DooR Estoque";
+            this.Text = "themeForm1";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.crownSectionPanel1.ResumeLayout(false);

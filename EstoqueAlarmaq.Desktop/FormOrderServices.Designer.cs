@@ -58,11 +58,12 @@
             // 
             // txtClient
             // 
+            this.txtClient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtClient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtClient.Location = new System.Drawing.Point(12, 58);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(323, 23);
             this.txtClient.TabIndex = 1;
-            this.txtClient.Text = "almoxarifado";
             // 
             // label1
             // 
@@ -79,7 +80,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(323, 23);
             this.txtUser.TabIndex = 3;
-            this.txtUser.Text = "ciclano";
             // 
             // label2
             // 
@@ -105,16 +105,14 @@
             this.txtTecnical.Name = "txtTecnical";
             this.txtTecnical.Size = new System.Drawing.Size(323, 23);
             this.txtTecnical.TabIndex = 5;
-            this.txtTecnical.Text = "Fulano";
             // 
             // txtObservation
             // 
             this.txtObservation.Location = new System.Drawing.Point(12, 214);
             this.txtObservation.Multiline = true;
             this.txtObservation.Name = "txtObservation";
-            this.txtObservation.Size = new System.Drawing.Size(323, 73);
+            this.txtObservation.Size = new System.Drawing.Size(323, 93);
             this.txtObservation.TabIndex = 9;
-            this.txtObservation.Text = "Observação";
             // 
             // label5
             // 
@@ -193,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 549);
+            this.ClientSize = new System.Drawing.Size(757, 549);
             this.Controls.Add(this.dataGridOrders);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRegisterOrderService);
@@ -210,6 +208,7 @@
             this.Controls.Add(this.txtClient);
             this.Controls.Add(this.btnNewOrder);
             this.Name = "FormOrderServices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormOrderServices";
             this.Load += new System.EventHandler(this.FormOrderServices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();

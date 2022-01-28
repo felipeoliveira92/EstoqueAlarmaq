@@ -27,6 +27,16 @@ namespace EstoqueAlarmaq.Desktop
             InitializeComponent();
             _context = context;
             this.orderService = orderService;
+
+            if(orderService != null)
+            {
+                txtClient.Text = orderService.Client;
+                txtTecnical.Text = orderService.Tecnico;
+                txtUser.Text = orderService.User;
+                txtObservation.Text = orderService.Observation;
+                //listBoxProducts.Items.Add(orderService.Products);
+            }
+
             refreshDataGrid();
             autoComplete();
         }
@@ -39,9 +49,11 @@ namespace EstoqueAlarmaq.Desktop
 
         private void autoComplete()
         {
-            AutoCompleteStringCollection listProducts = new AutoCompleteStringCollection();
+            var listProducts = new AutoCompleteStringCollection();
+            var listClients = new AutoCompleteStringCollection();
 
             var products = _context.Products.Select(x => new { x.Code, x.Name }).ToList();
+            var clients = _context.Clients.Select(x => new { x.Code,x.Name }).ToList();
 
             try
             {
@@ -50,6 +62,11 @@ namespace EstoqueAlarmaq.Desktop
                     listProducts.Add(product.Code);
                     listProducts.Add(product.Name);
                 }
+                foreach (var client in clients)
+                {
+                    listClients.Add(client.Code.ToString());
+                    listClients.Add(client.Name);
+                }
             }
             catch (Exception msg)
             {
@@ -57,6 +74,7 @@ namespace EstoqueAlarmaq.Desktop
             }
 
             txtProductCode.AutoCompleteCustomSource = listProducts;
+            txtClient.AutoCompleteCustomSource = listClients;
         }
 
 
@@ -86,10 +104,10 @@ namespace EstoqueAlarmaq.Desktop
                 if(orderService == null)
                 {
                     orderService.Client = txtClient.Text;
+                    orderService.Tecnico = txtTecnical.Text;
                     orderService.User = txtUser.Text;
                     orderService.Observation = txtObservation.Text;
                     orderService.Products = listProducts.ToList();
-
 
                     _context.OrderServices.Update(orderService);
                     _context.SaveChanges();
@@ -97,6 +115,7 @@ namespace EstoqueAlarmaq.Desktop
                 else
                 {
                     orderService.Client = txtClient.Text;
+                    orderService.Tecnico = txtTecnical.Text;
                     orderService.User = txtUser.Text;
                     orderService.Observation = txtObservation.Text;
                     orderService.Products = listProducts.ToList();
@@ -110,17 +129,14 @@ namespace EstoqueAlarmaq.Desktop
                     {
                         print();
                     }
-                }
-                
+                }                
 
-                refreshDataGrid();
-
+                cleanForm();
             }
             catch (Exception msg)
             {
                 MessageBox.Show(msg.Message);
-            }
-            
+            }            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -171,6 +187,18 @@ namespace EstoqueAlarmaq.Desktop
                 System.Diagnostics.Process.Start(path);
             }           
             
+        }
+
+        private void cleanForm()
+        {
+            txtClient.Clear();
+            txtTecnical.Clear();
+            txtUser.Clear();
+            txtObservation.Clear();
+            listBoxProducts.Dispose();
+
+            refreshDataGrid();
+            txtClient.Focus();
         }
 
 

@@ -47,7 +47,7 @@ namespace EstoqueAlarmaq.Desktop
             // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(105, 97);
+            this.txtCode.Location = new System.Drawing.Point(87, 6);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(175, 23);
             this.txtCode.TabIndex = 0;
@@ -55,14 +55,14 @@ namespace EstoqueAlarmaq.Desktop
             // txtName
             // 
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtName.Location = new System.Drawing.Point(105, 132);
+            this.txtName.Location = new System.Drawing.Point(87, 41);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(175, 23);
             this.txtName.TabIndex = 1;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(105, 167);
+            this.txtDescription.Location = new System.Drawing.Point(87, 76);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(175, 49);
@@ -70,7 +70,7 @@ namespace EstoqueAlarmaq.Desktop
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(105, 228);
+            this.txtQuantidade.Location = new System.Drawing.Point(87, 137);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(78, 23);
             this.txtQuantidade.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace EstoqueAlarmaq.Desktop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 100);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace EstoqueAlarmaq.Desktop
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 135);
+            this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 15);
             this.label2.TabIndex = 5;
@@ -96,7 +96,7 @@ namespace EstoqueAlarmaq.Desktop
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 170);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace EstoqueAlarmaq.Desktop
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 231);
+            this.label4.Location = new System.Drawing.Point(12, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 7;
@@ -113,7 +113,7 @@ namespace EstoqueAlarmaq.Desktop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 273);
+            this.button1.Location = new System.Drawing.Point(87, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -124,7 +124,7 @@ namespace EstoqueAlarmaq.Desktop
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(245, 326);
+            this.label5.Location = new System.Drawing.Point(227, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 9;
@@ -136,7 +136,7 @@ namespace EstoqueAlarmaq.Desktop
             this.dataGridProducts.AllowUserToDeleteRows = false;
             this.dataGridProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(286, 101);
+            this.dataGridProducts.Location = new System.Drawing.Point(268, 10);
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.ReadOnly = true;
             this.dataGridProducts.RowHeadersVisible = false;

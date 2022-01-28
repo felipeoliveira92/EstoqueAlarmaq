@@ -27,7 +27,7 @@ namespace EstoqueAlarmaq.Desktop
         private void refreshDataGrid()
         {
             DataGridOrders.DataSource = _context.OrderServices
-                .Select(x => new { x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
+                .Select(x => new { x.Id, x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -55,6 +55,22 @@ namespace EstoqueAlarmaq.Desktop
         private void FormHome_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DataGridOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DataGridOrders_DoubleClick(object sender, EventArgs e)
+        {
+            var orderClicked = DataGridOrders.CurrentRow.Cells[0].Value;
+            var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));
+
+            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
+            formOrderServices.ShowDialog();
+
+            refreshDataGrid();
         }
     }
 }
