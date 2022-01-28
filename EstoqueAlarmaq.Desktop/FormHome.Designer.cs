@@ -38,6 +38,7 @@
             this.materialButton2 = new ReaLTaiizor.Controls.MaterialButton();
             this.crownSectionPanel1 = new ReaLTaiizor.Controls.CrownSectionPanel();
             this.DataGridOrders = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.crownSectionPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridOrders)).BeginInit();
             this.SuspendLayout();
@@ -112,6 +113,7 @@
             // 
             // crownSectionPanel1
             // 
+            this.crownSectionPanel1.Controls.Add(this.btnUsers);
             this.crownSectionPanel1.Controls.Add(this.materialButton1);
             this.crownSectionPanel1.Controls.Add(this.materialButton2);
             this.crownSectionPanel1.Location = new System.Drawing.Point(-1, 64);
@@ -169,6 +171,15 @@
             this.DataGridOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridOrders_CellContentClick);
             this.DataGridOrders.DoubleClick += new System.EventHandler(this.DataGridOrders_DoubleClick);
             // 
+            // btnUsers
+            // 
+            this.btnUsers.Location = new System.Drawing.Point(7, 97);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(129, 23);
+            this.btnUsers.TabIndex = 12;
+            this.btnUsers.Text = "Usuarios";
+            this.btnUsers.UseVisualStyleBackColor = true;
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -202,5 +213,6 @@
         private ReaLTaiizor.Controls.MaterialButton materialButton2;
         private ReaLTaiizor.Controls.CrownSectionPanel crownSectionPanel1;
         private ReaLTaiizor.Controls.PoisonDataGridView DataGridOrders;
+        private System.Windows.Forms.Button btnUsers;
     }
 }
