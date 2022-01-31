@@ -4,14 +4,16 @@ using EstoqueAlarmaq.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EstoqueAlarmaq.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220131190202_criado-relacionamento-orderservice_products")]
+    partial class criadorelacionamentoorderservice_products
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,8 +46,8 @@ namespace EstoqueAlarmaq.Infra.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Client")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("ClientId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DateCreatedAt")
                         .HasColumnType("datetime2");
@@ -56,13 +58,19 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.Property<int?>("ProductsId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Tecnico")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("TecnicoId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("User")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("TecnicoId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("OrderServices");
                 });
@@ -118,6 +126,27 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("EstoqueAlarmaq.Domain.OrderService", b =>
+                {
+                    b.HasOne("EstoqueAlarmaq.Domain.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId");
+
+                    b.HasOne("EstoqueAlarmaq.Domain.User", "Tecnico")
+                        .WithMany()
+                        .HasForeignKey("TecnicoId");
+
+                    b.HasOne("EstoqueAlarmaq.Domain.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Tecnico");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EstoqueAlarmaq.Domain.Product", b =>

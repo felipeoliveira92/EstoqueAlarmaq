@@ -34,7 +34,9 @@ namespace EstoqueAlarmaq.Desktop
                 txtTecnical.Text = orderService.Tecnico;
                 txtUser.Text = orderService.User;
                 txtObservation.Text = orderService.Observation;
-                //listBoxProducts.Items.Add(orderService.Products);
+
+                var product = _context.Products.First(x => x.OrderServicesId == orderService.Id);
+                //listBoxProducts.Items.Add(orderService.Products.ToList());
             }
 
             refreshDataGrid();
@@ -101,7 +103,7 @@ namespace EstoqueAlarmaq.Desktop
         {
             try
             {
-                if(orderService == null)
+                if (orderService == null)
                 {
                     orderService.Client = txtClient.Text;
                     orderService.Tecnico = txtTecnical.Text;
@@ -129,7 +131,7 @@ namespace EstoqueAlarmaq.Desktop
                     {
                         print();
                     }
-                }                
+                }
 
                 cleanForm();
             }
