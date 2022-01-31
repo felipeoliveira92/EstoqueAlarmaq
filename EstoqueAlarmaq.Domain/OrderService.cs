@@ -12,7 +12,7 @@ namespace EstoqueAlarmaq.Domain
         public string Observation { get; set; }
         public DateTime DateCreatedAt { get; set; } = DateTime.Now;
 
-        public List<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
 
         public OrderService(Client client, User tecnico, User user, string observation, List<Product> products)
         {
