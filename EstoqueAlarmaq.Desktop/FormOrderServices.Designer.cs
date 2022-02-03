@@ -153,6 +153,7 @@
             this.txtProductCode.Size = new System.Drawing.Size(323, 23);
             this.txtProductCode.TabIndex = 13;
             this.txtProductCode.TextChanged += new System.EventHandler(this.txtProduct_TextChanged);
+            this.txtProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductCode_KeyDown);
             this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
             // 
             // btnRegisterOrderService

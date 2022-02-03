@@ -38,10 +38,11 @@ namespace EstoqueAlarmaq.Desktop
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,20 +112,20 @@ namespace EstoqueAlarmaq.Desktop
             this.label4.TabIndex = 7;
             this.label4.Text = "Quantidade";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(87, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Location = new System.Drawing.Point(87, 182);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Cadastrar";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(227, 235);
+            this.label5.Location = new System.Drawing.Point(20, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 9;
@@ -136,22 +137,35 @@ namespace EstoqueAlarmaq.Desktop
             this.dataGridProducts.AllowUserToDeleteRows = false;
             this.dataGridProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(268, 10);
+            this.dataGridProducts.Location = new System.Drawing.Point(12, 211);
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.ReadOnly = true;
             this.dataGridProducts.RowHeadersVisible = false;
             this.dataGridProducts.RowTemplate.Height = 25;
-            this.dataGridProducts.Size = new System.Drawing.Size(502, 150);
+            this.dataGridProducts.Size = new System.Drawing.Size(776, 181);
             this.dataGridProducts.TabIndex = 10;
+            this.dataGridProducts.DoubleClick += new System.EventHandler(this.dataGridProducts_DoubleClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(168, 182);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Deletar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridProducts);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -180,10 +194,11 @@ namespace EstoqueAlarmaq.Desktop
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridProducts;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

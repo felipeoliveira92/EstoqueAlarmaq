@@ -55,7 +55,7 @@ namespace EstoqueAlarmaq.Desktop
         private void refreshDataGrid()
         {
             dataGridOrders.DataSource = _context.OrderServices
-                .Select(x => new { x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
+                .Select(x => new { x.Id, x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
         }
 
         private void autoComplete()
@@ -97,9 +97,50 @@ namespace EstoqueAlarmaq.Desktop
                 {
                     var product = _context.Products.First(x => x.Code == txtProductCode.Text);
 
-                    listBoxProducts.Items.Add(product.Name);
-                    listProducts.Add(product);
-                    //orderService.Products += product.Name + ",";
+                    if (product == null)
+                    {
+                        MessageBox.Show("produto não encontrado!");
+                    }
+                    if (product.Quantidade == 0)
+                    {
+                        MessageBox.Show("Impossivel adicionar, produto com quantidade 0!");
+                    }
+                    else
+                    {
+                        listBoxProducts.Items.Add(product.Name);
+                        product.Quantidade -= 1;
+                        listProducts.Add(product);
+                    }
+                }
+                catch (Exception msg)
+                {
+                    MessageBox.Show(msg.Message);
+                }
+            }
+        }
+
+        private void txtProductCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == Convert.ToChar(Keys.Enter))
+            {
+                try
+                {
+                    var product = _context.Products.First(x => x.Code == txtProductCode.Text);
+
+                    if (product == null)
+                    {
+                        MessageBox.Show("produto não encontrado!");
+                    }
+                    if (product.Quantidade == 0)
+                    {
+                        MessageBox.Show("Impossivel adicionar, produto com quantidade 0!");
+                    }
+                    else
+                    {
+                        listBoxProducts.Items.Add(product.Name);
+                        product.Quantidade -= 1;
+                        listProducts.Add(product);
+                    }
                 }
                 catch (Exception msg)
                 {
@@ -260,5 +301,7 @@ namespace EstoqueAlarmaq.Desktop
             }
 
         }
+
+        
     }
 }

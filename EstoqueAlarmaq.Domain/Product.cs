@@ -23,6 +23,9 @@ namespace EstoqueAlarmaq.Domain
             Quantidade = quantidade;
             PhotoLocation = photoLocation;
         }
+        public Product()
+        {
 
+        }        
     }
 }
