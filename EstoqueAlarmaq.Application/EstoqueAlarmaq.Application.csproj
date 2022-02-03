@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EstoqueAlarmaq.Domain\EstoqueAlarmaq.Domain.csproj" />
+    <ProjectReference Include="..\EstoqueAlarmaq.Infra\EstoqueAlarmaq.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

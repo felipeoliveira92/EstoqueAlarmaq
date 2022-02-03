@@ -55,7 +55,7 @@ namespace EstoqueAlarmaq.Desktop
                 }
                 else
                 {
-                    try
+                    //try
                     {
                         product.Code = code;
                         product.Name = name;
@@ -75,14 +75,15 @@ namespace EstoqueAlarmaq.Desktop
                             _context.Products.Add(product);
                             _context.SaveChanges();
 
+                            
                             MessageBox.Show("Produto cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         } 
 
                         CleanForm();
                     }
-                    catch (Exception ex)
+                    //catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show(ex.Message);
                     }
                 }                
             }           
@@ -139,6 +140,11 @@ namespace EstoqueAlarmaq.Desktop
                 btnDelete.Visible = false;
                 CleanForm();
             }
+        }
+
+        private void Save(Product product)
+        {
+
         }
     }
 }
