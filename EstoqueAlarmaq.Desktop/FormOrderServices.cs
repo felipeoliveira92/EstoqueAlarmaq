@@ -118,9 +118,14 @@ namespace EstoqueAlarmaq.Desktop
                 {
                     MessageBox.Show("produto não encontrado!");
                 }
+                if(product.Quantidade == 0)
+                {
+                    MessageBox.Show("Impossivel adicionar, produto com quantidade 0!");                    
+                }
                 else
                 {
                     listBoxProducts.Items.Add(product.Name);
+                    product.Quantidade -= 1;
                     listProducts.Add(product);
                 }
             }
@@ -212,6 +217,7 @@ namespace EstoqueAlarmaq.Desktop
             txtTecnical.Clear();
             txtUser.Clear();
             txtObservation.Clear();
+            txtProductCode.Clear();
             listBoxProducts.Dispose();
 
             refreshDataGrid();
@@ -231,6 +237,27 @@ namespace EstoqueAlarmaq.Desktop
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnDeleteProduct.Visible = true;
+            
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            var question = MessageBox.Show("Deseja remover este item?", "Aviso!", MessageBoxButtons.YesNo);
+
+            if (question == DialogResult.Yes)
+            {
+                var product = _context.Products.First(x => x.Name == listBoxProducts.SelectedItem.ToString());
+                listBoxProducts.Items.Remove(listBoxProducts.SelectedItem);
+                listProducts.Remove(product);
+
+                btnDeleteProduct.Visible = false;
+            }
 
         }
     }
