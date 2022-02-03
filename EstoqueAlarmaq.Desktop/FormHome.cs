@@ -46,7 +46,7 @@ namespace EstoqueAlarmaq.Desktop
         {
             OrderService orderService = new OrderService();
 
-            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
+            FormOrderServices formOrderServices = new FormOrderServices(_context, null);
             formOrderServices.ShowDialog();
 
             refreshDataGrid();
@@ -66,7 +66,6 @@ namespace EstoqueAlarmaq.Desktop
         {
             var orderClicked = DataGridOrders.CurrentRow.Cells[0].Value;
             var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));
-
 
             FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
             formOrderServices.ShowDialog();

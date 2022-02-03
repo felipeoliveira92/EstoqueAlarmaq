@@ -11,8 +11,7 @@ namespace EstoqueAlarmaq.Domain
         public string Description { get; set; }
         public int Quantidade { get; set; }
         public string PhotoLocation { get; set; }
-
-        [ForeignKey("OrderServicesId")]
+        
         public int? OrderServicesId { get; set; }
         public OrderService OrderServices { get; set; }
 

@@ -25,18 +25,27 @@ namespace EstoqueAlarmaq.Desktop
         public FormOrderServices(DataContext context, OrderService orderService)
         {
             InitializeComponent();
-            _context = context;
-            this.orderService = orderService;
+            _context = context;            
 
             if(orderService != null)
             {
+                this.orderService = orderService;
+
                 txtClient.Text = orderService.Client;
                 txtTecnical.Text = orderService.Tecnico;
                 txtUser.Text = orderService.User;
                 txtObservation.Text = orderService.Observation;
 
-                var product = _context.Products.First(x => x.OrderServicesId == orderService.Id);
-                //listBoxProducts.Items.Add(orderService.Products.ToList());
+                var products = _context.Products
+                                   .Where(p => p.OrderServicesId == orderService.Id)
+                                   .ToList();
+
+                foreach (var product in products)
+                {
+                    listBoxProducts.Items.Add(product.Name);
+                }
+
+                btnRegisterOrderService.Text = "Editar";
             }
 
             refreshDataGrid();
@@ -99,11 +108,33 @@ namespace EstoqueAlarmaq.Desktop
             }
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var product = _context.Products.First(x => x.Code == txtProductCode.Text);
+
+                if (product == null)
+                {
+                    MessageBox.Show("produto não encontrado!");
+                }
+                else
+                {
+                    listBoxProducts.Items.Add(product.Name);
+                    listProducts.Add(product);
+                }
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.Message);
+            }
+        }
+
         private void btnRegisterOrderService_Click(object sender, EventArgs e)
         {
             try
             {
-                if (orderService == null)
+                if (btnRegisterOrderService.Text == "Editar")
                 {
                     orderService.Client = txtClient.Text;
                     orderService.Tecnico = txtTecnical.Text;
@@ -113,6 +144,13 @@ namespace EstoqueAlarmaq.Desktop
 
                     _context.OrderServices.Update(orderService);
                     _context.SaveChanges();
+
+                    var result = MessageBox.Show("Deseja imprimir?", "Order de Serviço editada com sucesso!", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        print();
+                    }
                 }
                 else
                 {
@@ -125,7 +163,7 @@ namespace EstoqueAlarmaq.Desktop
                     _context.OrderServices.Add(orderService);
                     _context.SaveChanges();
 
-                    var result = MessageBox.Show("Deseja imprimir?", "Order de Serviço gerada!", MessageBoxButtons.YesNo);
+                    var result = MessageBox.Show("Deseja imprimir?", "Order de Serviço gerada com sucesso!", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
                     {
@@ -141,30 +179,7 @@ namespace EstoqueAlarmaq.Desktop
             }            
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var product = _context.Products.First(x => x.Code == txtProductCode.Text);                                                
-
-                if (product == null)
-                {
-                    MessageBox.Show("produto não encontrado");
-                }
-                else
-                {
-                    listBoxProducts.Items.Add(product.Name);
-                    listProducts.Add(product);
-
-                    //orderService.Products.Add(product);
-                    //orderService.Products += product.Name + ",";
-                }
-            }
-            catch (Exception msg)
-            {
-                MessageBox.Show(msg.Message);
-            }
-        }
+        
 
         private void print()
         {

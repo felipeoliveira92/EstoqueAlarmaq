@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EstoqueAlarmaq.Domain
 {
@@ -11,11 +10,8 @@ namespace EstoqueAlarmaq.Domain
         public string Tecnico { get; set; }
         public string User { get; set; }
         public string Observation { get; set; }
-        public DateTime DateCreatedAt { get; set; } = DateTime.Now;
-
-        [ForeignKey("ProductsId")]
-        public int? ProductsId { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public DateTime DateCreatedAt { get; set; } = DateTime.Now;                
+        public List<Product> Products { get; set; }
 
         public OrderService(string client, string tecnico, string user, string observation, List<Product> products)
         {
