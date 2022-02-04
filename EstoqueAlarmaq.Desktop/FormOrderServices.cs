@@ -22,7 +22,7 @@ namespace EstoqueAlarmaq.Desktop
         OrderService orderService = new OrderService();
         List<Product> listProducts = new List<Product>();
 
-        public FormOrderServices(DataContext context, OrderService orderService)
+        public FormOrderServices(DataContext context, OrderService orderService, List<Product> products)
         {
             InitializeComponent();
             _context = context;
@@ -31,10 +31,11 @@ namespace EstoqueAlarmaq.Desktop
             if(orderService != null)
             {
                 txtClient.Text = orderService.Client;
-                txtTecnical.Text = orderService.Tecnico;
+                txtTecnical.Text = orderService.Tec;
                 txtUser.Text = orderService.User;
                 txtObservation.Text = orderService.Observation;
-                //listBoxProducts.Items.Add(orderService.Products);
+                
+                listBoxProducts.Items.Add(products.ToString());
             }
 
             refreshDataGrid();
@@ -104,7 +105,7 @@ namespace EstoqueAlarmaq.Desktop
                 if(orderService == null)
                 {
                     orderService.Client = txtClient.Text;
-                    orderService.Tecnico = txtTecnical.Text;
+                    orderService.Tec = txtTecnical.Text;
                     orderService.User = txtUser.Text;
                     orderService.Observation = txtObservation.Text;
                     orderService.Products = listProducts.ToList();
@@ -115,7 +116,7 @@ namespace EstoqueAlarmaq.Desktop
                 else
                 {
                     orderService.Client = txtClient.Text;
-                    orderService.Tecnico = txtTecnical.Text;
+                    orderService.Tec = txtTecnical.Text;
                     orderService.User = txtUser.Text;
                     orderService.Observation = txtObservation.Text;
                     orderService.Products = listProducts.ToList();
@@ -153,9 +154,6 @@ namespace EstoqueAlarmaq.Desktop
                 {
                     listBoxProducts.Items.Add(product.Name);
                     listProducts.Add(product);
-
-                    //orderService.Products.Add(product);
-                    //orderService.Products += product.Name + ",";
                 }
             }
             catch (Exception msg)

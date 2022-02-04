@@ -45,8 +45,9 @@ namespace EstoqueAlarmaq.Desktop
         private void btnOrderServices_Click(object sender, EventArgs e)
         {
             OrderService orderService = new OrderService();
+            List<Product> listProducts = new List<Product>();
 
-            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
+            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService, listProducts);
             formOrderServices.ShowDialog();
 
             refreshDataGrid();
@@ -64,10 +65,26 @@ namespace EstoqueAlarmaq.Desktop
 
         private void DataGridOrders_DoubleClick(object sender, EventArgs e)
         {
-            var orderClicked = DataGridOrders.CurrentRow.Cells[0].Value;
-            var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));
+            List<Product> listProducts = new List<Product>();
 
-            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);
+            var orderClicked = DataGridOrders.CurrentRow.Cells[0].Value;
+            var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));            
+            //var product = _context.Products.Select(p => p.Code == orderService.Id.ToString());
+
+            var product = _context.Products.First(x => x.OrderServices.Id == orderService.Id);
+
+            if (product == null)
+            {
+                MessageBox.Show("produto não encontrado");
+            }
+            else
+            {
+                listProducts.Add(product);
+            }
+
+
+
+            FormOrderServices formOrderServices = new FormOrderServices(_context, orderService, listProducts);
             formOrderServices.ShowDialog();
 
             refreshDataGrid();
