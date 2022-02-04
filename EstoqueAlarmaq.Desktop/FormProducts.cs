@@ -15,6 +15,8 @@ namespace EstoqueAlarmaq.Desktop
     public partial class FormProducts : Form
     {
         private readonly DataContext _context;
+        Product product = new Product();
+
         public FormProducts(DataContext context)
         {
             InitializeComponent();
@@ -53,18 +55,35 @@ namespace EstoqueAlarmaq.Desktop
                 }
                 else
                 {
-                    Product product = new Product(code, name, description, Convert.ToInt32(quantidade), null);
-
-                    try
+                    //try
                     {
-                        _context.Products.Add(product);
-                        _context.SaveChanges();
+                        product.Code = code;
+                        product.Name = name;
+                        product.Description = description;
+                        product.Description = description;
+                        product.Quantidade = Convert.ToInt32(quantidade);
+
+                        if (btnSave.Text == "Editar")
+                        {
+                            _context.Products.Update(product);
+                            _context.SaveChanges();
+
+                            MessageBox.Show("Produto alterado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            _context.Products.Add(product);
+                            _context.SaveChanges();
+
+                            
+                            MessageBox.Show("Produto cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        } 
 
                         CleanForm();
                     }
-                    catch (Exception ex)
+                    //catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show(ex.Message);
                     }
                 }                
             }           
@@ -77,14 +96,55 @@ namespace EstoqueAlarmaq.Desktop
             txtDescription.Clear();
             txtQuantidade.Clear();
 
-            MessageBox.Show("Produto cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             refreshDataGrid();
             txtCode.Focus();
+
+            btnSave.Text = "Cadastrar";
+            btnDelete.Visible = false;
         }
 
         private void refreshDataGrid()
         {
             dataGridProducts.DataSource = _context.Products.ToList();
+        }
+
+        private void dataGridProducts_DoubleClick(object sender, EventArgs e)
+        {
+            var productClicked = dataGridProducts.CurrentRow.Cells[0].Value;
+            var product = _context.Products.First(x => x.Id == Convert.ToInt32(productClicked));
+            
+
+            if (product != null)
+            {
+                this.product = product;
+
+                txtCode.Text = product.Code;
+                txtName.Text = product.Name;
+                txtDescription.Text = product.Description;
+                txtQuantidade.Text = product.Quantidade.ToString();
+
+                btnSave.Text = "Editar";
+                btnDelete.Visible = true;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Exclusão!", "realmente deseja excluir?", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+
+                btnDelete.Visible = false;
+                CleanForm();
+            }
+        }
+
+        private void Save(Product product)
+        {
+
         }
     }
 }

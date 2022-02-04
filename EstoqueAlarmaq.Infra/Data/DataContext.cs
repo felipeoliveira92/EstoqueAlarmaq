@@ -1,10 +1,5 @@
 ﻿using EstoqueAlarmaq.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Infra.Data
 {
@@ -39,5 +34,14 @@ namespace EstoqueAlarmaq.Infra.Data
                 .HasOne(os => os.OrderServices)
                 .WithMany(p => p.Products);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.OrderServices)
+                .WithMany(b => b.Products)
+                .HasForeignKey(p => p.OrderServicesId);
+        }
+
     }
 }

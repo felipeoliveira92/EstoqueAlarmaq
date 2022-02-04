@@ -53,7 +53,7 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.Property<string>("Observation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tec")
+                    b.Property<string>("Tecnico")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("User")
@@ -94,6 +94,27 @@ namespace EstoqueAlarmaq.Infra.Migrations
                     b.HasIndex("OrderServicesId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("EstoqueAlarmaq.Domain.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EstoqueAlarmaq.Domain.Product", b =>
