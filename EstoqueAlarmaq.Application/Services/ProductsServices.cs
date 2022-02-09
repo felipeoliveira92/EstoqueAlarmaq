@@ -1,14 +1,9 @@
 ﻿using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Application.Services
 {
-    internal class ProductsServices : IProduct
+    public class ProductsServices : IProduct
     {
         //private readonly DataContext _context;
         void IProduct.Delete(Product product, DataContext context)

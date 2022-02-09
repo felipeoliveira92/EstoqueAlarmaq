@@ -1,13 +1,8 @@
-﻿using EstoqueAlarmaq.Domain;
+﻿using EstoqueAlarmaq.Application;
+using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
@@ -15,6 +10,8 @@ namespace EstoqueAlarmaq.Desktop
     public partial class FormProducts : Form
     {
         private readonly DataContext _context;
+        private readonly IProduct iproduct;
+
         Product product = new Product();
 
         public FormProducts(DataContext context)
@@ -134,8 +131,10 @@ namespace EstoqueAlarmaq.Desktop
 
             if (result == DialogResult.Yes)
             {
-                _context.Products.Remove(product);
-                _context.SaveChanges();
+                iproduct.Delete(product, _context);
+
+                //_context.Products.Remove(product);
+                //_context.SaveChanges();
 
                 btnDelete.Visible = false;
                 CleanForm();

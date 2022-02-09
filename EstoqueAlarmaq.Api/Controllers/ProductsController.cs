@@ -22,7 +22,7 @@ namespace EstoqueAlarmaq.Api.Controllers
         [HttpGet]
         public List<Product> GetProducts()
         {
-            return _context.Produtos.ToList();
+            return _context.Products.ToList();
         }
     }
 }

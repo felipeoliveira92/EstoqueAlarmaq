@@ -4,6 +4,71 @@
     "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj": {}
   },
   "projects": {
+    "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj",
+        "projectName": "EstoqueAlarmaq.Application",
+        "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj",
+        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+        "outputPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj": {
+                "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj"
+              },
+              "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
+                "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,6 +97,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj": {
+                "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj"
+              },
               "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
                 "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
               }
@@ -48,10 +116,6 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "ReaLTaiizor": {
-              "target": "Package",
-              "version": "[3.7.8.5, )"
-            },
             "iTextSharp": {
               "target": "Package",
               "version": "[5.5.13.2, )"

@@ -1,0 +1,5 @@
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Application\obj\Debug\net5.0\EstoqueAlarmaq.Application.csproj.AssemblyReference.cache
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Application\obj\Debug\net5.0\EstoqueAlarmaq.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Application\obj\Debug\net5.0\EstoqueAlarmaq.Application.AssemblyInfoInputs.cache
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Application\obj\Debug\net5.0\EstoqueAlarmaq.Application.AssemblyInfo.cs
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Application\obj\Debug\net5.0\EstoqueAlarmaq.Application.csproj.CoreCompileInputs.cache
