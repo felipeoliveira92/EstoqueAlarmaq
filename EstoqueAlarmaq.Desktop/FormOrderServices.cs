@@ -4,13 +4,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
@@ -55,16 +51,18 @@ namespace EstoqueAlarmaq.Desktop
         private void refreshDataGrid()
         {
             dataGridOrders.DataSource = _context.OrderServices
-                .Select(x => new { x.Id, x.Client, x.DateCreatedAt, x.User, x.Observation }).ToList();
+                .Select(x => new { x.Id, x.Client, x.Tecnico, x.DateCreatedAt, x.User, x.Observation }).ToList();
         }
 
         private void autoComplete()
         {
             var listProducts = new AutoCompleteStringCollection();
             var listClients = new AutoCompleteStringCollection();
+            var listUsers = new AutoCompleteStringCollection();
 
             var products = _context.Products.Select(x => new { x.Code, x.Name }).ToList();
             var clients = _context.Clients.Select(x => new { x.Code,x.Name }).ToList();
+            var users = _context.Users.Select(x => new {x.Name}).ToList();
 
             try
             {
@@ -78,6 +76,10 @@ namespace EstoqueAlarmaq.Desktop
                     listClients.Add(client.Code.ToString());
                     listClients.Add(client.Name);
                 }
+                foreach (var user in users)
+                {
+                    listUsers.Add(user.Name);
+                }
             }
             catch (Exception msg)
             {
@@ -86,6 +88,8 @@ namespace EstoqueAlarmaq.Desktop
 
             txtProductCode.AutoCompleteCustomSource = listProducts;
             txtClient.AutoCompleteCustomSource = listClients;
+            txtUser.AutoCompleteCustomSource = listUsers;
+            txtTecnical.AutoCompleteCustomSource = listUsers;
         }
 
 
@@ -191,6 +195,8 @@ namespace EstoqueAlarmaq.Desktop
                     _context.OrderServices.Update(orderService);
                     _context.SaveChanges();
 
+                    orderService = new OrderService();
+
                     var result = MessageBox.Show("Deseja imprimir?", "Order de Serviço editada com sucesso!", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
@@ -209,6 +215,8 @@ namespace EstoqueAlarmaq.Desktop
                     _context.OrderServices.Add(orderService);
                     _context.SaveChanges();
 
+                    orderService = new OrderService();
+
                     var result = MessageBox.Show("Deseja imprimir?", "Order de Serviço gerada com sucesso!", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
@@ -223,9 +231,7 @@ namespace EstoqueAlarmaq.Desktop
             {
                 MessageBox.Show(msg.Message);
             }            
-        }
-
-        
+        }        
 
         private void print()
         {
@@ -248,8 +254,7 @@ namespace EstoqueAlarmaq.Desktop
                 document.Close();
 
                 System.Diagnostics.Process.Start(path);
-            }           
-            
+            }   
         }
 
         private void cleanForm()
@@ -263,22 +268,6 @@ namespace EstoqueAlarmaq.Desktop
 
             refreshDataGrid();
             txtClient.Focus();
-        }
-
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormOrderServices_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProduct_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -299,9 +288,38 @@ namespace EstoqueAlarmaq.Desktop
 
                 btnDeleteProduct.Visible = false;
             }
-
         }
 
-        
+        private void dataGridOrders_DoubleClick(object sender, EventArgs e)
+        {
+            listBoxProducts.Items.Clear();
+
+            var orderClicked = dataGridOrders.CurrentRow.Cells[0].Value;
+            var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));
+
+            if (orderService != null)
+            {
+                this.orderService = orderService;
+
+                txtClient.Text = orderService.Client;
+                txtTecnical.Text = orderService.Tecnico;
+                txtUser.Text = orderService.User;
+                txtObservation.Text = orderService.Observation;
+
+                var products = _context.Products
+                                   .Where(p => p.OrderServicesId == orderService.Id)
+                                   .ToList();
+
+                foreach (var product in products)
+                {
+                    listBoxProducts.Items.Add(product.Name);
+                }
+
+                btnRegisterOrderService.Text = "Editar";
+            }
+
+            refreshDataGrid();
+            autoComplete();
+        }
     }
 }
