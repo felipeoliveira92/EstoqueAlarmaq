@@ -37,6 +37,7 @@
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,11 +124,24 @@
             this.txtName.Size = new System.Drawing.Size(175, 23);
             this.txtName.TabIndex = 13;
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario",
+            "Tecnico"});
+            this.cbType.Location = new System.Drawing.Point(94, 163);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 23);
+            this.cbType.TabIndex = 23;
+            // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridProducts);
             this.Controls.Add(this.btnSave);
@@ -156,5 +170,6 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }
