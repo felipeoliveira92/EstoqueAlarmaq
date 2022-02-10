@@ -71,5 +71,11 @@ namespace EstoqueAlarmaq.Desktop
         {
             dataGridOrders.Visible = true;
         }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            FormUsers formUsers = new FormUsers(_context);
+            formUsers.ShowDialog();
+        }
     }
 }

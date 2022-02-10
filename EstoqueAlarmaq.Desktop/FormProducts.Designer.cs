@@ -117,7 +117,7 @@ namespace EstoqueAlarmaq.Desktop
             this.btnSave.Location = new System.Drawing.Point(87, 182);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Cadastrar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
@@ -142,7 +142,7 @@ namespace EstoqueAlarmaq.Desktop
             this.btnDelete.Location = new System.Drawing.Point(168, 182);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 11;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Visible = false;

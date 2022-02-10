@@ -21,3 +21,4 @@ F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\Estoqu
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.dll
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\ref\EstoqueAlarmaq.Domain.dll
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.pdb
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Domain\obj\Debug\net5.0\EstoqueAlarmaq.Domain.csproj.AssemblyReference.cache

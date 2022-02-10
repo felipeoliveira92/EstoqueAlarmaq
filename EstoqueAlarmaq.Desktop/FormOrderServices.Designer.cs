@@ -54,7 +54,7 @@
             this.txtClient.Location = new System.Drawing.Point(12, 30);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(323, 23);
-            this.txtClient.TabIndex = 1;
+            this.txtClient.TabIndex = 0;
             // 
             // label1
             // 
@@ -70,7 +70,7 @@
             this.txtUser.Location = new System.Drawing.Point(12, 130);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(323, 23);
-            this.txtUser.TabIndex = 3;
+            this.txtUser.TabIndex = 2;
             // 
             // label2
             // 
@@ -95,7 +95,7 @@
             this.txtTecnical.Location = new System.Drawing.Point(12, 80);
             this.txtTecnical.Name = "txtTecnical";
             this.txtTecnical.Size = new System.Drawing.Size(323, 23);
-            this.txtTecnical.TabIndex = 5;
+            this.txtTecnical.TabIndex = 1;
             // 
             // txtObservation
             // 
@@ -103,7 +103,7 @@
             this.txtObservation.Multiline = true;
             this.txtObservation.Name = "txtObservation";
             this.txtObservation.Size = new System.Drawing.Size(323, 93);
-            this.txtObservation.TabIndex = 9;
+            this.txtObservation.TabIndex = 3;
             // 
             // label5
             // 
@@ -140,7 +140,7 @@
             this.txtProductCode.Location = new System.Drawing.Point(341, 51);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(323, 23);
-            this.txtProductCode.TabIndex = 13;
+            this.txtProductCode.TabIndex = 4;
             this.txtProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductCode_KeyDown);
             this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
             // 
@@ -149,7 +149,7 @@
             this.btnRegisterOrderService.Location = new System.Drawing.Point(670, 285);
             this.btnRegisterOrderService.Name = "btnRegisterOrderService";
             this.btnRegisterOrderService.Size = new System.Drawing.Size(75, 23);
-            this.btnRegisterOrderService.TabIndex = 15;
+            this.btnRegisterOrderService.TabIndex = 7;
             this.btnRegisterOrderService.Text = "Registrar";
             this.btnRegisterOrderService.UseVisualStyleBackColor = true;
             this.btnRegisterOrderService.Click += new System.EventHandler(this.btnRegisterOrderService_Click);
@@ -159,7 +159,7 @@
             this.btnAdd.Location = new System.Drawing.Point(670, 51);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -184,7 +184,7 @@
             this.btnDeleteProduct.Location = new System.Drawing.Point(589, 285);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteProduct.TabIndex = 18;
+            this.btnDeleteProduct.TabIndex = 6;
             this.btnDeleteProduct.Text = "Remover";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
             this.btnDeleteProduct.Visible = false;

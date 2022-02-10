@@ -38,6 +38,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.btnDelete.Location = new System.Drawing.Point(168, 208);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 22;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Visible = false;
@@ -70,9 +71,10 @@
             this.btnSave.Location = new System.Drawing.Point(87, 208);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 20;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Cadastrar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label4
             // 
@@ -106,14 +108,14 @@
             this.txtConfirm.Location = new System.Drawing.Point(94, 134);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(168, 23);
-            this.txtConfirm.TabIndex = 15;
+            this.txtConfirm.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(87, 102);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
-            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TabIndex = 1;
             // 
             // txtName
             // 
@@ -122,11 +124,12 @@
             this.txtName.Location = new System.Drawing.Point(87, 67);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(175, 23);
-            this.txtName.TabIndex = 13;
+            this.txtName.TabIndex = 0;
             // 
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
+            this.cbType.ItemHeight = 15;
             this.cbType.Items.AddRange(new object[] {
             "Administrador",
             "Usuario",
@@ -134,13 +137,23 @@
             this.cbType.Location = new System.Drawing.Point(94, 163);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(121, 23);
-            this.cbType.TabIndex = 23;
+            this.cbType.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 15);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Tipo";
             // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridProducts);
@@ -171,5 +184,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.Label label1;
     }
 }
