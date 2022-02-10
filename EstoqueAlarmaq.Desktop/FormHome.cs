@@ -1,13 +1,8 @@
 ﻿using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
@@ -42,10 +37,15 @@ namespace EstoqueAlarmaq.Desktop
         }
 
         private void btnOrderServices_Click(object sender, EventArgs e)
-        {
+        {            
             OrderService orderService = new OrderService();
 
             FormOrderServices formOrderServices = new FormOrderServices(_context, null);
+            //formOrderServices.Dock = DockStyle.Fill;
+            //formOrderServices.TopLevel = false;
+            //panelMDI.Controls.Add(formOrderServices);
+            //formOrderServices.Show();
+            //dataGridOrders.Visible = false;
             formOrderServices.ShowDialog();
 
             refreshDataGrid();
@@ -65,6 +65,11 @@ namespace EstoqueAlarmaq.Desktop
             formOrderServices.ShowDialog();
 
             refreshDataGrid();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            dataGridOrders.Visible = true;
         }
     }
 }

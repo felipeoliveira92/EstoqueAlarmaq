@@ -40,7 +40,6 @@ namespace EstoqueAlarmaq.Desktop
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
@@ -56,6 +55,7 @@ namespace EstoqueAlarmaq.Desktop
             // txtName
             // 
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Location = new System.Drawing.Point(87, 41);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(175, 23);
@@ -122,15 +122,6 @@ namespace EstoqueAlarmaq.Desktop
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
-            // 
             // dataGridProducts
             // 
             this.dataGridProducts.AllowUserToAddRows = false;
@@ -164,7 +155,6 @@ namespace EstoqueAlarmaq.Desktop
             this.ClientSize = new System.Drawing.Size(800, 404);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridProducts);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -196,7 +186,6 @@ namespace EstoqueAlarmaq.Desktop
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridProducts;
         private System.Windows.Forms.Button btnDelete;
     }

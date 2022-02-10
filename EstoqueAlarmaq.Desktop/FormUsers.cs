@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormOrderService : Form
+    public partial class FormUsers : Form
     {
-        public FormOrderService()
+        public FormUsers()
         {
             InitializeComponent();
         }

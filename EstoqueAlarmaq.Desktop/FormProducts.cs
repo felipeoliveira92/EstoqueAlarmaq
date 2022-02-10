@@ -50,7 +50,7 @@ namespace EstoqueAlarmaq.Desktop
                 }
                 else
                 {
-                    //try
+                    try
                     {
                         product.Code = code;
                         product.Name = name;
@@ -62,6 +62,8 @@ namespace EstoqueAlarmaq.Desktop
                         {
                             _context.Products.Update(product);
                             _context.SaveChanges();
+                            
+                            product = new Product();                            
 
                             MessageBox.Show("Produto alterado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -70,15 +72,16 @@ namespace EstoqueAlarmaq.Desktop
                             _context.Products.Add(product);
                             _context.SaveChanges();
 
+                            product = new Product();
                             
                             MessageBox.Show("Produto cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         } 
 
                         CleanForm();
                     }
-                    //catch (Exception ex)
+                    catch (Exception ex)
                     {
-                        //MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message);
                     }
                 }                
             }           
@@ -101,6 +104,15 @@ namespace EstoqueAlarmaq.Desktop
         private void refreshDataGrid()
         {
             dataGridProducts.DataSource = _context.Products.ToList();
+
+            var listProducts = new AutoCompleteStringCollection();
+
+            foreach (var product in _context.Products)
+            {
+                listProducts.Add(product.Name);
+            }
+
+            txtName.AutoCompleteCustomSource = listProducts;
         }
 
         private void dataGridProducts_DoubleClick(object sender, EventArgs e)
@@ -128,8 +140,7 @@ namespace EstoqueAlarmaq.Desktop
             var result = MessageBox.Show("Exclusão!", "realmente deseja excluir?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
-            {        
-
+            { 
                 _context.Products.Remove(product);
                 _context.SaveChanges();
 
@@ -138,9 +149,5 @@ namespace EstoqueAlarmaq.Desktop
             }
         }
 
-        private void Save(Product product)
-        {
-
-        }
     }
 }
