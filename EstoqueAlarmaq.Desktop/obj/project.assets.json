@@ -1503,20 +1503,6 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "EstoqueAlarmaq.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "EstoqueAlarmaq.Domain": "1.0.0",
-          "EstoqueAlarmaq.Infra": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EstoqueAlarmaq.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EstoqueAlarmaq.Application.dll": {}
-        }
-      },
       "EstoqueAlarmaq.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5782,11 +5768,6 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "EstoqueAlarmaq.Application/1.0.0": {
-      "type": "project",
-      "path": "../EstoqueAlarmaq.Application/EstoqueAlarmaq.Application.csproj",
-      "msbuildProject": "../EstoqueAlarmaq.Application/EstoqueAlarmaq.Application.csproj"
-    },
     "EstoqueAlarmaq.Domain/1.0.0": {
       "type": "project",
       "path": "../EstoqueAlarmaq.Domain/EstoqueAlarmaq.Domain.csproj",
@@ -5800,7 +5781,6 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "EstoqueAlarmaq.Application >= 1.0.0",
       "EstoqueAlarmaq.Infra >= 1.0.0",
       "iTextSharp >= 5.5.13.2"
     ]
@@ -5837,9 +5817,6 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj": {
-              "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj"
-            },
             "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
               "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
             }

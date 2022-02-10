@@ -54,14 +54,9 @@ namespace EstoqueAlarmaq.Desktop
         private void FormHome_Load(object sender, EventArgs e)
         {
 
-        }
+        }       
 
-        private void DataGridOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void DataGridOrders_DoubleClick(object sender, EventArgs e)
+        private void dataGridOrders_DoubleClick_1(object sender, EventArgs e)
         {
             var orderClicked = dataGridOrders.CurrentRow.Cells[0].Value;
             var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));

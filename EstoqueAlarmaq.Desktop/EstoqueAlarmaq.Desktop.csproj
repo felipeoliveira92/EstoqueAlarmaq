@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EstoqueAlarmaq.Application\EstoqueAlarmaq.Application.csproj" />
     <ProjectReference Include="..\EstoqueAlarmaq.Infra\EstoqueAlarmaq.Infra.csproj" />
   </ItemGroup>
 

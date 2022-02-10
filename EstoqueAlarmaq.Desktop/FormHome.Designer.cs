@@ -102,6 +102,7 @@
             this.dataGridOrders.RowTemplate.Height = 25;
             this.dataGridOrders.Size = new System.Drawing.Size(628, 318);
             this.dataGridOrders.TabIndex = 14;
+            this.dataGridOrders.DoubleClick += new System.EventHandler(this.dataGridOrders_DoubleClick_1);
             // 
             // FormHome
             // 
