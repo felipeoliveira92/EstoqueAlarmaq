@@ -9,11 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ReaLTaiizor.Forms;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormHome : MaterialForm
+    public partial class FormHome : Form
     {
         private readonly DataContext _context;
         public FormHome(DataContext context)
@@ -26,7 +25,7 @@ namespace EstoqueAlarmaq.Desktop
 
         private void refreshDataGrid()
         {
-            DataGridOrders.DataSource = _context.OrderServices
+            dataGridOrders.DataSource = _context.OrderServices
                 .Select(x => new { x.Id, x.Client, x.DateCreatedAt, x.Tecnico, x.Observation }).ToList();
         }
 
@@ -55,16 +54,11 @@ namespace EstoqueAlarmaq.Desktop
         private void FormHome_Load(object sender, EventArgs e)
         {
 
-        }
+        }       
 
-        private void DataGridOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridOrders_DoubleClick_1(object sender, EventArgs e)
         {
-            
-        }
-
-        private void DataGridOrders_DoubleClick(object sender, EventArgs e)
-        {
-            var orderClicked = DataGridOrders.CurrentRow.Cells[0].Value;
+            var orderClicked = dataGridOrders.CurrentRow.Cells[0].Value;
             var orderService = _context.OrderServices.First(x => x.Id == Convert.ToInt32(orderClicked));
 
             FormOrderServices formOrderServices = new FormOrderServices(_context, orderService);

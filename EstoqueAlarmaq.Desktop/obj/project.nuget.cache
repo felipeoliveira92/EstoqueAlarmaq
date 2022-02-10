@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qF7pC1Q8U8oB61uFzOMwa+SobJEQtjjAvtfzXTAC4Uv+5fMToAJoZL6i9qA7zC7z5+LAZQ+OPnTm4kbobuhRGQ==",
+  "dgSpecHash": "ureKHlYnm62eaUBSxutoEW9ynkjkW++bv+EEREIBU00OQX/cM1vDb2vJPRV3ycx3NdXbGYCrWP6Xqp7c48b2Pw==",
   "success": true,
   "projectFilePath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,6 @@
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
-    "C:\\Users\\Administrador\\.nuget\\packages\\realtaiizor\\3.7.8.5\\realtaiizor.3.7.8.5.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
