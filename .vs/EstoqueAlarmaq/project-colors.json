@@ -20,7 +20,22 @@
       "ProjectGuid": "1f26ade8-1cce-419d-9a51-2b57c3541c8f",
       "DisplayName": "EstoqueAlarmaq.Infra",
       "ColorIndex": 3
+    },
+    "39c26669-dbca-4b81-85b0-f4ca9ee9f6c0": {
+      "ProjectGuid": "39c26669-dbca-4b81-85b0-f4ca9ee9f6c0",
+      "DisplayName": "EstoqueAlarmaq.Application",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "7ad12e28-54a4-4f08-bc97-9ffc896bdddc": {
+      "ProjectGuid": "7ad12e28-54a4-4f08-bc97-9ffc896bdddc",
+      "DisplayName": "EstoqueAlarmaq.Api",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

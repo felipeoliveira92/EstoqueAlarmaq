@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace EstoqueAlarmaq.Domain
+﻿namespace EstoqueAlarmaq.Domain
 {
     public class Product
     {

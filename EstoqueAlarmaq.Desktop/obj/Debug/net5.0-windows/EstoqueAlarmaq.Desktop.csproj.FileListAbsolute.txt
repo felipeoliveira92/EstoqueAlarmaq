@@ -121,8 +121,6 @@ C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Deb
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormOrderService.resources
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\itextsharp.dll
-F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormOrderService.resources
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\itextsharp.dll
-F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\ReaLTaiizor.dll
-C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\ReaLTaiizor.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormUsers.resources

@@ -14,5 +14,10 @@
             Type = type;
         }
 
+        public User()
+        {
+
+        }
+
     }
 }
