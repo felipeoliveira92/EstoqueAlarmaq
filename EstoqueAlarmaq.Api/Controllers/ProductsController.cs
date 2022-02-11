@@ -22,5 +22,11 @@ namespace EstoqueAlarmaq.Api.Controllers
         {
             return _context.Products.ToList();
         }
+
+        [HttpGet("id")]
+        public Product GetProduct(int id)
+        {
+            return _context.Products.FirstOrDefault(p => p.Id == id);
+        }
     }
 }
