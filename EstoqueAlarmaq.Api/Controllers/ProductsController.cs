@@ -24,9 +24,20 @@ namespace EstoqueAlarmaq.Api.Controllers
         }
 
         [HttpGet("id")]
-        public Product GetProduct(int id)
+        public Product GetProductById(int id)
         {
             return _context.Products.FirstOrDefault(p => p.Id == id);
+        }
+
+        [HttpDelete("id")]
+        public IActionResult DeleteProduct(int id)
+        {
+            var product = _context.Products.First(p => p.Id == id);
+
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
