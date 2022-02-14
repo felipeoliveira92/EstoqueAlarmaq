@@ -1,9 +1,9 @@
-﻿using EstoqueAlarmaq.Application.Repositories;
-using EstoqueAlarmaq.Domain;
+﻿using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using EstoqueAlarmaq.Services.Repositories;
 
 namespace EstoqueAlarmaq.Desktop
 {
@@ -139,7 +139,7 @@ namespace EstoqueAlarmaq.Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Exclusão!", "realmente deseja excluir?", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("realmente deseja excluir?", "Exclusão!", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {

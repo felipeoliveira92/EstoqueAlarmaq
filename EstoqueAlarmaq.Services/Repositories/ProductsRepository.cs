@@ -1,10 +1,10 @@
-﻿using EstoqueAlarmaq.Application.Interfaces;
-using EstoqueAlarmaq.Domain;
+﻿using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
+using EstoqueAlarmaq.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EstoqueAlarmaq.Application.Repositories
+namespace EstoqueAlarmaq.Services.Repositories
 {
     public class ProductsRepository : IProductsRepository
     {

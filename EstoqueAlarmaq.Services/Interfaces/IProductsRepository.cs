@@ -1,7 +1,7 @@
 ﻿using EstoqueAlarmaq.Domain;
 using System.Collections.Generic;
 
-namespace EstoqueAlarmaq.Application.Interfaces
+namespace EstoqueAlarmaq.Services.Interfaces
 {
     public interface IProductsRepository
     {
