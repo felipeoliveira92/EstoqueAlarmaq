@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EstoqueAlarmaq.Application
+namespace EstoqueAlarmaq.Services
 {
     public class Class1
     {

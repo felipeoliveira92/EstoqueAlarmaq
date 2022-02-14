@@ -1,4 +1,5 @@
-﻿using EstoqueAlarmaq.Domain;
+﻿using EstoqueAlarmaq.Application.Repositories;
+using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace EstoqueAlarmaq.Desktop
     public partial class FormProducts : Form
     {
         private readonly DataContext _context;
+        private readonly ProductsRepository _productsRepository;
 
         Product product = new Product();
 
@@ -140,9 +142,10 @@ namespace EstoqueAlarmaq.Desktop
             var result = MessageBox.Show("Exclusão!", "realmente deseja excluir?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
-            { 
-                _context.Products.Remove(product);
-                _context.SaveChanges();
+            {
+                _productsRepository.Delete(product.Id);
+                //_context.Products.Remove(product);
+                //_context.SaveChanges();
 
                 btnDelete.Visible = false;
                 CleanForm();

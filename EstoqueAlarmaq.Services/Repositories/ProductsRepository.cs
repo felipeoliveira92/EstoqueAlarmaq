@@ -1,11 +1,8 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
 using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Application.Repositories
 {
@@ -45,3 +42,4 @@ namespace EstoqueAlarmaq.Application.Repositories
         }
     }
 }
+

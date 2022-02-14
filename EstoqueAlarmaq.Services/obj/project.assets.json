@@ -5742,11 +5742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj",
-      "projectName": "EstoqueAlarmaq.Application",
-      "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\EstoqueAlarmaq.Application.csproj",
+      "projectUniqueName": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj",
+      "projectName": "EstoqueAlarmaq.Services",
+      "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Application\\obj\\",
+      "outputPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
