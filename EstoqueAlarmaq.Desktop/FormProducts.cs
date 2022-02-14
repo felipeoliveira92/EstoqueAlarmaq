@@ -3,12 +3,14 @@ using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using EstoqueAlarmaq.Services.Repositories;
 
 namespace EstoqueAlarmaq.Desktop
 {
     public partial class FormProducts : Form
     {
         private readonly DataContext _context;
+        private readonly ProductsRepository _productsRepository;
 
         Product product = new Product();
 
@@ -137,12 +139,13 @@ namespace EstoqueAlarmaq.Desktop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Exclusão!", "realmente deseja excluir?", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("realmente deseja excluir?", "Exclusão!", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
-            { 
-                _context.Products.Remove(product);
-                _context.SaveChanges();
+            {
+                _productsRepository.Delete(product.Id);
+                //_context.Products.Remove(product);
+                //_context.SaveChanges();
 
                 btnDelete.Visible = false;
                 CleanForm();

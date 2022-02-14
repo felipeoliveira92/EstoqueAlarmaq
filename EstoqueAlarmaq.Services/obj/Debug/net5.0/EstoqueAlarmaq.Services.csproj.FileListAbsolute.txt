@@ -1,0 +1,17 @@
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Services.deps.json
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Services.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\ref\EstoqueAlarmaq.Services.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Services.pdb
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Domain.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Infra.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Domain.pdb
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\bin\Debug\net5.0\EstoqueAlarmaq.Infra.pdb
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.csproj.AssemblyReference.cache
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.AssemblyInfoInputs.cache
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.AssemblyInfo.cs
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.csproj.CoreCompileInputs.cache
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.csproj.CopyComplete
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\ref\EstoqueAlarmaq.Services.dll
+F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Services\obj\Debug\net5.0\EstoqueAlarmaq.Services.pdb
