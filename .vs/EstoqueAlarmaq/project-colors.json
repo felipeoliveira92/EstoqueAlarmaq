@@ -35,7 +35,22 @@
       "ProjectGuid": "7ad12e28-54a4-4f08-bc97-9ffc896bdddc",
       "DisplayName": "EstoqueAlarmaq.Api",
       "ColorIndex": 5
+    },
+    "22b341c0-2917-490e-aa29-632bb813fb98": {
+      "ProjectGuid": "22b341c0-2917-490e-aa29-632bb813fb98",
+      "DisplayName": "EstoqueAlarmaq.Services",
+      "ColorIndex": 6
+    },
+    "5c03f223-d197-47b9-8f12-ee9a62bc109b": {
+      "ProjectGuid": "5c03f223-d197-47b9-8f12-ee9a62bc109b",
+      "DisplayName": "EstoqueAlarmaq.Services",
+      "ColorIndex": 7
+    },
+    "bffd8f57-76aa-4e72-964a-c1c45f8da9a9": {
+      "ProjectGuid": "bffd8f57-76aa-4e72-964a-c1c45f8da9a9",
+      "DisplayName": "EstoqueAlarmaq.Services",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 9
 }

@@ -18,6 +18,7 @@ namespace EstoqueAlarmaq.Desktop
         {
             InitializeComponent();
             _context = context;
+            _productsRepository = new ProductsRepository(_context);
             refreshDataGrid();
         }
 
