@@ -276,3 +276,5 @@ F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Api\obj\Debug\net5.0\staticweb
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Api\obj\Debug\net5.0\EstoqueAlarmaq.Api.RazorTargetAssemblyInfo.cache
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Api\obj\Debug\net5.0\EstoqueAlarmaq.Api.csproj.CopyComplete
 F:\Documents\dotnet\EstoqueAlarmaq\EstoqueAlarmaq.Api\obj\Debug\net5.0\EstoqueAlarmaq.Api.genruntimeconfig.cache
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Api\bin\Debug\net5.0\EstoqueAlarmaq.Services.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Api\bin\Debug\net5.0\EstoqueAlarmaq.Services.pdb

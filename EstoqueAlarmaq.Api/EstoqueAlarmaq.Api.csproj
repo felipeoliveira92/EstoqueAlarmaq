@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EstoqueAlarmaq.Infra\EstoqueAlarmaq.Infra.csproj" />
+    <ProjectReference Include="..\EstoqueAlarmaq.Services\EstoqueAlarmaq.Services.csproj" />
   </ItemGroup>
 
 </Project>

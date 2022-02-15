@@ -34,6 +34,7 @@
       "EstoqueAlarmaq.Api/1.0.0": {
         "dependencies": {
           "EstoqueAlarmaq.Infra": "1.0.0",
+          "EstoqueAlarmaq.Services": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.12",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
@@ -1879,6 +1880,18 @@
         },
         "compile": {
           "EstoqueAlarmaq.Infra.dll": {}
+        }
+      },
+      "EstoqueAlarmaq.Services/1.0.0": {
+        "dependencies": {
+          "EstoqueAlarmaq.Domain": "1.0.0",
+          "EstoqueAlarmaq.Infra": "1.0.0"
+        },
+        "runtime": {
+          "EstoqueAlarmaq.Services.dll": {}
+        },
+        "compile": {
+          "EstoqueAlarmaq.Services.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4491,6 +4504,11 @@
       "sha512": ""
     },
     "EstoqueAlarmaq.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EstoqueAlarmaq.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

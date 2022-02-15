@@ -2108,6 +2108,20 @@
         "runtime": {
           "bin/placeholder/EstoqueAlarmaq.Infra.dll": {}
         }
+      },
+      "EstoqueAlarmaq.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EstoqueAlarmaq.Domain": "1.0.0",
+          "EstoqueAlarmaq.Infra": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
+        }
       }
     }
   },
@@ -7353,11 +7367,17 @@
       "type": "project",
       "path": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj",
       "msbuildProject": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj"
+    },
+    "EstoqueAlarmaq.Services/1.0.0": {
+      "type": "project",
+      "path": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj",
+      "msbuildProject": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "EstoqueAlarmaq.Infra >= 1.0.0",
+      "EstoqueAlarmaq.Services >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
@@ -7401,6 +7421,9 @@
           "projectReferences": {
             "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
               "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
+            },
+            "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj": {
+              "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj"
             }
           }
         }
