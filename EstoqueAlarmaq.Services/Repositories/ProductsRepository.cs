@@ -10,6 +10,10 @@ namespace EstoqueAlarmaq.Services.Repositories
     {
         private readonly DataContext _context;
 
+        public ProductsRepository(DataContext context)
+        {
+            _context = context;
+        }
         public void Delete(int id)
         {
             var product = _context.Products.FirstOrDefault(p => p.Id == id);

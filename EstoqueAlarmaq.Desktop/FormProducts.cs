@@ -18,6 +18,7 @@ namespace EstoqueAlarmaq.Desktop
         {
             InitializeComponent();
             _context = context;
+            _productsRepository = new ProductsRepository(context);
             refreshDataGrid();
         }
 
@@ -105,7 +106,8 @@ namespace EstoqueAlarmaq.Desktop
 
         private void refreshDataGrid()
         {
-            dataGridProducts.DataSource = _context.Products.ToList();
+            //dataGridProducts.DataSource = _context.Products.ToList();
+            dataGridProducts.DataSource = _productsRepository.SelectAll();
 
             var listProducts = new AutoCompleteStringCollection();
 

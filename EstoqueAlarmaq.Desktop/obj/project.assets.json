@@ -1526,6 +1526,20 @@
         "runtime": {
           "bin/placeholder/EstoqueAlarmaq.Infra.dll": {}
         }
+      },
+      "EstoqueAlarmaq.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EstoqueAlarmaq.Domain": "1.0.0",
+          "EstoqueAlarmaq.Infra": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
+        }
       }
     }
   },
@@ -5777,11 +5791,17 @@
       "type": "project",
       "path": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj",
       "msbuildProject": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj"
+    },
+    "EstoqueAlarmaq.Services/1.0.0": {
+      "type": "project",
+      "path": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj",
+      "msbuildProject": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "EstoqueAlarmaq.Infra >= 1.0.0",
+      "EstoqueAlarmaq.Services >= 1.0.0",
       "iTextSharp >= 5.5.13.2"
     ]
   },
@@ -5822,6 +5842,9 @@
           "projectReferences": {
             "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
               "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
+            },
+            "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj": {
+              "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj"
             }
           }
         }
@@ -5859,7 +5882,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   },
