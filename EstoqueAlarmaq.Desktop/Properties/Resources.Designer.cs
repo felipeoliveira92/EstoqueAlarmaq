@@ -63,6 +63,16 @@ namespace EstoqueAlarmaq.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon__Moradores__Oficial {
+            get {
+                object obj = ResourceManager.GetObject("Icon (Moradores) Oficial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoAlarmaq_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("logoAlarmaq-removebg-preview", resourceCulture);

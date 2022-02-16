@@ -39,10 +39,15 @@
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
             this.panelMDI = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridProducts = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProducts
@@ -50,6 +55,7 @@
             this.btnProducts.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnProducts.Location = new System.Drawing.Point(0, 208);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(263, 63);
@@ -63,6 +69,7 @@
             this.btnClients.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnClients.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClients.Location = new System.Drawing.Point(0, 145);
             this.btnClients.Name = "btnClients";
             this.btnClients.Size = new System.Drawing.Size(263, 63);
@@ -75,9 +82,10 @@
             // 
             this.btnOrderServices.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnOrderServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderServices.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOrderServices.Location = new System.Drawing.Point(45, 424);
             this.btnOrderServices.Name = "btnOrderServices";
-            this.btnOrderServices.Size = new System.Drawing.Size(154, 44);
+            this.btnOrderServices.Size = new System.Drawing.Size(173, 44);
             this.btnOrderServices.TabIndex = 20;
             this.btnOrderServices.Text = "Ordens Serviços";
             this.btnOrderServices.UseVisualStyleBackColor = false;
@@ -88,6 +96,7 @@
             this.btnUsers.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUsers.Location = new System.Drawing.Point(0, 334);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(263, 63);
@@ -116,6 +125,7 @@
             this.btnHome.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHome.Location = new System.Drawing.Point(0, 271);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(263, 63);
@@ -150,11 +160,10 @@
             this.dataGridOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridOrders.Location = new System.Drawing.Point(263, 145);
+            this.dataGridOrders.Location = new System.Drawing.Point(3, 28);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.RowTemplate.Height = 25;
-            this.dataGridOrders.Size = new System.Drawing.Size(954, 569);
+            this.dataGridOrders.Size = new System.Drawing.Size(954, 232);
             this.dataGridOrders.TabIndex = 14;
             this.dataGridOrders.DoubleClick += new System.EventHandler(this.dataGridOrders_DoubleClick_1);
             // 
@@ -170,18 +179,53 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.dataGridProducts);
+            this.panel3.Controls.Add(this.dataGridOrders);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(263, 145);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(954, 569);
             this.panel3.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(0, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(269, 25);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Produtos com baixo estoque";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 25);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Ordens de Serviços recentes";
+            // 
+            // dataGridProducts
+            // 
+            this.dataGridProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProducts.Location = new System.Drawing.Point(0, 309);
+            this.dataGridProducts.Name = "dataGridProducts";
+            this.dataGridProducts.RowTemplate.Height = 25;
+            this.dataGridProducts.Size = new System.Drawing.Size(954, 224);
+            this.dataGridProducts.TabIndex = 15;
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 714);
-            this.Controls.Add(this.dataGridOrders);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMDI);
             this.Controls.Add(this.panel1);
@@ -196,6 +240,9 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +261,8 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridProducts;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -74,7 +74,7 @@ namespace EstoqueAlarmaq.Desktop
             }
             else
             {
-                MessageBox.Show(this.Text, "Senhas são diferentes!");
+                MessageBox.Show("Senhas são diferentes!", this.Text);
                 txtConfirm.Focus();
             }
             
@@ -84,7 +84,7 @@ namespace EstoqueAlarmaq.Desktop
             txtName.Clear();
             txtPassword.Clear();
             txtConfirm.Clear();
-            cbType.SelectedIndex = 0;
+            cbType.Text = "";
 
             refreshDataGrid();
             txtName.Focus();
@@ -96,6 +96,25 @@ namespace EstoqueAlarmaq.Desktop
         private void refreshDataGrid()
         {
             dataGridProducts.DataSource = _context.Users.ToList();
+        }
+
+        private void dataGridProducts_DoubleClick(object sender, EventArgs e)
+        {
+            var userClicked = dataGridProducts.CurrentRow.Cells[0].Value;
+            var user = _context.Users.First(u => u.Id == Convert.ToInt32(userClicked));
+
+            if (user != null)
+            {
+                this.user = user;
+
+                txtName.Text = user.Name;
+                txtPassword.Text = user.Password;
+                txtConfirm.Text = user.Password;
+                cbType.Text = user.Type;
+
+                btnSave.Text = "Editar";
+                btnDelete.Visible = true;
+            }
         }
     }
 }

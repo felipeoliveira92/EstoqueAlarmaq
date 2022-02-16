@@ -65,6 +65,7 @@
             this.dataGridProducts.RowTemplate.Height = 25;
             this.dataGridProducts.Size = new System.Drawing.Size(509, 201);
             this.dataGridProducts.TabIndex = 21;
+            this.dataGridProducts.DoubleClick += new System.EventHandler(this.dataGridProducts_DoubleClick);
             // 
             // btnSave
             // 
@@ -107,6 +108,7 @@
             // 
             this.txtConfirm.Location = new System.Drawing.Point(94, 134);
             this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '#';
             this.txtConfirm.Size = new System.Drawing.Size(168, 23);
             this.txtConfirm.TabIndex = 2;
             // 
@@ -114,6 +116,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(87, 102);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 1;
             // 
@@ -152,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 311);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnDelete);
@@ -165,7 +168,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
             this.Name = "FormUsers";
-            this.Text = "FormUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
