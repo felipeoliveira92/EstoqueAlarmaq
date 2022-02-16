@@ -17,7 +17,7 @@ namespace EstoqueAlarmaq.Services.Interfaces
 
         IEnumerable<User> SelectAll();
 
-        Product Select(int id);
+        User Select(int id);
 
         void Delete(int id);
     }

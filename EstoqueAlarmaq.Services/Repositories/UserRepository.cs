@@ -1,4 +1,5 @@
 ﻿using EstoqueAlarmaq.Domain;
+using EstoqueAlarmaq.Infra.Data;
 using EstoqueAlarmaq.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,34 +11,47 @@ namespace EstoqueAlarmaq.Services.Repositories
 {
     public class UserRepository : IUserRepository
     {
+        private readonly DataContext _context;
+
+        public UserRepository(DataContext context)
+        {
+            _context = context;
+        }
+
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _context.Remove(id);
+            _context.SaveChanges();
         }
 
         public void Insert(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Add(user);
+            _context.SaveChanges();
         }
 
         public User New()
         {
-            throw new NotImplementedException();
+            User user = new User();
+            return user;
         }
 
-        public Product Select(int id)
+        public User Select(int id)
         {
-            throw new NotImplementedException();
+            return _context.Users.FirstOrDefault(u => u.Id == id);
+
         }
 
         public IEnumerable<User> SelectAll()
         {
-            throw new NotImplementedException();
+            return _context.Users.ToList();
         }
 
         public void Update(int id, User user)
         {
-            throw new NotImplementedException();
+            user.Id = id;
+            _context.Update(user);
+            _context.SaveChanges();
         }
     }
 }
