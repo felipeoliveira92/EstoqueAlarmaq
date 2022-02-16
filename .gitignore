@@ -452,3 +452,7 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.vs/EstoqueAlarmaq/DesignTimeBuild/.dtbcache.v2
+.vs/EstoqueAlarmaq/DesignTimeBuild/.dtbcache.v2
+.vs/EstoqueAlarmaq/v17/.futdcache.v1
+.vs/EstoqueAlarmaq/v17/.suo
