@@ -14,6 +14,11 @@ namespace EstoqueAlarmaq.Services.Repositories
         {
             _context = context;
         }
+
+        public Product New()
+        {
+            return new Product();
+        }
         public void Delete(int id)
         {
             var product = _context.Products.FirstOrDefault(p => p.Id == id);
