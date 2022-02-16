@@ -63,8 +63,9 @@ namespace EstoqueAlarmaq.Desktop
 
                         if (btnSave.Text == "Editar")
                         {
-                            _context.Products.Update(product);
-                            _context.SaveChanges();
+                            _productsRepository.Update(product.Id, product);
+                            //_context.Products.Update(product);
+                            //_context.SaveChanges();
                             
                             product = new Product();                            
 
@@ -72,8 +73,9 @@ namespace EstoqueAlarmaq.Desktop
                         }
                         else
                         {
-                            _context.Products.Add(product);
-                            _context.SaveChanges();
+                            _productsRepository.Insert(product);
+                            //_context.Products.Add(product);
+                            //_context.SaveChanges();
 
                             product = new Product();
                             
@@ -122,7 +124,8 @@ namespace EstoqueAlarmaq.Desktop
         private void dataGridProducts_DoubleClick(object sender, EventArgs e)
         {
             var productClicked = dataGridProducts.CurrentRow.Cells[0].Value;
-            var product = _context.Products.First(x => x.Id == Convert.ToInt32(productClicked));
+            //var product = _context.Products.First(x => x.Id == Convert.ToInt32(productClicked));
+            var product = _productsRepository.Select(Convert.ToInt32(productClicked));
             
 
             if (product != null)
