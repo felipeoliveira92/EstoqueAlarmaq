@@ -3,6 +3,7 @@ using EstoqueAlarmaq.Infra.Data;
 using EstoqueAlarmaq.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Services.Repositories
 {
@@ -19,11 +20,13 @@ namespace EstoqueAlarmaq.Services.Repositories
         {
             return new Product();
         }
-        public void Delete(int id)
+        public Product Delete(int id)
         {
             var product = _context.Products.FirstOrDefault(p => p.Id == id);
             _context.Products.Remove(product);
             _context.SaveChanges();
+
+            return product;
         }
 
         public void Insert(Product product)
