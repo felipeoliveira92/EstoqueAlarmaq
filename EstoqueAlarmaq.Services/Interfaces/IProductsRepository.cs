@@ -13,6 +13,6 @@ namespace EstoqueAlarmaq.Services.Interfaces
 
         Product Select(int id);
 
-        void Delete(int id);
+        Product Delete(int id);
     }
 }
