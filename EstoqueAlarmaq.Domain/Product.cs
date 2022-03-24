@@ -23,6 +23,10 @@
         public Product()
         {
 
-        }        
+        }
+        public Product(CreateProductsDTO productsDTO)
+        {
+
+        }
     }
 }
