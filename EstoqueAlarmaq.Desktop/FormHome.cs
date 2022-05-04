@@ -77,5 +77,10 @@ namespace EstoqueAlarmaq.Desktop
             FormUsers formUsers = new FormUsers(_context);
             formUsers.ShowDialog();
         }
+
+        private void panelMDI_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

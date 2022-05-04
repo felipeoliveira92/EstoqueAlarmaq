@@ -130,6 +130,7 @@
             this.panelMDI.Name = "panelMDI";
             this.panelMDI.Size = new System.Drawing.Size(1045, 568);
             this.panelMDI.TabIndex = 15;
+            this.panelMDI.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMDI_Paint);
             // 
             // FormHome
             // 
