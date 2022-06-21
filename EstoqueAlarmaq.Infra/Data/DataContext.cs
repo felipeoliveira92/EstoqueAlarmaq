@@ -14,6 +14,7 @@ namespace EstoqueAlarmaq.Infra.Data
 
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductObject> ProductsObjects { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<OrderService> OrderServices { get; set; }
         public DbSet<User> Users { get; set; }

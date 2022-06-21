@@ -10,7 +10,7 @@ namespace EstoqueAlarmaq.Desktop
     public partial class FormHome : Form
     {
         private readonly DataContext _context;
-        public FormHome(DataContext context)
+        public FormHome()
         {
             InitializeComponent();
             _context = context;
