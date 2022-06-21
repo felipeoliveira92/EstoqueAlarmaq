@@ -10,9 +10,9 @@ namespace EstoqueAlarmaq.Services.Repositories
     {
         private readonly DataContext _context;
 
-        public ProductsRepository(DataContext context)
+        public ProductsRepository()
         {
-            _context = context;
+            _context = new DataContext();
         }
         public void Delete(int id)
         {

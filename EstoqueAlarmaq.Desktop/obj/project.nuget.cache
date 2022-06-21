@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8cGUWXx58zMA4RL3t3vUsETlg/UUiMbmm5UK0ObGGtoG3QSqwnIVwow7m/7lz+duo6gVEz20MwAzRPCIuj69Wg==",
+  "dgSpecHash": "0Xgcl3vlscK0rO3/OYclVYOJKLJfp4rMp4kRIw3FCIs6d3l4aepmRx4jIuIsFtNVkqkmVQvobU+J/qQ5GvGVKA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\itextsharp\\5.5.13.2\\itextsharp.5.5.13.2.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\materialskin\\0.2.1\\materialskin.0.2.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -118,6 +119,16 @@
       "warningLevel": 1,
       "message": "O pacote 'iTextSharp 5.5.13.2' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0-windows7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'MaterialSkin 0.2.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto 'net5.0-windows7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "MaterialSkin",
       "targetGraphs": [
         "net5.0-windows7.0"
       ]

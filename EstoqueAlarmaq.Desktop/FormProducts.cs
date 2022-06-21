@@ -4,10 +4,11 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using EstoqueAlarmaq.Services.Repositories;
+using MaterialSkin.Controls;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormProducts : Form
+    public partial class FormProducts : MaterialForm
     {
         private readonly DataContext _context;
         private readonly ProductsRepository _productsRepository;
