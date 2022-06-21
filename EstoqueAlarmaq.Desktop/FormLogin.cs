@@ -1,5 +1,6 @@
 ﻿using EstoqueAlarmaq.Services.Repositories;
 using MaterialSkin.Controls;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
@@ -22,8 +23,15 @@ namespace EstoqueAlarmaq.Desktop
 
                     if(_loginRepository.Login(txtUser.Text, txtPassword.Text))
                     {
-                        FormHome formHome = new FormHome();
-                        formHome.ShowDialog();
+                        this.Close();
+                        Thread thread = new Thread(OpenHome);
+                        thread.SetApartmentState(ApartmentState.STA);
+                        thread.Start();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario ou senha invalidos!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     
                 }
@@ -36,6 +44,10 @@ namespace EstoqueAlarmaq.Desktop
             {
                 MessageBox.Show("O Campo Usuario não pode ser vazio!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        public void OpenHome()
+        {
+            Application.Run(new FormHome());
         }
     }
 }

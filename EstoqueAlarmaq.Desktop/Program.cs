@@ -1,4 +1,3 @@
-using EstoqueAlarmaq.Infra.Data;
 using System;
 using System.Windows.Forms;
 
@@ -15,9 +14,7 @@ namespace EstoqueAlarmaq.Desktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            DataContext context = new DataContext();
-            Application.Run(new FormHome(context));
+            Application.Run(new FormLogin());
         }
     }
 }

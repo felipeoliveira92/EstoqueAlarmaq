@@ -56,7 +56,7 @@ namespace EstoqueAlarmaq.Desktop
             this.txtPassword.Location = new System.Drawing.Point(103, 255);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
@@ -86,6 +86,7 @@ namespace EstoqueAlarmaq.Desktop
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
 
