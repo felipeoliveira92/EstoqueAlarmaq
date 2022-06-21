@@ -10,16 +10,16 @@ namespace EstoqueAlarmaq.Desktop
 {
     public partial class FormProducts : MaterialForm
     {
-        private readonly DataContext _context;
         private readonly ProductsRepository _productsRepository;
 
         Product product = new Product();
 
-        public FormProducts(DataContext context)
+        public FormProducts()
         {
             InitializeComponent();
-            _context = context;
-            _productsRepository = new ProductsRepository(context);
+            _productsRepository = new ProductsRepository();
+
+            LoadCbx();
             refreshDataGrid();
         }
 
@@ -105,19 +105,23 @@ namespace EstoqueAlarmaq.Desktop
             btnDelete.Visible = false;
         }
 
+        private void LoadCbx()
+        {
+            cbxNameProduct.DataSource = _productsRepository.SelectAll();
+        }
+
         private void refreshDataGrid()
         {
-            //dataGridProducts.DataSource = _context.Products.ToList();
-            dataGridProducts.DataSource = _productsRepository.SelectAll();
+            //dataGridProducts.DataSource = _productsRepository.SelectAll();
 
-            var listProducts = new AutoCompleteStringCollection();
+            //var listProducts = new AutoCompleteStringCollection();
 
-            foreach (var product in _context.Products)
-            {
-                //listProducts.Add(product.Name);
-            }
+            //foreach (var product in _context.Products)
+            //{
+            //    //listProducts.Add(product.Name);
+            //}
 
-            txtName.AutoCompleteCustomSource = listProducts;
+            //txtName.AutoCompleteCustomSource = listProducts;
         }
 
         private void dataGridProducts_DoubleClick(object sender, EventArgs e)

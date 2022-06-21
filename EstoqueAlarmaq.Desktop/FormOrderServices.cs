@@ -23,26 +23,26 @@ namespace EstoqueAlarmaq.Desktop
             InitializeComponent();
             _context = context;            
 
-            if(orderService != null)
-            {
-                this.orderService = orderService;
+            //if(orderService != null)
+            //{
+            //    this.orderService = orderService;
 
-                txtClient.Text = orderService.Client;
-                txtTecnical.Text = orderService.Tecnico;
-                txtUser.Text = orderService.User;
-                txtObservation.Text = orderService.Observation;
+            //    txtClient.Text = orderService.Client;
+            //    txtTecnical.Text = orderService.Tecnico;
+            //    txtUser.Text = orderService.User;
+            //    txtObservation.Text = orderService.Observation;
 
-                var products = _context.Products
-                                   .Where(p => p.IdProduct == orderService.Id)
-                                   .ToList();
+            //    var products = _context.Products
+            //                       .Where(p => p.IdProduct == orderService.Id)
+            //                       .ToList();
 
-                foreach (var product in products)
-                {
-                    listBoxProducts.Items.Add(product.NameProduct);
-                }
+            //    foreach (var product in products)
+            //    {
+            //        listBoxProducts.Items.Add(product.NameProduct);
+            //    }
 
-                btnRegisterOrderService.Text = "Editar";
-            }
+            //    btnRegisterOrderService.Text = "Editar";
+            //}
 
             refreshDataGrid();
             autoComplete();
@@ -56,40 +56,40 @@ namespace EstoqueAlarmaq.Desktop
 
         private void autoComplete()
         {
-            var listProducts = new AutoCompleteStringCollection();
-            var listClients = new AutoCompleteStringCollection();
-            var listUsers = new AutoCompleteStringCollection();
+            //var listProducts = new AutoCompleteStringCollection();
+            //var listClients = new AutoCompleteStringCollection();
+            //var listUsers = new AutoCompleteStringCollection();
 
-            var products = _context.Products.Select(x => new { x.IdProduct, x.NameProduct }).ToList();
-            var clients = _context.Clients.Select(x => new { x.Code,x.Name }).ToList();
-            var users = _context.Users.Select(x => new {x.Name}).ToList();
+            //var products = _context.Products.Select(x => new { x.IdProduct, x.NameProduct }).ToList();
+            //var clients = _context.Clients.Select(x => new { x.Code,x.Name }).ToList();
+            //var users = _context.Users.Select(x => new {x.Name}).ToList();
 
-            try
-            {
-                foreach (var product in products)
-                {
-                    //listProducts.Add(product.IdProduct);
-                    //listProducts.Add(product.Name);
-                }
-                foreach (var client in clients)
-                {
-                    listClients.Add(client.Code.ToString());
-                    listClients.Add(client.Name);
-                }
-                foreach (var user in users)
-                {
-                    listUsers.Add(user.Name);
-                }
-            }
-            catch (Exception msg)
-            {
-                MessageBox.Show(msg.Message);
-            }
+            //try
+            //{
+            //    foreach (var product in products)
+            //    {
+            //        //listProducts.Add(product.IdProduct);
+            //        //listProducts.Add(product.Name);
+            //    }
+            //    foreach (var client in clients)
+            //    {
+            //        listClients.Add(client.Code.ToString());
+            //        listClients.Add(client.Name);
+            //    }
+            //    foreach (var user in users)
+            //    {
+            //        listUsers.Add(user.Name);
+            //    }
+            //}
+            //catch (Exception msg)
+            //{
+            //    MessageBox.Show(msg.Message);
+            //}
 
-            txtProductCode.AutoCompleteCustomSource = listProducts;
-            txtClient.AutoCompleteCustomSource = listClients;
-            txtUser.AutoCompleteCustomSource = listUsers;
-            txtTecnical.AutoCompleteCustomSource = listUsers;
+            //txtProductCode.AutoCompleteCustomSource = listProducts;
+            //txtClient.AutoCompleteCustomSource = listClients;
+            //txtUser.AutoCompleteCustomSource = listUsers;
+            //txtTecnical.AutoCompleteCustomSource = listUsers;
         }
 
 
