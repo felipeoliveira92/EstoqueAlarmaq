@@ -95,7 +95,7 @@ namespace EstoqueAlarmaq.Desktop
 
         private void refreshDataGrid()
         {
-            dataGridProducts.DataSource = _context.Users.ToList();
+            gridUsers.DataSource = _context.Users.ToList();
         }
     }
 }

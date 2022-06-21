@@ -38,3 +38,5 @@ C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\obj\Debu
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\obj\Debug\net5.0\EstoqueAlarmaq.WebApp.pdb
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\obj\Debug\net5.0\EstoqueAlarmaq.WebApp.genruntimeconfig.cache
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\obj\Debug\net5.0\EstoqueAlarmaq.WebApp.csproj.CopyComplete
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\bin\Debug\net5.0\EstoqueAlarmaq.Domain.dll
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.WebApp\bin\Debug\net5.0\EstoqueAlarmaq.Domain.pdb

@@ -40,9 +40,9 @@ namespace EstoqueAlarmaq.Services.Repositories
 
         public void Update(int id, Product product)
         {
-            product.Id = id;
-            _context.Update(product);
-            _context.SaveChanges();
+            //product.Id = id;
+            //_context.Update(product);
+            //_context.SaveChanges();
         }
     }
 }

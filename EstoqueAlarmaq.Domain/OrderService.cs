@@ -10,8 +10,7 @@ namespace EstoqueAlarmaq.Domain
         public string Tecnico { get; set; }
         public string User { get; set; }
         public string Observation { get; set; }
-        public DateTime DateCreatedAt { get; set; } = DateTime.Now;                
-        public List<Product> Products { get; set; }
+        public DateTime DateCreatedAt { get; set; } = DateTime.Now;
 
         public OrderService(string client, string tecnico, string user, string observation, List<Product> products)
         {
@@ -19,7 +18,6 @@ namespace EstoqueAlarmaq.Domain
             this.Tecnico = tecnico;
             this.User = user;
             this.Observation = observation;
-            this.Products = products;
         }
 
         public OrderService()

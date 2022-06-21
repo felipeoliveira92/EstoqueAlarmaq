@@ -22,18 +22,16 @@ namespace EstoqueAlarmaq.Infra.Data
         {
             var home = "Integrated Security=SSPI;Persist Security Info=False;" +
                 "User ID=sa;Initial Catalog=dbEstoque;Data Source=DESKTOP-FELIPE";
-            var work = "Integrated Security=SSPI;Persist Security Info=False;" +
-                "User ID=sa;Initial Catalog=dbEstoque;Data Source=A002";
 
             optionsBuilder.UseSqlServer(home);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.OrderServices)
-                .WithMany(b => b.Products)
-                .HasForeignKey(p => p.OrderServicesId);
+            //modelBuilder.Entity<Product>()
+            //    .HasOne(p => p.OrderServices)
+            //    .WithMany(b => b.Products)
+            //    .HasForeignKey(p => p.OrderServicesId);
         }
 
     }
