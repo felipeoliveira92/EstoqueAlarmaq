@@ -14,11 +14,15 @@ namespace EstoqueAlarmaq.Services.Repositories
         {
             _context = new DataContext();
         }
+
         public void Delete(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Id == id);
-            _context.Products.Remove(product);
-            _context.SaveChanges();
+            if(id != 0)
+            {
+                var product = _context.Products.Find(id);
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+            }            
         }
 
         public void Insert(Product product)

@@ -45,6 +45,7 @@ namespace EstoqueAlarmaq.Desktop
                 MessageBox.Show("O Campo Usuario não pode ser vazio!", this.Name, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         public void OpenHome()
         {
             Application.Run(new FormHome());
