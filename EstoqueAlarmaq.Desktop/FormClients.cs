@@ -1,18 +1,18 @@
 ﻿using EstoqueAlarmaq.Domain;
-using EstoqueAlarmaq.Infra.Data;
+using EstoqueAlarmaq.Services.Repositories;
+using MaterialSkin.Controls;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormClients : Form
+    public partial class FormClients : MaterialForm
     {
-        private readonly DataContext _context;
-        public FormClients(DataContext context)
+        private readonly ClientRepository _context;
+        public FormClients()
         {
             InitializeComponent();
-            _context = context;
+            _context = new ClientRepository();
             refreshDataGrid();
         }
 
@@ -25,11 +25,11 @@ namespace EstoqueAlarmaq.Desktop
         {
             var code = txtCode.Text;
             var name = txtName.Text;
-
             
             if (string.IsNullOrEmpty(code) || string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("È necessario preencher o codigo e/ou nome corretamente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("È necessario preencher o codigo e/ou nome corretamente!", "Aviso!", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtCode.Focus();
             }
             else
@@ -38,9 +38,7 @@ namespace EstoqueAlarmaq.Desktop
 
                 try
                 {
-                    _context.Clients.Add(client);
-                    _context.SaveChanges();
-
+                    _context.Save(client);
                     CleanForm();
                 }
                 catch (Exception ex)
@@ -49,6 +47,7 @@ namespace EstoqueAlarmaq.Desktop
                 }
             }
         }
+
         private void CleanForm()
         {
             txtCode.Clear();
@@ -59,13 +58,11 @@ namespace EstoqueAlarmaq.Desktop
             refreshDataGrid();
         }
 
-
         private void refreshDataGrid()
         {
-            dataGridClients.DataSource = _context.Clients.ToList();
+            dataGridClients.DataSource = _context.GetAllClients();
             dataGridClients.AutoResizeColumns();
             dataGridClients.AutoResizeRows();
-        }
-        
+        }        
     }
 }

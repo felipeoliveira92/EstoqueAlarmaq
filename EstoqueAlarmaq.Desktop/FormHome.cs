@@ -28,8 +28,8 @@ namespace EstoqueAlarmaq.Desktop
 
         private void btnClients_Click(object sender, EventArgs e)
         {
-            //FormClients formClients = new FormClients();
-            //formClients.ShowDialog();
+            FormClients formClients = new FormClients();
+            formClients.ShowDialog();
         }
 
         private void btnOrderServices_Click(object sender, EventArgs e)
