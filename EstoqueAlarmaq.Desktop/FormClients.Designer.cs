@@ -91,22 +91,24 @@
             this.dataGridClients.ReadOnly = true;
             this.dataGridClients.RowHeadersVisible = false;
             this.dataGridClients.RowTemplate.Height = 25;
-            this.dataGridClients.Size = new System.Drawing.Size(449, 150);
+            this.dataGridClients.Size = new System.Drawing.Size(425, 150);
             this.dataGridClients.TabIndex = 11;
             // 
             // FormClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(754, 450);
             this.Controls.Add(this.dataGridClients);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtCode);
+            this.MaximizeBox = false;
             this.Name = "FormClients";
-            this.Text = "FormClients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FormClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
             this.ResumeLayout(false);

@@ -10,7 +10,6 @@ namespace EstoqueAlarmaq.Desktop
         public FormLogin()
         {
             InitializeComponent();
-            this.Name = "Login";
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)

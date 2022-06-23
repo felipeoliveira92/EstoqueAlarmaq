@@ -130,3 +130,4 @@ C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Deb
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormUsers.resources
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\bin\Debug\net5.0-windows\MaterialSkin.dll
 C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.FormLogin.resources
+C:\Users\Felipe\Documents\Projetos\EstoqueAlarmaq\EstoqueAlarmaq.Desktop\obj\Debug\net5.0-windows\EstoqueAlarmaq.Desktop.Properties.Resources.resources
