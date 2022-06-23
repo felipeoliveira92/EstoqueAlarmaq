@@ -11,14 +11,7 @@ namespace EstoqueAlarmaq.Domain
         public string User { get; set; }
         public string Observation { get; set; }
         public DateTime DateCreatedAt { get; set; } = DateTime.Now;
-
-        public OrderService(string client, string tecnico, string user, string observation, List<Product> products)
-        {
-            this.Client = client;
-            this.Tecnico = tecnico;
-            this.User = user;
-            this.Observation = observation;
-        }
+        public List<OrderServiceProductObject> OrderServiceProductObjects { get; set; }
 
         public OrderService()
         {

@@ -6,6 +6,6 @@
         public int Id { get; set; }
         public string Code { get; set; }
         public int IdProduct { get; set; }
-        public Product Product { get; set; }        
+        public Product Product { get; set; }
     }
 }
