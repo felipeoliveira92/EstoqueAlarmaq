@@ -3,10 +3,11 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace EstoqueAlarmaq.Desktop
 {
-    public partial class FormHome : Form
+    public partial class FormHome : MaterialForm
     {
         public FormHome()
         {

@@ -118,17 +118,16 @@
             this.dataGridOrders.Location = new System.Drawing.Point(6, 192);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.RowTemplate.Height = 25;
-            this.dataGridOrders.Size = new System.Drawing.Size(830, 364);
+            this.dataGridOrders.Size = new System.Drawing.Size(830, 311);
             this.dataGridOrders.TabIndex = 14;
             this.dataGridOrders.DoubleClick += new System.EventHandler(this.dataGridOrders_DoubleClick_1);
             // 
             // panelMDI
             // 
             this.panelMDI.Controls.Add(this.dataGridOrders);
-            this.panelMDI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMDI.Location = new System.Drawing.Point(172, 0);
+            this.panelMDI.Location = new System.Drawing.Point(172, 65);
             this.panelMDI.Name = "panelMDI";
-            this.panelMDI.Size = new System.Drawing.Size(1045, 568);
+            this.panelMDI.Size = new System.Drawing.Size(1045, 503);
             this.panelMDI.TabIndex = 15;
             this.panelMDI.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMDI_Paint);
             // 
