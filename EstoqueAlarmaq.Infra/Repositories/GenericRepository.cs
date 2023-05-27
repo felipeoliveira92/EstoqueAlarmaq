@@ -1,4 +1,5 @@
 ﻿using EstoqueAlarmaq.Infra.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,43 +8,62 @@ using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Infra.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity>
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly DataContext _context;
+        private readonly DbSet<T> _dbSet;
 
         public GenericRepository(DataContext dataContext)
         {
             _context = dataContext;
+            _dbSet = _context.Set<T>();
         }
 
-        public bool Create(TEntity entity)
+        public bool Create(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
+            return true;
+        }
+
+        public bool CreateRange(IEnumerable<T> entities)
+        {
+            _dbSet.AddRange(entities);
+            return true;
+        }        
+
+        public IEnumerable<T> FindAll()
+        {
+            return _dbSet.ToList();
+        }
+
+        public T FindById(Guid id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public bool Update(T entity)
+        {
+            _dbSet.Update(entity);
+            _context.SaveChanges();
+            return true;
         }
 
         public bool Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = FindById(id);
+            _dbSet.Remove(entity);
+            return true;
+        }
+
+        public bool DeleteRange(IEnumerable<T> entities)
+        {
+            _dbSet.RemoveRange(entities);
+            return true;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<TEntity> FindAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public TEntity FindById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(TEntity entity)
-        {
-            throw new NotImplementedException();
+            _context.Dispose();            
         }
     }
 }

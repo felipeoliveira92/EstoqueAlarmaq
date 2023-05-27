@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace EstoqueAlarmaq.Infra.Repositories
 {
-    public interface IGenericRepository<TEntity> : IDisposable
+    public interface IGenericRepository<T> : IDisposable
     {
-        IQueryable<TEntity> FindAll();
-        TEntity FindById(Guid id);
-        bool Create(TEntity entity);
-        bool Update(TEntity entity);
+        bool Create(T entity);
+        bool CreateRange(IEnumerable<T> entities);
+        IEnumerable<T> FindAll();
+        T FindById(Guid id);        
+        bool Update(T entity);
         bool Delete(Guid id);
+        bool DeleteRange(IEnumerable<T> entities);
     }
 }
