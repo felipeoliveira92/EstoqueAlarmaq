@@ -23,8 +23,8 @@ namespace EstoqueAlarmaq.Services.Repositories
 
         public void Insert(User user)
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            //_context.Users.Add(user);
+            //_context.SaveChanges();
         }
 
         public User New()
@@ -35,13 +35,15 @@ namespace EstoqueAlarmaq.Services.Repositories
 
         public User Select(int id)
         {
-            return _context.Users.FirstOrDefault(u => u.Id == id);
+            //return _context.Users.FirstOrDefault(u => u.Id == id);
+            return null;
 
         }
 
         public IEnumerable<User> SelectAll()
         {
-            return _context.Users.ToList();
+            //return _context.Users.ToList();
+            return null;
         }
 
         public void Update(int id, User user)

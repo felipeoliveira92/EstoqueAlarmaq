@@ -2085,28 +2085,24 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "EstoqueAlarmaq.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/EstoqueAlarmaq.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EstoqueAlarmaq.Domain.dll": {}
-        }
-      },
       "EstoqueAlarmaq.Infra/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "EstoqueAlarmaq.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/EstoqueAlarmaq.Infra.dll": {}
         },
         "runtime": {
           "bin/placeholder/EstoqueAlarmaq.Infra.dll": {}
+        }
+      },
+      "EstoqueAlarmaq.Services/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EstoqueAlarmaq.Services.dll": {}
         }
       }
     }
@@ -7344,20 +7340,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "EstoqueAlarmaq.Domain/1.0.0": {
-      "type": "project",
-      "path": "../EstoqueAlarmaq.Domain/EstoqueAlarmaq.Domain.csproj",
-      "msbuildProject": "../EstoqueAlarmaq.Domain/EstoqueAlarmaq.Domain.csproj"
-    },
     "EstoqueAlarmaq.Infra/1.0.0": {
       "type": "project",
       "path": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj",
       "msbuildProject": "../EstoqueAlarmaq.Infra/EstoqueAlarmaq.Infra.csproj"
+    },
+    "EstoqueAlarmaq.Services/1.0.0": {
+      "type": "project",
+      "path": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj",
+      "msbuildProject": "../EstoqueAlarmaq.Services/EstoqueAlarmaq.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "EstoqueAlarmaq.Infra >= 1.0.0",
+      "EstoqueAlarmaq.Services >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
@@ -7365,25 +7362,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrador\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Felipe\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
+      "projectUniqueName": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
       "projectName": "EstoqueAlarmaq.Api",
-      "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
-      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\obj\\",
+      "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
+      "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
+      "outputPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7396,8 +7396,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
-              "projectPath": "F:\\Documents\\dotnet\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
+            "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
+              "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj"
+            },
+            "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj": {
+              "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj"
             }
           }
         }
@@ -7449,8 +7452,28 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "O projeto EstoqueAlarmaq.Services não é compatível com net5.0 (.NETCoreApp,Version=v5.0). O projeto EstoqueAlarmaq.Services dá suporte a: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "EstoqueAlarmaq.Services",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "O projeto EstoqueAlarmaq.Infra não é compatível com net5.0 (.NETCoreApp,Version=v5.0). O projeto EstoqueAlarmaq.Infra dá suporte a: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "EstoqueAlarmaq.Infra",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

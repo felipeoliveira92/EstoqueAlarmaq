@@ -1,4 +1,5 @@
 using EstoqueAlarmaq.Infra.Data;
+using EstoqueAlarmaq.Services.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,7 @@ namespace EstoqueAlarmaq.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<DataContext, DataContext>();
-
+            services.AddScoped<ProductsRepository, ProductsRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -34,125 +34,80 @@
             this.btnUsers = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
             this.panelMDI = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridProducts = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
+            this.panelMDI.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProducts
             // 
-            this.btnProducts.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnProducts.Location = new System.Drawing.Point(0, 208);
+            this.btnProducts.Location = new System.Drawing.Point(0, 132);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(263, 63);
-            this.btnProducts.TabIndex = 18;
+            this.btnProducts.Size = new System.Drawing.Size(172, 44);
+            this.btnProducts.TabIndex = 3;
             this.btnProducts.Text = "Produtos";
-            this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.UseVisualStyleBackColor = true;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnClients
             // 
-            this.btnClients.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnClients.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClients.Location = new System.Drawing.Point(0, 145);
+            this.btnClients.Location = new System.Drawing.Point(0, 44);
             this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(263, 63);
+            this.btnClients.Size = new System.Drawing.Size(172, 44);
             this.btnClients.TabIndex = 1;
             this.btnClients.Text = "Clientes";
-            this.btnClients.UseVisualStyleBackColor = false;
+            this.btnClients.UseVisualStyleBackColor = true;
             this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnOrderServices
             // 
-            this.btnOrderServices.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnOrderServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderServices.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOrderServices.Location = new System.Drawing.Point(45, 424);
+            this.btnOrderServices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrderServices.Location = new System.Drawing.Point(0, 0);
             this.btnOrderServices.Name = "btnOrderServices";
-            this.btnOrderServices.Size = new System.Drawing.Size(173, 44);
-            this.btnOrderServices.TabIndex = 20;
+            this.btnOrderServices.Size = new System.Drawing.Size(172, 44);
+            this.btnOrderServices.TabIndex = 0;
             this.btnOrderServices.Text = "Ordens Serviços";
-            this.btnOrderServices.UseVisualStyleBackColor = false;
+            this.btnOrderServices.UseVisualStyleBackColor = true;
             this.btnOrderServices.Click += new System.EventHandler(this.btnOrderServices_Click);
             // 
             // btnUsers
             // 
-            this.btnUsers.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUsers.Location = new System.Drawing.Point(0, 334);
+            this.btnUsers.Location = new System.Drawing.Point(0, 88);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(263, 63);
+            this.btnUsers.Size = new System.Drawing.Size(172, 44);
             this.btnUsers.TabIndex = 2;
             this.btnUsers.Text = "Usuarios";
-            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnProducts);
+            this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.btnClients);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnOrderServices);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(263, 714);
+            this.panel1.Size = new System.Drawing.Size(172, 568);
             this.panel1.TabIndex = 13;
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.Location = new System.Drawing.Point(0, 271);
+            this.btnHome.Location = new System.Drawing.Point(0, 176);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(263, 63);
-            this.btnHome.TabIndex = 20;
+            this.btnHome.Size = new System.Drawing.Size(172, 44);
+            this.btnHome.TabIndex = 13;
             this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(263, 145);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::EstoqueAlarmaq.Desktop.Properties.Resources.logoAlarmaq_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridOrders
             // 
@@ -160,73 +115,27 @@
             this.dataGridOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrders.Location = new System.Drawing.Point(3, 28);
+            this.dataGridOrders.Location = new System.Drawing.Point(6, 192);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.RowTemplate.Height = 25;
-            this.dataGridOrders.Size = new System.Drawing.Size(954, 232);
+            this.dataGridOrders.Size = new System.Drawing.Size(830, 311);
             this.dataGridOrders.TabIndex = 14;
             this.dataGridOrders.DoubleClick += new System.EventHandler(this.dataGridOrders_DoubleClick_1);
             // 
             // panelMDI
             // 
-            this.panelMDI.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelMDI.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMDI.Location = new System.Drawing.Point(263, 0);
+            this.panelMDI.Controls.Add(this.dataGridOrders);
+            this.panelMDI.Location = new System.Drawing.Point(172, 65);
             this.panelMDI.Name = "panelMDI";
-            this.panelMDI.Size = new System.Drawing.Size(954, 145);
+            this.panelMDI.Size = new System.Drawing.Size(1045, 503);
             this.panelMDI.TabIndex = 15;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.dataGridProducts);
-            this.panel3.Controls.Add(this.dataGridOrders);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(263, 145);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(954, 569);
-            this.panel3.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 281);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 25);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Produtos com baixo estoque";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 25);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Ordens de Serviços recentes";
-            // 
-            // dataGridProducts
-            // 
-            this.dataGridProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(0, 309);
-            this.dataGridProducts.Name = "dataGridProducts";
-            this.dataGridProducts.RowTemplate.Height = 25;
-            this.dataGridProducts.Size = new System.Drawing.Size(954, 224);
-            this.dataGridProducts.TabIndex = 15;
+            this.panelMDI.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMDI_Paint);
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 714);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1217, 568);
             this.Controls.Add(this.panelMDI);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1680, 1010);
@@ -237,32 +146,21 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
+            this.panelMDI.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        
+        private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnOrderServices;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridOrders;
         private System.Windows.Forms.Panel panelMDI;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridProducts;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

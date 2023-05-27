@@ -19,7 +19,7 @@ namespace EstoqueAlarmaq.Desktop.Properties {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace EstoqueAlarmaq.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icon__Moradores__Oficial {
+        internal static System.Drawing.Bitmap OEstoque_logo {
             get {
-                object obj = ResourceManager.GetObject("Icon (Moradores) Oficial", resourceCulture);
+                object obj = ResourceManager.GetObject("OEstoque-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace EstoqueAlarmaq.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoAlarmaq_removebg_preview {
+        internal static System.Drawing.Bitmap OEstoque_logo1 {
             get {
-                object obj = ResourceManager.GetObject("logoAlarmaq-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("OEstoque-logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_06_22_at_23_10_19 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-06-22 at 23.10.19", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

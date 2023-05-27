@@ -41,28 +41,28 @@ namespace EstoqueAlarmaq.Desktop
                 {
                     try
                     {
-                        user.Name = name;
-                        user.Password = password;
-                        user.Type = type;
+                        //user.Name = name;
+                        //user.Password = password;
+                        //user.Type = type;
 
-                        if (btnSave.Text == "Editar")
-                        {
-                            _context.Users.Update(user);
-                            _context.SaveChanges();
+                        //if (btnSave.Text == "Editar")
+                        //{
+                        //    _context.Users.Update(user);
+                        //    _context.SaveChanges();
 
-                            user = new User();
+                        //    user = new User();
 
-                            MessageBox.Show("Usuario alterado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            _context.Users.Add(user);
-                            _context.SaveChanges();
+                        //    MessageBox.Show("Usuario alterado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
+                        //else
+                        //{
+                        //    _context.Users.Add(user);
+                        //    _context.SaveChanges();
 
-                            user = new User();
+                        //    user = new User();
 
-                            MessageBox.Show("Usuario cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        //    MessageBox.Show("Usuario cadastrado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
 
                         CleanForm();
                     }
@@ -95,26 +95,26 @@ namespace EstoqueAlarmaq.Desktop
 
         private void refreshDataGrid()
         {
-            dataGridProducts.DataSource = _context.Users.ToList();
+            gridUsers.DataSource = _context.Users.ToList();
         }
 
         private void dataGridProducts_DoubleClick(object sender, EventArgs e)
         {
-            var userClicked = dataGridProducts.CurrentRow.Cells[0].Value;
-            var user = _context.Users.First(u => u.Id == Convert.ToInt32(userClicked));
+            //var userClicked = dataGridProducts.CurrentRow.Cells[0].Value;
+            //var user = _context.Users.First(u => u.Id == Convert.ToInt32(userClicked));
 
-            if (user != null)
-            {
-                this.user = user;
+            //if (user != null)
+            //{
+            //    this.user = user;
 
-                txtName.Text = user.Name;
-                txtPassword.Text = user.Password;
-                txtConfirm.Text = user.Password;
-                cbType.Text = user.Type;
+            //    txtName.Text = user.Name;
+            //    txtPassword.Text = user.Password;
+            //    txtConfirm.Text = user.Password;
+            //    cbType.Text = user.Type;
 
-                btnSave.Text = "Editar";
-                btnDelete.Visible = true;
-            }
+            //    btnSave.Text = "Editar";
+            //    btnDelete.Visible = true;
+            //}
         }
     }
 }

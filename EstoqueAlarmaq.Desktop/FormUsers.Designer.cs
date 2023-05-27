@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dataGridProducts = new System.Windows.Forms.DataGridView();
+            this.gridUsers = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -52,20 +52,19 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Visible = false;
             // 
-            // dataGridProducts
+            // gridUsers
             // 
-            this.dataGridProducts.AllowUserToAddRows = false;
-            this.dataGridProducts.AllowUserToDeleteRows = false;
-            this.dataGridProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(279, 50);
-            this.dataGridProducts.Name = "dataGridProducts";
-            this.dataGridProducts.ReadOnly = true;
-            this.dataGridProducts.RowHeadersVisible = false;
-            this.dataGridProducts.RowTemplate.Height = 25;
-            this.dataGridProducts.Size = new System.Drawing.Size(509, 201);
-            this.dataGridProducts.TabIndex = 21;
-            this.dataGridProducts.DoubleClick += new System.EventHandler(this.dataGridProducts_DoubleClick);
+            this.gridUsers.AllowUserToAddRows = false;
+            this.gridUsers.AllowUserToDeleteRows = false;
+            this.gridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUsers.Location = new System.Drawing.Point(279, 50);
+            this.gridUsers.Name = "gridUsers";
+            this.gridUsers.ReadOnly = true;
+            this.gridUsers.RowHeadersVisible = false;
+            this.gridUsers.RowTemplate.Height = 25;
+            this.gridUsers.Size = new System.Drawing.Size(509, 201);
+            this.gridUsers.TabIndex = 21;
             // 
             // btnSave
             // 
@@ -108,7 +107,6 @@
             // 
             this.txtConfirm.Location = new System.Drawing.Point(94, 134);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.PasswordChar = '#';
             this.txtConfirm.Size = new System.Drawing.Size(168, 23);
             this.txtConfirm.TabIndex = 2;
             // 
@@ -116,7 +114,6 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(87, 102);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 1;
             // 
@@ -155,11 +152,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 311);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.dataGridProducts);
+            this.Controls.Add(this.gridUsers);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,9 +165,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
             this.Name = "FormUsers";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
+            this.Text = "FormUsers";
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +175,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dataGridProducts;
+        private System.Windows.Forms.DataGridView gridUsers;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

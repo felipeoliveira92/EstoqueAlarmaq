@@ -10,20 +10,24 @@ namespace EstoqueAlarmaq.Services.Repositories
     {
         private readonly DataContext _context;
 
-        public ProductsRepository(DataContext context)
+        public ProductsRepository()
         {
-            _context = context;
+            _context = null;
         }
 
         public Product New()
         {
             return new Product();
         }
+
         public void Delete(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Id == id);
-            _context.Products.Remove(product);
-            _context.SaveChanges();
+            if(id != 0)
+            {
+                var product = _context.Products.Find(id);
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+            }            
         }
 
         public void Insert(Product product)

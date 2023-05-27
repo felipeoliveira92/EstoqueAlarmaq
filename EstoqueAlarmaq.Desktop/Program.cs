@@ -1,3 +1,4 @@
+
 using EstoqueAlarmaq.Infra.Data;
 using EstoqueAlarmaq.Services.Repositories;
 using System;
@@ -17,9 +18,13 @@ namespace EstoqueAlarmaq.Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DataContext context = new DataContext();
-            ProductsRepository productsRepository = new ProductsRepository(context);
-            Application.Run(new FormHome(context));
+
+            //DataContext context = new DataContext();
+            //ProductsRepository productsRepository = new ProductsRepository(context);
+            //Application.Run(new FormHome(context));
+
+            Application.Run(new FormLogin());
+
         }
     }
 }
