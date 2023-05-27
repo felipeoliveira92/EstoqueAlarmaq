@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vs/VzFfjblbLTdwg1xgG1XfClPKZknx6EoWgLqup9cWfyAMB/CkXpKXVfAFqKPfqD1CmzzTiD/RWLhUiru8ByQ==",
+  "dgSpecHash": "T/bgik9d0fDb8egSd7R9sMzDn0GYehOHa0rEOZfyr+/LhDu/aurl3x2qN5SAfGWps/zWiqzkcSR0a0zBNRiSAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj",
+  "projectFilePath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Services\\EstoqueAlarmaq.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

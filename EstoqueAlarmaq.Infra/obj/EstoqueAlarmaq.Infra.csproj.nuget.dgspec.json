@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {}
+    "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj": {
+    "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
+        "projectUniqueName": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
         "projectName": "EstoqueAlarmaq.Domain",
-        "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
+        "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj",
         "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\obj\\",
+        "outputPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -60,18 +60,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
+    "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
+        "projectUniqueName": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
         "projectName": "EstoqueAlarmaq.Infra",
-        "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
+        "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
         "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\obj\\",
+        "outputPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -94,8 +94,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj": {
-                "projectPath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj"
+              "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj": {
+                "projectPath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Domain\\EstoqueAlarmaq.Domain.csproj"
               }
             }
           }
@@ -142,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
         }
       }
     }

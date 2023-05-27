@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0Xgcl3vlscK0rO3/OYclVYOJKLJfp4rMp4kRIw3FCIs6d3l4aepmRx4jIuIsFtNVkqkmVQvobU+J/qQ5GvGVKA==",
+  "dgSpecHash": "kITUQWqtvKwjedE94787ZFhLzjEQ6DidRK5Jt7X62Jmc+2RhOa5fRNPjOrGw/lFMWTnG2wd4vlU6YTDMGQJGfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj",
+  "projectFilePath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Desktop\\EstoqueAlarmaq.Desktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\itextsharp\\5.5.13.2\\itextsharp.5.5.13.2.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6T/wRmRrraiCqrm951swIYDXchtT51We63xAZBW8INdepk9AVtykOVBJrqu0gOetHTCQWGNdYRwIVDp7R6qQtw==",
+  "dgSpecHash": "wYHQeh5YXEKvkH/ecbJik1M+HWkkrOQ7V4/Q6sEfN0WpbLYEklcEs+UJhjNgCwVOHTgGlsFk9JaS9xxVOVHUcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
+  "projectFilePath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Infra\\EstoqueAlarmaq.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

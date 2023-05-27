@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XpcrUXl35DTgUuV5+e/oyvGgYrfVJoqhOa82ow+EhJcDouzp2VIOQhoRh7ngbmIry6zbdWfpZnHqoeEZK+XzUw==",
+  "dgSpecHash": "xhUGVvRDd1nRsng0ScS2lagTzkiUvjOKatErpFh8iF0rEqEcHek6NFWmSISve/ApYUdZOmWg+WjYTtUf/p53VQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felipe\\Documents\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
+  "projectFilePath": "D:\\Documentos\\Projetos\\EstoqueAlarmaq\\EstoqueAlarmaq.Api\\EstoqueAlarmaq.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

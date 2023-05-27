@@ -4,15 +4,8 @@ using Microsoft.EntityFrameworkCore;
 namespace EstoqueAlarmaq.Infra.Data
 {
     public class DataContext : DbContext
-    {
-        public DataContext()
-        {
-
-        }
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
-        {
-
-        }
+    {  
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductObject> ProductsObjects { get; set; }
         public DbSet<Client> Clients { get; set; }
@@ -21,10 +14,10 @@ namespace EstoqueAlarmaq.Infra.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var home = "Integrated Security=SSPI;Persist Security Info=False;" +
-                "User ID=sa;Initial Catalog=dbEstoque;Data Source=DESKTOP-FELIPE";
+            //var home = "Integrated Security=SSPI;Persist Security Info=False;" +
+            //    "User ID=sa;Initial Catalog=dbEstoque;Data Source=DESKTOP-FELIPE";
 
-            optionsBuilder.UseSqlServer(home);
+            //optionsBuilder.UseSqlServer(home);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
