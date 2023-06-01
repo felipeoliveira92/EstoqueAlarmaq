@@ -1,4 +1,5 @@
 ﻿using EstoqueAlarmaq.Infra.Data;
+using EstoqueAlarmaq.Infra.Interfaces.Generic;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueAlarmaq.Infra.Repositories
+namespace EstoqueAlarmaq.Infra.Repositories.Generic
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -29,7 +30,7 @@ namespace EstoqueAlarmaq.Infra.Repositories
         {
             _dbSet.AddRange(entities);
             return true;
-        }        
+        }
 
         public IEnumerable<T> FindAll()
         {
@@ -63,7 +64,7 @@ namespace EstoqueAlarmaq.Infra.Repositories
 
         public void Dispose()
         {
-            _context.Dispose();            
+            _context.Dispose();
         }
     }
 }

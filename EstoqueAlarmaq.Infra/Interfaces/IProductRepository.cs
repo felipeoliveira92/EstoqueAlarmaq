@@ -1,5 +1,5 @@
 ﻿using EstoqueAlarmaq.Domain;
-using EstoqueAlarmaq.Infra.Repositories;
+using EstoqueAlarmaq.Infra.Interfaces.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;

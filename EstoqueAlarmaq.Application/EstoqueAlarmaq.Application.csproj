@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\EstoqueAlarmaq.Infra\EstoqueAlarmaq.Infra.csproj" />
   </ItemGroup>
 
 </Project>

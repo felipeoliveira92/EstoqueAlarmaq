@@ -1,4 +1,7 @@
+using EstoqueAlarmaq.Application.Interfaces;
+using EstoqueAlarmaq.Application.Repositories;
 using EstoqueAlarmaq.Infra.Data;
+using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Interfaces;
 using EstoqueAlarmaq.Infra.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -17,6 +20,8 @@ builder.Services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connectionStr
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
 //builder.Services.AddScoped<IDataContext, DataContext>();
+builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
+builder.Services.AddScoped<IProductApplication, ProductApplication>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 //builder.Services.AddAuthentication(options =>

@@ -1,4 +1,5 @@
-﻿using EstoqueAlarmaq.Infra.Interfaces;
+﻿using EstoqueAlarmaq.Application.Interfaces;
+using EstoqueAlarmaq.Infra.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,9 +7,9 @@ namespace OEstoque.Web.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IProductApplication _productRepository;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductApplication productRepository)
         {
             _productRepository = productRepository;
         }
