@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EstoqueAlarmaq.Infra.Identity
@@ -20,6 +16,11 @@ namespace EstoqueAlarmaq.Infra.Identity
             var result = await _signInManager.PasswordSignInAsync(email, password, rememberMe, lockoutOnFailure);
 
             return result;
+        }
+
+        public async Task Logout()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }

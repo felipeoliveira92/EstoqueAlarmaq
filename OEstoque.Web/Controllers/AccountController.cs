@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EstoqueAlarmaq.Infra.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OEstoque.Web.Models;
 
@@ -8,11 +9,13 @@ namespace OEstoque.Web.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IIdentityRepository _identityRepository;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IIdentityRepository identityRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _identityRepository = identityRepository;
         }
 
         [HttpGet]
@@ -54,15 +57,12 @@ namespace OEstoque.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var result = await _identityRepository.Login(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
                 if (result.Succeeded)
-                {
                     return RedirectToAction("Index", "Home");
-                }
                 else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                }
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");                
             }
             return View(model);
         }
@@ -70,7 +70,7 @@ namespace OEstoque.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+            await _identityRepository.Logout();
             return RedirectToAction("Index", "Home");
         }
     }

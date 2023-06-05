@@ -6,5 +6,6 @@ namespace EstoqueAlarmaq.Infra.Identity
     public interface IIdentityRepository
     {
         Task<SignInResult> Login(string email, string password, bool rememberMe, bool lockoutOnFailure);
+        Task Logout();
     }
 }

@@ -23,6 +23,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
 builder.Services.AddScoped<IProductApplication, ProductApplication>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
 
 //builder.Services.AddAuthentication(options =>
 //{
@@ -37,6 +38,12 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 //    options.ExpireTimeSpan = TimeSpan.FromDays(30); // Definir a duração do cookie de autenticação
 //    options.SlidingExpiration = true;
 //});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin"));
+});
 
 var app = builder.Build();
 
