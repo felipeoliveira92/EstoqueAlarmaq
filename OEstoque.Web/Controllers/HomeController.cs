@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using EstoqueAlarmaq.Services.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OEstoque.Web.Models;
 using System.Diagnostics;
@@ -14,8 +15,9 @@ namespace OEstoque.Web.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            string dollar = await DollarExchangeApi.GetDollarToday();
             return View();
         }
 

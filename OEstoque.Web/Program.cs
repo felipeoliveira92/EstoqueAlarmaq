@@ -18,12 +18,29 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetSection("ConnectionStrings:DefaultConnection");
 builder.Services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connectionString.Value));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
-//builder.Services.AddScoped<IDataContext, DataContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = true; //false
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+"; //idem
+    options.Password.RequireNonAlphanumeric = false; //true
+    options.Password.RequireUppercase = false; //true;
+    options.Password.RequireLowercase = false; //true;
+    options.Password.RequireDigit = false; //true;
+    options.Password.RequiredUniqueChars = 1; //1;
+    options.Password.RequiredLength = 6; //6;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3); //5
+    options.Lockout.MaxFailedAccessAttempts = 5; //5
+    options.Lockout.AllowedForNewUsers = true; //true		
+    options.SignIn.RequireConfirmedEmail = true; //false
+    options.SignIn.RequireConfirmedPhoneNumber = false; //false
+    options.SignIn.RequireConfirmedAccount = false; //false
+})
+.AddEntityFrameworkStores<DataContext>()
+.AddDefaultTokenProviders();
+
 builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
 builder.Services.AddScoped<IProductApplication, ProductApplication>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
 
 //builder.Services.AddAuthentication(options =>
 //{
@@ -38,6 +55,18 @@ builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
 //    options.ExpireTimeSpan = TimeSpan.FromDays(30); // Definir a duração do cookie de autenticação
 //    options.SlidingExpiration = true;
 //});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "OEstoque"; //AspNetCore.Cookies
+    options.Cookie.HttpOnly = true; //true
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5); //14 dias
+    options.LoginPath = "/Account/Login"; // /Account/Login
+    options.LogoutPath = "/Account/Logout";  // /Account/Logout
+    options.AccessDeniedPath = "/Account/AccessDenied"; // /Account/AccessDenied
+    options.SlidingExpiration = true; //true - gera um novo cookie a cada requisição se o cookie estiver com menos de meia vida
+    options.ReturnUrlParameter = "returnUrl"; //returnUrl
+});
 
 builder.Services.AddAuthorization(options =>
 {
@@ -60,6 +89,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+await CreateRolesAsync(app);
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -69,5 +100,14 @@ app.MapControllerRoute(
 
 app.Run();
 
+async Task CreateRolesAsync(WebApplication app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using(var scope = scopedFactory.CreateScope())
+    {
+
+    }
+}
 
 

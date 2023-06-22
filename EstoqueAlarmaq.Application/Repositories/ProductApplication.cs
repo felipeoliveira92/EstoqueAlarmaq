@@ -1,5 +1,6 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
 using EstoqueAlarmaq.Application.ViewModels;
+using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace EstoqueAlarmaq.Application.Repositories
         public ProductApplication(IProductRepository productRepository)
         {
             _productRepository = productRepository;
-        }
+        }        
 
         public IEnumerable<ProductViewModel> FindAll()
         {
@@ -33,6 +34,19 @@ namespace EstoqueAlarmaq.Application.Repositories
             }
 
             return productsViewModel;
+        }
+
+        public bool Create(ProductViewModel model)
+        {
+            var product = new Product
+            {
+                Name = model.Name,
+                Description = "Description",
+                Amount = model.Amount,
+                PhotoLocation = "c:///"
+            };
+
+            return _productRepository.Create(product);
         }
     }
 }

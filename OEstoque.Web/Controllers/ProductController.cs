@@ -1,10 +1,16 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
+using EstoqueAlarmaq.Application.ViewModels;
 using EstoqueAlarmaq.Infra.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using EstoqueAlarmaq.Services.Repositories;
+using EstoqueAlarmaq.Services.DTOs;
+using EstoqueAlarmaq.Services.DTOs.SendMail;
 
 namespace OEstoque.Web.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly IProductApplication _productRepository;
@@ -36,11 +42,19 @@ namespace OEstoque.Web.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ProductViewModel model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    if(_productRepository.Create(model))
+                        return RedirectToAction(nameof(Index));
+                    else
+                        return View(model);
+                }
+                else
+                    return View(model);                
             }
             catch
             {

@@ -3,23 +3,32 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <ul class="nav-item">
-        <form method="post" asp-controller="Account" asp-action="Logout">
-            <button type="submit" style="width:auto;" class="nav-link btn btn-link py-0">
-                Logout @User.Identity.Name
-            </button>
-        </form>
-    </ul>
+    <li class="nav-item dropdown align-content-end">
+        <a class="nav-link dropdown-toggle text-info" href="#" role="button" data-bs-toggle="dropdown">
+            Olá, <b>@User.Identity.Name</b>!
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+                <a class="dropdown-item" asp-controller="Account" asp-action="AlterarSenha" classes-if-active="disabled">
+                    Alterar Senha
+                </a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li>
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" style="width:auto;" class="nav-link btn btn-link py-0">
+                        Sair
+                    </button>
+                </form>
+                @*<a class="dropdown-item" asp-controller="Account" asp-action="Logout">Sair</a>*@
+            </li>
+        </ul>
+    </li>
 }
-else{
-    <ul class="nav-item">
-        <a class="nav-link" asp-controller="Account" asp-action="Register">
-            Registrar-se
-        </a>
-    </ul>
-    <ul class="nav-item">
-        <a class="nav-link" asp-controller="Account" asp-action="Login">
-            Login
-        </a>
-    </ul>
+else
+{
+    <a class="nav-link pe-0" asp-controller="Account" asp-action="Register">Registrar-se</a>
+    <a class="nav-link pe-0" asp-controller="Account" asp-action="Login">Entrar</a>
 }
