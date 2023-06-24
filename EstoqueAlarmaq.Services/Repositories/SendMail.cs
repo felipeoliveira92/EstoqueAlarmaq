@@ -17,9 +17,9 @@ namespace EstoqueAlarmaq.Services.Repositories
             this.SmtpClient = new SmtpClient();
         }
 
-        public void BuildMessage(BuildMessageInputModel inputModel)
+        public void BuildMessage(BuildMessageMailInputModel inputModel)
         {
-            this.Message.From.Add(new MailboxAddress(inputModel.NameFrom, inputModel.MailFrom));
+            this.Message.From.Add(new MailboxAddress("OEstoque", "teste@mmdata.com.br"));
             this.Message.To.Add(new MailboxAddress(inputModel.NameTo, inputModel.MailTo));
             this.Message.Subject = inputModel.Subject;
 

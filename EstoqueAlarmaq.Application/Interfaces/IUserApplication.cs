@@ -2,14 +2,15 @@
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 
-namespace EstoqueAlarmaq.Infra.Identity
+namespace EstoqueAlarmaq.Application.Interfaces
 {
-    public interface IIdentityRepository
+    public interface IUserApplication
     {
         Task<SignInResult> Login(string email, string password, bool rememberMe, bool lockoutOnFailure);
         Task Logout();
-        Task<string> GenerateTokenByUserAsync(UserModel user);
+        void GenerateConfirmationEmail(UserModel user, string urlConfirmation);
         Task<bool> IsEmailConfirmedAsync(UserModel user);
         Task<UserModel> FindUserByEmailAsync(string email);
+        Task<string> GenerateTokenByUserAsync(UserModel user);
     }
 }

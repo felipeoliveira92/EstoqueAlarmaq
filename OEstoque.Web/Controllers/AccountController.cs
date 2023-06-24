@@ -1,12 +1,8 @@
-﻿using EstoqueAlarmaq.Domain;
-using EstoqueAlarmaq.Infra.Identity;
-using EstoqueAlarmaq.Services.DTOs.SendMail;
-using EstoqueAlarmaq.Services.Repositories;
+﻿using EstoqueAlarmaq.Application.Interfaces;
+using EstoqueAlarmaq.Infra.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Common;
 using OEstoque.Web.Models;
-using System.Text;
 
 namespace OEstoque.Web.Controllers
 {
@@ -14,16 +10,16 @@ namespace OEstoque.Web.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly IIdentityRepository _identityRepository;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUserApplication _userRepository;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, 
-            IIdentityRepository identityRepository, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager, IUserApplication userRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _identityRepository = identityRepository;
             _roleManager = roleManager;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
@@ -37,7 +33,8 @@ namespace OEstoque.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser {                    
+                var user = new UserModel {
+                    Name = model.Name,
                     UserName = model.Email, 
                     Email = model.Email 
                 };
@@ -75,6 +72,9 @@ namespace OEstoque.Web.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (_signInManager.IsSignedIn(User))
+                return RedirectToAction("Index", "Home");
+
             return View();
         }
 
@@ -83,27 +83,28 @@ namespace OEstoque.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(model.Email);
-                if (!_userManager.IsEmailConfirmedAsync(user).Result)
+                var user = await _userRepository.FindUserByEmailAsync(model.Email);
+                if (!await _userRepository.IsEmailConfirmedAsync(user))
                 {
-                    ModelState.AddModelError(string.Empty, "Email ainda não confirmado");
+                    ModelState.AddModelError(string.Empty, "Email ainda não confirmado!");
                     return View(model);
                 }
 
-                var result = await _identityRepository.Login(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);                
+                var result = await _userRepository.Login(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);                
 
                 if (result.Succeeded)
                     return RedirectToAction("Index", "Home");
                 else
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");                
+                    ModelState.AddModelError(string.Empty, "Tentativa de login inválida.");                
             }
+
             return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await _identityRepository.Logout();
+            await _userRepository.Logout();
             return RedirectToAction("Index", "Home");
         }
 
@@ -114,16 +115,12 @@ namespace OEstoque.Web.Controllers
             return View();
         }
         
-        private async Task GenerateConfirmEmail(IdentityUser user)
+        private async Task GenerateConfirmEmail(UserModel user)
         {
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var urlConfirmacao = Url.Action("ConfirmEmail",
-                "Account", new { mail = user.Email, token }, Request.Scheme);
-            var mensagem = new StringBuilder();
-            mensagem.Append($"<p>Olá, {user.UserName}.</p>");
-            mensagem.Append("<p>Recebemos seu cadastro em nosso sistema. Para concluir o processo de cadastro, clique no link a seguir:</p>");
-            mensagem.Append($"<p><a href='{urlConfirmacao}'>Confirmar Cadastro</a></p>");
-            mensagem.Append("<p>Atenciosamente,<br>Equipe de Suporte</p>");
+            var token = await _userRepository.GenerateTokenByUserAsync(user);
+            var urlConfirmation = Url.Action("ConfirmEmail", "Account", new { mail = user.Email, token }, Request.Scheme);
+
+            _userRepository.GenerateConfirmationEmail(user, urlConfirmation);
         }
 
         [HttpGet]

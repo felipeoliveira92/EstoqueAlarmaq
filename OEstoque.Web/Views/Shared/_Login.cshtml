@@ -1,11 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using EstoqueAlarmaq.Services.Extensions
 @inject SignInManager<IdentityUser> SignInManager
 
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item dropdown align-content-end">
         <a class="nav-link dropdown-toggle text-info" href="#" role="button" data-bs-toggle="dropdown">
-            Olá, <b>@User.Identity.Name</b>!
+            Olá, <b>@User.Identity.Name.FirstWord()</b>!
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>

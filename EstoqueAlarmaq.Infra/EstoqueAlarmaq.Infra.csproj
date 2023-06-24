@@ -22,8 +22,4 @@
     <ProjectReference Include="..\EstoqueAlarmaq.Domain\EstoqueAlarmaq.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

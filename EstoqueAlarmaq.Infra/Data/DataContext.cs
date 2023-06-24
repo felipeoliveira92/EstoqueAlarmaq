@@ -1,11 +1,12 @@
 ﻿using EstoqueAlarmaq.Domain;
+using EstoqueAlarmaq.Infra.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EstoqueAlarmaq.Infra.Data
 {
-    public class DataContext : IdentityDbContext
+    public class DataContext : IdentityDbContext<UserModel>
     {
         public DataContext() { }
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }

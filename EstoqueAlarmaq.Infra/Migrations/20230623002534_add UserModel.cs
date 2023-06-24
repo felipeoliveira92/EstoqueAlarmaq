@@ -5,13 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EstoqueAlarmaq.Infra.Migrations
 {
-    public partial class addIdentity : Migration
+    public partial class addUserModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Users");
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -49,6 +46,53 @@ namespace EstoqueAlarmaq.Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Clients",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Clients", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderServices",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Client = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Tecnico = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    User = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Observation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateCreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderServices", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    PhotoLocation = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -157,6 +201,52 @@ namespace EstoqueAlarmaq.Infra.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ProductsObjects",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IdProduct = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductsObjects", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductsObjects_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderServiceProductObject",
+                columns: table => new
+                {
+                    IdOrderServiceProductObject = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdOrderService = table.Column<int>(type: "int", nullable: false),
+                    OrderServiceId = table.Column<int>(type: "int", nullable: true),
+                    IdProductObject = table.Column<int>(type: "int", nullable: false),
+                    ProductObjectId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderServiceProductObject", x => x.IdOrderServiceProductObject);
+                    table.ForeignKey(
+                        name: "FK_OrderServiceProductObject_OrderServices_OrderServiceId",
+                        column: x => x.OrderServiceId,
+                        principalTable: "OrderServices",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_OrderServiceProductObject_ProductsObjects_ProductObjectId",
+                        column: x => x.ProductObjectId,
+                        principalTable: "ProductsObjects",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -195,6 +285,21 @@ namespace EstoqueAlarmaq.Infra.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderServiceProductObject_OrderServiceId",
+                table: "OrderServiceProductObject",
+                column: "OrderServiceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderServiceProductObject_ProductObjectId",
+                table: "OrderServiceProductObject",
+                column: "ProductObjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductsObjects_ProductId",
+                table: "ProductsObjects",
+                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -215,26 +320,25 @@ namespace EstoqueAlarmaq.Infra.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Clients");
+
+            migrationBuilder.DropTable(
+                name: "OrderServiceProductObject");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.Id);
-                });
+            migrationBuilder.DropTable(
+                name: "OrderServices");
+
+            migrationBuilder.DropTable(
+                name: "ProductsObjects");
+
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }

@@ -1,0 +1,33 @@
+﻿using EstoqueAlarmaq.Infra.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+
+namespace EstoqueAlarmaq.Infra.Identity
+{
+    public class IdentityRepository : IIdentityRepository
+    {
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public IdentityRepository(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        {
+            _signInManager = signInManager;
+            _userManager = userManager;
+        }
+
+        public async Task<SignInResult> Login(string email, string password, bool rememberMe, bool lockoutOnFailure)
+            => await _signInManager.PasswordSignInAsync(email, password, rememberMe, lockoutOnFailure);
+
+        public async Task Logout() 
+            => await _signInManager.SignOutAsync();
+        
+        public async Task<string> GenerateTokenByUserAsync(UserModel user)
+            => await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+        public async Task<bool> IsEmailConfirmedAsync(UserModel user)
+            => await _userManager.IsEmailConfirmedAsync(user);
+
+        public async Task<UserModel> FindUserByEmailAsync(string email)
+            => (UserModel)await _userManager.FindByEmailAsync(email);
+    }
+}

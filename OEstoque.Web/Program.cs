@@ -4,6 +4,8 @@ using EstoqueAlarmaq.Infra.Data;
 using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Interfaces;
 using EstoqueAlarmaq.Infra.Repositories;
+using EstoqueAlarmaq.Services.Interfaces;
+using EstoqueAlarmaq.Services.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
@@ -38,9 +40,12 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 .AddEntityFrameworkStores<DataContext>()
 .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<IIdentityRepository, IdentityRespository>();
+builder.Services.AddScoped<IUserApplication, UserApplication>();
+builder.Services.AddScoped<IIdentityRepository, IdentityRepository>();
 builder.Services.AddScoped<IProductApplication, ProductApplication>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ISendMailApplication, SendMailApplication>();
+builder.Services.AddScoped<ISendMail, SendMail>();
 
 //builder.Services.AddAuthentication(options =>
 //{
@@ -96,7 +101,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EstoqueAlarmaq.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230527155344_addIdentity")]
-    partial class addIdentity
+    [Migration("20230623002534_add UserModel")]
+    partial class addUserModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
