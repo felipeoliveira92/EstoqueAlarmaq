@@ -8,12 +8,12 @@ namespace OEstoque.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<UserModel> _userManager;
+        private readonly SignInManager<UserModel> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserApplication _userRepository;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,
+        public AccountController(UserManager<UserModel> userManager, SignInManager<UserModel> signInManager,
             RoleManager<IdentityRole> roleManager, IUserApplication userRepository)
         {
             _userManager = userManager;

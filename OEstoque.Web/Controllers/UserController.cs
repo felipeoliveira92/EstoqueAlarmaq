@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EstoqueAlarmaq.Infra.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,8 +7,8 @@ namespace OEstoque.Web.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        public UserController(UserManager<IdentityUser> userManager)
+        private readonly UserManager<UserModel> _userManager;
+        public UserController(UserManager<UserModel> userManager)
         {
             _userManager = userManager;
         }

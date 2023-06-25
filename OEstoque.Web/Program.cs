@@ -3,6 +3,7 @@ using EstoqueAlarmaq.Application.Repositories;
 using EstoqueAlarmaq.Infra.Data;
 using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Interfaces;
+using EstoqueAlarmaq.Infra.Models;
 using EstoqueAlarmaq.Infra.Repositories;
 using EstoqueAlarmaq.Services.Interfaces;
 using EstoqueAlarmaq.Services.Repositories;
@@ -20,7 +21,7 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetSection("ConnectionStrings:DefaultConnection");
 builder.Services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connectionString.Value));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+builder.Services.AddIdentity<UserModel, IdentityRole>(options =>
 {
     options.User.RequireUniqueEmail = true; //false
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+"; //idem

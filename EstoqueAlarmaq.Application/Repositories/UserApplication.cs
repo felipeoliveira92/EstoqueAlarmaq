@@ -2,6 +2,7 @@
 using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Models;
 using EstoqueAlarmaq.Services.DTOs.SendMail;
+using EstoqueAlarmaq.Services.Extensions;
 using Microsoft.AspNetCore.Identity;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace EstoqueAlarmaq.Application.Repositories
         public void GenerateConfirmationEmail(UserModel user, string urlConfirmation)
         {
             var emailMessage = new StringBuilder();
-            emailMessage.Append($"<p>Olá, {user.UserName}.</p>");
+            emailMessage.Append($"<p>Olá, {user.Name.FirstWord()}.</p>");
             emailMessage.Append("<p>Recebemos seu cadastro em nosso sistema. Para concluir o processo de cadastro, clique no link a seguir:</p>");
             emailMessage.Append($"<p><a href='{urlConfirmation}'>Confirmar Cadastro</a></p>");
             emailMessage.Append("<p>Atenciosamente,<br>Equipe de Suporte</p>");

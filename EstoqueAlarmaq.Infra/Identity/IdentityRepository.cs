@@ -6,10 +6,10 @@ namespace EstoqueAlarmaq.Infra.Identity
 {
     public class IdentityRepository : IIdentityRepository
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<UserModel> _signInManager;
+        private readonly UserManager<UserModel> _userManager;
 
-        public IdentityRepository(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public IdentityRepository(SignInManager<UserModel> signInManager, UserManager<UserModel> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;

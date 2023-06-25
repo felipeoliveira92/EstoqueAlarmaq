@@ -1,12 +1,14 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using EstoqueAlarmaq.Infra.Models;
+@using Microsoft.AspNetCore.Identity
 @using EstoqueAlarmaq.Services.Extensions
-@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<UserModel> _userManager
 
-@if (SignInManager.IsSignedIn(User))
+@if (Context.User.Identity.IsAuthenticated)
 {
+    var user = await _userManager.GetUserAsync(Context.User);
     <li class="nav-item dropdown align-content-end">
         <a class="nav-link dropdown-toggle text-info" href="#" role="button" data-bs-toggle="dropdown">
-            Olá, <b>@User.Identity.Name.FirstWord()</b>!
+            Olá, <b>@user.Name.FirstWord()</b>!
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
