@@ -15,7 +15,7 @@
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <a class="float-right" href="#">Forgot?</a>
+                        <a class="float-right" asp-controller="Account" asp-action="ForgotPassword">Forgot?</a>
                         <label>Your password</label>
                         <input class="form-control" asp-for="Password" placeholder="******" type="password">
                         <span asp-validation-for="Password" class="text-danger"></span>

@@ -2,6 +2,7 @@
 using EstoqueAlarmaq.Infra.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OEstoque.Web.Models;
 
 namespace OEstoque.Web.Controllers
@@ -136,7 +137,7 @@ namespace OEstoque.Web.Controllers
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -145,5 +146,83 @@ namespace OEstoque.Web.Controllers
 
             return View();
         }
+
+        #region ForgotPassword
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword([FromForm] ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (_userManager.Users.AsNoTracking().Any(u => u.NormalizedEmail == model.Email.ToUpper().Trim()))
+                {
+                    var user = await _userRepository.FindUserByEmailAsync(model.Email);
+                    var token = await _userRepository.GeneratePasswordResetTokenAsync(user);
+                    var urlConfirmation = Url.Action(nameof(ResetPassword), "Account", new { token }, Request.Scheme);
+
+                    _userRepository.GenerateForgotPasswordEmail(user, urlConfirmation);
+
+                    return View(nameof(SentResetPassword));
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, $"Usuário/e-mail <b>{model.Email}</b> não encontrado.");
+                    return View();
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        public IActionResult SentResetPassword()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string token)
+        {
+            var model = new ResetPasswordViewModel
+            {
+                Token = token,
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var usuario = await _userManager.FindByEmailAsync(model.Email);
+                var resultado = await _userManager.ResetPasswordAsync(
+                    usuario, model.Token, model.NewPassword);
+                if (resultado.Succeeded)
+                {
+                    //this.MostrarMensagem(
+                    //   $"Senha redefinida com sucesso! Agora você já pode fazer login com a nova senha.");
+                    return View(nameof(Login));
+                }
+                else
+                {
+                    //this.MostrarMensagem(
+                    //    $"Não foi possível redefinir a senha. Verifique se preencheu a senha corretamente. Se o problema persistir, entre em contato com o suporte.");
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+        #endregion
     }
 }

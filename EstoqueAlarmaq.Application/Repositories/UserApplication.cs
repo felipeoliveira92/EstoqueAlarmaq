@@ -1,9 +1,11 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
+using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Models;
 using EstoqueAlarmaq.Services.DTOs.SendMail;
 using EstoqueAlarmaq.Services.Extensions;
 using Microsoft.AspNetCore.Identity;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,5 +56,28 @@ namespace EstoqueAlarmaq.Application.Repositories
 
         public async Task<string> GenerateTokenByUserAsync(UserModel user)
             => await _identityRepository.GenerateTokenByUserAsync(user);
+
+        public async Task<string> GeneratePasswordResetTokenAsync(UserModel user)
+            => await _identityRepository.GeneratePasswordResetTokenAsync(user);
+
+        public void GenerateForgotPasswordEmail(UserModel user, string urlConfirmation)
+        {
+            var emailMessage = new StringBuilder();
+            emailMessage.Append($"<p>Olá, {user.Name.FirstWord()}.</p>");
+            emailMessage.Append("<p>Houve uma solicitação de redefinição de senha para seu usuário em nosso site. Se não foi você que fez a solicitação, ignore essa mensagem. Caso tenha sido você, clique no link abaixo para criar sua nova senha:</p>");
+            emailMessage.Append($"<p><a href='{urlConfirmation}'>Redefinir Senha</a></p>");
+            emailMessage.Append("<p>Atenciosamente,<br>Equipe de Suporte</p>");
+
+            _sendMailApplication.BuildMessage(new BuildMessageMailInputModel
+            {
+                NameTo = user.Name,
+                MailTo = user.Email,
+                Subject = "Redefinição de senha",
+                BodyMessage = emailMessage.ToString()
+            });
+
+            _sendMailApplication.Send();
+            _sendMailApplication.Disconnect();
+        }
     }
 }

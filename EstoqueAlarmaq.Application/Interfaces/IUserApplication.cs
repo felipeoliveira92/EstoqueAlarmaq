@@ -12,5 +12,7 @@ namespace EstoqueAlarmaq.Application.Interfaces
         Task<bool> IsEmailConfirmedAsync(UserModel user);
         Task<UserModel> FindUserByEmailAsync(string email);
         Task<string> GenerateTokenByUserAsync(UserModel user);
+        Task<string> GeneratePasswordResetTokenAsync(UserModel user);
+        void GenerateForgotPasswordEmail(UserModel user, string urlConfirmation);
     }
 }

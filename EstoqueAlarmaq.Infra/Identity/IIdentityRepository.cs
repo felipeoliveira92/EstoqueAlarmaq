@@ -11,5 +11,6 @@ namespace EstoqueAlarmaq.Infra.Identity
         Task<string> GenerateTokenByUserAsync(UserModel user);
         Task<bool> IsEmailConfirmedAsync(UserModel user);
         Task<UserModel> FindUserByEmailAsync(string email);
+        Task<string> GeneratePasswordResetTokenAsync(UserModel user);
     }
 }

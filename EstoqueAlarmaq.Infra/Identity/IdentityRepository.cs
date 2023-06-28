@@ -29,5 +29,8 @@ namespace EstoqueAlarmaq.Infra.Identity
 
         public async Task<UserModel> FindUserByEmailAsync(string email)
             => (UserModel)await _userManager.FindByEmailAsync(email);
+
+        public async Task<string> GeneratePasswordResetTokenAsync(UserModel user)
+            => await _userManager.GeneratePasswordResetTokenAsync(user);
     }
 }
