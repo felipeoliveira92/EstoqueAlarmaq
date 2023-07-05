@@ -47,6 +47,7 @@ builder.Services.AddScoped<IProductApplication, ProductApplication>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ISendMailApplication, SendMailApplication>();
 builder.Services.AddScoped<ISendMail, SendMail>();
+builder.Services.AddScoped<IParameterRepository, ParameterRepository>();
 
 //builder.Services.AddAuthentication(options =>
 //{

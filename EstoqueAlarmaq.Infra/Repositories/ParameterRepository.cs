@@ -5,10 +5,11 @@ using EstoqueAlarmaq.Infra.Repositories.Generic;
 
 namespace EstoqueAlarmaq.Infra.Repositories
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
+    public class ParameterRepository : GenericRepository<Parameter>, IParameterRepository
     {
-        public ProductRepository(DataContext dataContext) : base(dataContext)
+        public ParameterRepository(DataContext dataContext) : base(dataContext)
         {
+                
         }
     }
 }

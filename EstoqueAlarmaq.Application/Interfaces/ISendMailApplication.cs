@@ -6,6 +6,5 @@ namespace EstoqueAlarmaq.Application.Interfaces
     {
         void BuildMessage(BuildMessageMailInputModel inputModel);
         void Send();
-        void Disconnect();
     }
 }

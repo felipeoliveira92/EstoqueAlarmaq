@@ -1,11 +1,9 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
-using EstoqueAlarmaq.Domain;
 using EstoqueAlarmaq.Infra.Identity;
 using EstoqueAlarmaq.Infra.Models;
 using EstoqueAlarmaq.Services.DTOs.SendMail;
 using EstoqueAlarmaq.Services.Extensions;
 using Microsoft.AspNetCore.Identity;
-using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,7 +43,6 @@ namespace EstoqueAlarmaq.Application.Repositories
             });
 
             _sendMailApplication.Send();
-            _sendMailApplication.Disconnect();
         }
 
         public async Task<bool> IsEmailConfirmedAsync(UserModel user)
@@ -77,7 +74,6 @@ namespace EstoqueAlarmaq.Application.Repositories
             });
 
             _sendMailApplication.Send();
-            _sendMailApplication.Disconnect();
         }
     }
 }

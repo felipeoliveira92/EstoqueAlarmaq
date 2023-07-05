@@ -1,6 +1,7 @@
 ﻿using EstoqueAlarmaq.Application.Interfaces;
 using EstoqueAlarmaq.Services.DTOs.SendMail;
 using EstoqueAlarmaq.Services.Interfaces;
+using System;
 
 namespace EstoqueAlarmaq.Application.Repositories
 {
@@ -11,7 +12,7 @@ namespace EstoqueAlarmaq.Application.Repositories
         public SendMailApplication(ISendMail sendMailRepository)
         {
             _sendMailRepository = sendMailRepository;
-        }
+        }        
 
         public void BuildMessage(BuildMessageMailInputModel inputModel)
         {
@@ -20,20 +21,43 @@ namespace EstoqueAlarmaq.Application.Repositories
         
         public void Send()
         {
-            _sendMailRepository.Send(new SendInputModel
+            try
             {
-                Authentication = true,
-                HostSmtp = "",
-                PortSmtp = 587,
-                UseSsl = false,
-                MailAuthentication = "",
-                PasswordAuthentication = ""
-            });
+                Connect();
+                _sendMailRepository.Send().Wait();
+                Disconnect();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public void Disconnect()
+        private void Connect()
         {
-            _sendMailRepository.Disconnect();
+            try
+            {
+                _sendMailRepository.Connect(new ConnectInputModel
+                {
+                    UnTrustedCertificate = false,
+                    HasAuthentication = true,
+                    HostSmtp = "smtp.ethereal.email",
+                    PortSmtp = 587,
+                    EmailAuthentication = "dagmar.walsh@ethereal.email",
+                    PasswordAuthentication = "BeURe3synxA2npWzMZ",
+                    SecureOption = 1,
+                    ProtocolOption = 0
+                }).Wait();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void Disconnect()
+        {
+            _sendMailRepository.Disconnect().Wait();
         }
     }
 }
