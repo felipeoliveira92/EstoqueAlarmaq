@@ -4,6 +4,7 @@ using EstoqueAlarmaq.Infra.Models;
 using EstoqueAlarmaq.Services.DTOs.SendMail;
 using EstoqueAlarmaq.Services.Extensions;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,10 +35,15 @@ namespace EstoqueAlarmaq.Application.Repositories
             emailMessage.Append($"<p><a href='{urlConfirmation}'>Confirmar Cadastro</a></p>");
             emailMessage.Append("<p>Atenciosamente,<br>Equipe de Suporte</p>");
 
-            _sendMailApplication.BuildMessage(new BuildMessageMailInputModel
+            var emailTo = new ToMessageMailInputModel
             {
                 NameTo = user.Name,
-                MailTo = user.Email,
+                EmailTo = user.Email
+            };
+
+            _sendMailApplication.BuildMessage(new BuildMessageMailInputModel
+            {
+                To = new List<ToMessageMailInputModel> { emailTo},
                 Subject = "Confirmação de email",
                 BodyMessage = emailMessage.ToString()
             });
@@ -65,10 +71,15 @@ namespace EstoqueAlarmaq.Application.Repositories
             emailMessage.Append($"<p><a href='{urlConfirmation}'>Redefinir Senha</a></p>");
             emailMessage.Append("<p>Atenciosamente,<br>Equipe de Suporte</p>");
 
-            _sendMailApplication.BuildMessage(new BuildMessageMailInputModel
+            var emailTo = new ToMessageMailInputModel
             {
                 NameTo = user.Name,
-                MailTo = user.Email,
+                EmailTo = user.Email
+            };
+
+            _sendMailApplication.BuildMessage(new BuildMessageMailInputModel
+            {
+                To = new List<ToMessageMailInputModel> { emailTo },
                 Subject = "Redefinição de senha",
                 BodyMessage = emailMessage.ToString()
             });

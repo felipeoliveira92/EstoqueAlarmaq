@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Security.Authentication;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace EstoqueAlarmaq.Services.Repositories
 {
@@ -47,8 +48,11 @@ namespace EstoqueAlarmaq.Services.Repositories
 
         public void BuildMessage(BuildMessageMailInputModel inputModel)
         {
-            this.Message.From.Add(new MailboxAddress("OEstoque", "dagmar.walsh@ethereal.email"));
-            this.Message.To.Add(new MailboxAddress(inputModel.NameTo, inputModel.MailTo));
+            this.Message.From.Add(new MailboxAddress(inputModel.From.NameFrom, inputModel.From.EmailFrom));
+
+            var emailsTo = inputModel.To.Select(t => new MailboxAddress(t.NameTo, t.EmailTo));
+            this.Message.To.AddRange(emailsTo);
+
             this.Message.Subject = inputModel.Subject;
 
             this.Message.Body = new TextPart(TextFormat.Html)

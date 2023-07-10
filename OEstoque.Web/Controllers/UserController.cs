@@ -13,15 +13,22 @@ namespace OEstoque.Web.Controllers
             _userManager = userManager;
         }
 
-        // GET: UserController
+        [HttpGet]
         public ActionResult Index()
         {
             var users = _userManager.Users.ToList();
             return View(users);
         }
 
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet]
+        public ActionResult GetUsers()
+        {
+            var users = _userManager.Users.ToList();
+            return Json(users);
+        }
+
+        [HttpGet]
+        public ActionResult Details(string id)
         {
             return View();
         }
@@ -48,28 +55,29 @@ namespace OEstoque.Web.Controllers
         }
 
         // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        //[HttpGet]
+        public ActionResult Edit(string id)
         {
             return View();
         }
 
         // POST: UserController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public ActionResult Edit(string id, IFormCollection collection)
+        // {
+        //     try
+        //     {
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     catch
+        //     {
+        //         return View();
+        //     }
+        // }
 
         // GET: UserController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             return View();
         }

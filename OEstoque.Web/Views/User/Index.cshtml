@@ -19,7 +19,40 @@
                 <td>@user.Name</td>
                 <td>@user.Email</td>
                 <td>@user.Id</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-sm btn-primary">
+                        <i class="bi-pencil" title="Ver detalhes"></i>Detalhes
+                    </a> |
+                    <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-sm btn-secondary">
+                        <i class="bi-pencil" title="Alterar"></i>Editar
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-sm btn-danger">
+                        <i class="bi-pencil" title="Excluir"></i>Excluir
+                    </a>
+                    <button class="btn btn-sm btn-success" onclick="getUsers()">jquery</button>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<script>
+
+    function getUsers(){
+        debugger;
+        @* $.ajax(            
+            url: "User/GetUsers",
+            type: "html"
+            
+        ).done((data) =>{
+            debugger;
+        }); *@
+
+        $.get("/User/GetUsers", function(data, status){
+            console.log(data);
+        });
+
+
+
+    }
+</script>

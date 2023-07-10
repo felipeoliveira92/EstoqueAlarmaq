@@ -16,7 +16,21 @@ namespace EstoqueAlarmaq.Application.Repositories
 
         public void BuildMessage(BuildMessageMailInputModel inputModel)
         {
-            _sendMailRepository.BuildMessage(inputModel);
+            // Aqui busco informações no sistema de quem é o From para os emails.
+            inputModel.From = new FromMessageMailInputModel
+            {
+                NameFrom = "OEstoque",
+                EmailFrom = "oestoque@teste.com.br"
+            };
+
+            try
+            {
+                _sendMailRepository.BuildMessage(inputModel);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Não foi possível construir a mensagem de email. Erro: {ex.Message}");
+            }            
         }
         
         public void Send()
@@ -27,9 +41,9 @@ namespace EstoqueAlarmaq.Application.Repositories
                 _sendMailRepository.Send().Wait();
                 Disconnect();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception($"Não foi possível enviar email. Erro: {ex.Message}");
             }
         }
 
@@ -41,17 +55,17 @@ namespace EstoqueAlarmaq.Application.Repositories
                 {
                     UnTrustedCertificate = false,
                     HasAuthentication = true,
-                    HostSmtp = "smtp.ethereal.email",
+                    HostSmtp = "sandbox.smtp.mailtrap.io",
                     PortSmtp = 587,
-                    EmailAuthentication = "dagmar.walsh@ethereal.email",
-                    PasswordAuthentication = "BeURe3synxA2npWzMZ",
+                    EmailAuthentication = "0bc42921f87d6b",
+                    PasswordAuthentication = "f65856a8189114",
                     SecureOption = 1,
                     ProtocolOption = 0
                 }).Wait();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception($"Não foi possível conectar o servidor smtp. Erro: {ex.Message}");
             }
         }
 
