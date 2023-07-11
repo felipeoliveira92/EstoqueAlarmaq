@@ -12,20 +12,19 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
-                <a class="dropdown-item" asp-controller="Account" asp-action="AlterarSenha" classes-if-active="disabled">
-                    Alterar Senha
+                <a class="dropdown-item" asp-controller="Account" asp-action="ProfileSettings" classes-if-active="disabled">
+                    Profile
                 </a>
             </li>
             <li>
                 <hr class="dropdown-divider">
             </li>
             <li>
-                <form method="post" asp-controller="Account" asp-action="Logout">
+                <form class="dropdown-item" method="post" asp-controller="Account" asp-action="Logout">
                     <button type="submit" style="width:auto;" class="nav-link btn btn-link py-0">
                         Sair
                     </button>
                 </form>
-                @*<a class="dropdown-item" asp-controller="Account" asp-action="Logout">Sair</a>*@
             </li>
         </ul>
     </li>

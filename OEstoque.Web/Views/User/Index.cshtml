@@ -1,8 +1,15 @@
 ﻿@using EstoqueAlarmaq.Infra.Models;
-@using Microsoft.AspNetCore.Identity;
 @model List<UserModel>
 
+@{
+    ViewData["Title"] = "Usuários";
+}
+
 <h1>Lista de Usuários</h1>
+
+<a asp-action="New" class="btn btn-sm btn-sucess">
+    <i class="bi bi-plus-lg">Adicionar</i>
+</a>
 
 <table class="table">
     <thead>
@@ -28,7 +35,7 @@
                     </a> |
                     <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-sm btn-danger">
                         <i class="bi-pencil" title="Excluir"></i>Excluir
-                    </a>
+                    </a> |
                     <button class="btn btn-sm btn-success" onclick="getUsers()">jquery</button>
                 </td>
             </tr>
@@ -51,8 +58,5 @@
         $.get("/User/GetUsers", function(data, status){
             console.log(data);
         });
-
-
-
     }
 </script>

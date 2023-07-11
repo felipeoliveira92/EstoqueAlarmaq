@@ -1,0 +1,42 @@
+﻿@model NewUserInputModel
+
+
+<h2>Cadastro de Usuário</h2>
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    <div class="container-fluid">
+        <div class="row">
+            <label class ="form-label" for="nome">Nome:</label>
+            <input type="text" class="form-control" asp-for="Name" id="nome" required />
+        </div>
+
+        <div class="row">
+            <label class="form-label" for="email">Email:</label>
+            <input type="email" class="form-control" asp-for="Email" id="email" required />
+        </div>
+
+        <div class="row">
+            <label class="form-label" for="ckbTypeUser">Tipo:</label>
+            <select class="form-select" id="ckbTypeUser" asp-for="TypeUser" required>
+                <option value="0">Cliente</option>
+                <option value="1">Funcionario</option>
+                <option value="2">Administrador</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label class="form-label" for="senha">Senha:</label>
+            <input type="password" class="form-control" asp-for=Password id="senha" required />
+        </div>
+
+        <div class="row">
+            <label class="form-label" for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" class="form-control" asp-for="ConfirmPassword" id="confirmarSenha" required />
+        </div>
+
+        <div class="row">
+            <input type="submit" class="btn btn-success mb-3" value="Cadastrar" />
+        </div>    
+    </div>    
+}

@@ -223,6 +223,12 @@ namespace OEstoque.Web.Controllers
                 return View(model);
             }
         }
+
+        [HttpGet]
+        public IActionResult ProfileSettings()
+        {
+            return View();
+        }
         #endregion
     }
 }

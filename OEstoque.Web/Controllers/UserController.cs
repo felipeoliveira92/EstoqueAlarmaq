@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OEstoque.Web.Models;
 
 namespace OEstoque.Web.Controllers
 {
@@ -33,25 +34,30 @@ namespace OEstoque.Web.Controllers
             return View();
         }
 
-        // GET: UserController/Create
-        public ActionResult Create()
+        public ActionResult New()
         {
             return View();
         }
 
-        // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(NewUserInputModel inputModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
+                }
             }
-            catch
+            else
             {
-                return View();
-            }
+                return View(inputModel);
+            }            
         }
 
         // GET: UserController/Edit/5
